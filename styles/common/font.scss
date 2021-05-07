@@ -1,0 +1,34 @@
+@charset 'UTF-8';
+
+@font-face { 
+  font-family: 'SpoqaT'; 
+  src: local("※"), 
+  url("../../public/fonts/Spoqa_Han_Sans_Thin.woff") format("woff"), 
+  url("../../public/fonts/Spoqa_Han_Sans_Thin.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal;
+}
+@font-face { 
+  font-family: 'SpoqaL'; 
+  src: local("※"),
+  url("../../public/fonts/Spoqa_Han_Sans_Light.woff") format("woff"),
+  url("../../public/fonts/Spoqa_Han_Sans_Light.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+@font-face { 
+  font-family: 'SpoqaR'; 
+  src: local("※"),
+  url("../../public/fonts/Spoqa_Han_Sans_Regular.woff") format("woff"), 
+  url("../../public/fonts/Spoqa_Han_Sans_Regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+@font-face { 
+  font-family: 'SpoqaB'; 
+  src: local("※"),
+  url("../../public/fonts/Spoqa_Han_Sans_Bold.woff") format("woff"), 
+  url("../../public/fonts/Spoqa_Han_Sans_Bold.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}

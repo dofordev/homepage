@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@import "common/font";
+@import "common/variables";
+@import "common/layout";
+@import "common/element";
+@import "common/animation";
+
+
 /***************************
 * CSS Default
 ****************************/
@@ -22,16 +29,7 @@ button, a, select, input, label { border: none; background: none; font-family: "
 button::-moz-focus-inner { padding: 0px; }
 strong { font-family: 'SpoqaB'; }
 button, a { -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); }
-
-/****************************************************
-* Font 정의
-*****************************************************/
-
-@font-face { font-family: 'SpoqaT'; src: local("※"), url("../public/fonts/Spoqa_Han_Sans_Thin.woff") format("woff"), url("../public/fonts/Spoqa_Han_Sans_Thin.ttf") format("truetype"); font-style: normal; font-weight: normal; }
-@font-face { font-family: 'SpoqaL'; src: local("※"), url("../public/fonts/Spoqa_Han_Sans_Light.woff") format("woff"), url("../public/fonts/Spoqa_Han_Sans_Light.ttf") format("truetype"); font-style: normal; font-weight: normal; }
-@font-face { font-family: 'SpoqaR'; src: local("※"), url("../public/fonts/Spoqa_Han_Sans_Regular.woff") format("woff"), url("../public/fonts/Spoqa_Han_Sans_Regular.ttf") format("truetype"); font-style: normal; font-weight: normal; }
-@font-face { font-family: 'SpoqaB'; src: local("※"), url("../public/fonts/Spoqa_Han_Sans_Bold.woff") format("woff"), url("../public/fonts/Spoqa_Han_Sans_Bold.ttf") format("truetype"); font-style: normal; font-weight: normal; }
-
+a, a:hover, a:focus, a:active, a:visited, a:link { font-family: inherit; text-decoration: none; word-break: break-all; white-space: normal;}
 
 /****************************************************
 * 공통 요소 정의 
@@ -43,40 +41,6 @@ br.mobile {display:none;}
 .clearfix:after {display:block; content:""; clear:both;}
 .bold {font-family: 'SpoqaB' !important;}
 
-/*****************************************************
-* 1) Layout (Header, Footer, Nav, Container)
-******************************************************/
-
-
-
-// 컨테이너 
-.container {}
-
-.key-visual .inner { height: 400px; padding: 169px 0; background: url(../public/images/common/sub_visual_common.jpg) no-repeat 50% 50%; background-size: cover; text-align: center; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in;}
-.key-visual .title {margin-bottom:10px; font-size:32px; color:#fff; letter-spacing: -2px;}
-.key-visual .desc { margin: 0 0 60px 0; font-size: 18px; color: rgba(255, 255, 255, 0.8); font-family:'SpoqaR';letter-spacing:0; }
-.key-visual .btn-wrap { display:none; }
-
-/***************************************************
-* 2) Element (Btn, Table, Tab 등)
-****************************************************/
-
-/**************************************************
-* 탭 : li의 자식요소는 버튼, a 등 상황에 맞게 사용 가능 
-***************************************************/
-.tab-wrap {}
-.tab-wrap ul {position: relative; max-width: 1280px; margin: 0 auto; padding:0 40px; z-index: 1; height:59px; border-bottom: 1px solid #c8c8c8;}
-.tab-wrap li {float: left; width: 20%;}
-.tab-wrap li > * {display:block; width:100%; box-sizing:border-box; background-color:#f8f8f8; background-color:#fff; height: 58px; border: 1px solid #c8c8c8; border-right: 0; border-bottom: 0; font-family: 'SpoqaR'; font-size: 16px; line-height: 56px; color: #666; text-align: center;}
-.tab-wrap li:last-child > * {border-right: 1px solid #c8c8c8;}
-.tab-wrap li.is-active > * {background-color:#fff; height: 59px; border: 2px solid #731aed; border-bottom: 0; font-family: 'SpoqaB'; color: #731aed;}
-
-/************************/
-/* 반응형(모바일)
-/************************ */
 @media screen and (max-width: 960px) {
-  .tab-wrap li {position: relative; float:left; display: inline-block; margin-top: -1px; margin-right: -1px; width: 50% !important;}
+  br.mobile {display:block;}
 }
-
-
-

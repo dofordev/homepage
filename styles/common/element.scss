@@ -1,0 +1,46 @@
+@charset 'UTF-8';
+
+/***************************************************
+* 2) Element (Btn, Table, Tab 등)
+****************************************************/
+
+/**************************************************
+* 탭 : li의 자식요소는 버튼, a 등 상황에 맞게 사용 가능 
+***************************************************/
+.tab-wrap {}
+.tab-wrap ul {position: relative; max-width: 1280px; margin: 0 auto; padding:0 40px; z-index: 1; height:59px; border-bottom: 1px solid #c8c8c8;}
+.tab-wrap ul:before {position: absolute; left: 0; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
+.tab-wrap li {float: left; width: 20%;}
+.tab-wrap li > * {display:block; width:100%; box-sizing:border-box; background-color:#f8f8f8; height: 58px; border: 1px solid #c8c8c8; border-right: 0; border-bottom: 0; font-family: 'SpoqaR'; font-size: 16px; line-height: 56px; color: #666; text-align: center;}
+.tab-wrap li.is-active > * {background-color:#fff; height: 59px; border: 2px solid #731aed; border-bottom: 0; font-family: 'SpoqaB'; color: #731aed;}
+.tab-wrap li:last-child > * {border-right: 1px solid #c8c8c8;}
+
+@media screen and (max-width: 960px) {
+  .tab-wrap ul {display: table; table-layout: fixed; width: 100%; height: auto; padding-left: 20px; padding-right: 20px; border-bottom: 0;}  
+  .tab-wrap li {display:block; position: relative; float:left; margin-top: -1px; margin-right: -1px; width: 50% !important;}
+  .tab-wrap li:nth-child(even) {border-right: 1px solid #c8c8c8;}
+  .tab-wrap li > * {height: 46px; border-bottom: 1px solid #c8c8c8; font-size: 14px; line-height: 42px;}
+  .tab-wrap li.is-active > * {height: 46px; border: 2px solid #731aed; font-family: 'SpoqaB';}
+  .tab-wrap li.is-active:after {@include common__after; width:100%; height:100%; @include position($t:0, $l:0); box-sizing: border-box; border: 2px solid #731aed; z-index: 2;}
+  .tab-wrap li:last-child > * {border-right:0;}
+}
+
+/**************************************************
+* contents
+***************************************************/
+.contents-head {max-width:1280px; margin:0 auto; padding-left:40px; padding-right:40px}
+.contents-head .title {display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px;}
+.contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222;}
+.contents-head .desc {display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999;}
+.contents-body {margin: 40px 0 0 0;}
+
+.contents-details {}
+.contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
+.contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
+.contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
+.contents-details .desc-wrap .item-desc {position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
+.contents-details .desc-wrap:nth-of-type(even) {background: #f8f8f8;}
+
+@media screen and (max-width: 960px) {
+  .contents-details .desc-wrap {padding: 40px 0;}  
+}
