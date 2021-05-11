@@ -2,29 +2,139 @@
 /*****************************************************
 * Layout (Header, Footer, Nav, Container)
 ******************************************************/
+.width-fix {position: relative; max-width: 1280px; margin: 0 auto; padding: 0 40px;}
+@media screen and (max-width: 960px) {
+  .width-fix {padding:0 20px;}
+}
 
 /***************************************************
 * header
 ****************************************************/
+.header {@include position($p:fixed, $t:0, $l:0); width: 100%; height: 100px; z-index: 10;}
+.header .header-logo {float: left; margin: 38px 0 0 0; width: 80px; height: 24px; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 80px 25px; text-indent: -999em;}
+.header .nav {float: right; margin: 38px 0 0 0; font-size: 16px;}
+.header .nav .nav-list li {float: left;}
+.header .nav .nav-list li a {position: relative; display: block; padding: 0 20px; font-family: 'SpoqaB'; font-size: 18px; line-height: 18px; color: #fff;}
+.header .nav .nav-list > li > a:after {display: inline-block; @include position($t: 1px, $r: 0); width: 1px; height: 15px; background: rgba(255, 255, 255,0.3); content: '';}
+.header .nav .nav-list .cerfi > a {padding-right: 26px; background: url(/images/common/ico_cerfi.png) no-repeat 100% 50%; background-size: 16px auto; font-family: 'SpoqaR'; font-size: 16px; line-height: 17px;}
+.m-gnb,
+.m-gnb-deem,
+.m-nav {display: none;}
+
+// 해더 고정(mouseenter 효과)
+.header.fixed {position:fixed;background:rgba(255, 255, 255, 0.9);box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);}
+.header.fixed .header-logo {background-image:url(/images/common/finnq_logo_color.png);}
+.header.fixed .nav .nav-list > li > a {color:#222}
+.header.fixed .nav .nav-list > li > a:after{background:rgba(0, 0, 0,0.3);}
+.header.fixed .nav .nav-list .cerfi > a {color:#222; background-image: url(/images/common/ico_cerfi_fixed.png);}
+
+@media screen and (max-width: 960px) {
+  .header {position: absolute;}
+  .header .header-logo {@include position($t:10px, $l:50%); margin: 0 0 0 -30px; width: 60px; background-size: 60px auto;}
+  .nav {display: none;}
+  .m-gnb {display: block; left: -100%; @include position($p:fixed, $t:0, $b:0); width: 240px; background: #fff; z-index: 999; height: auto; max-height: 100%; overflow: auto;}
+  .m-gnb .m-gnb-inner {margin: 60px 20px 0;}
+  .m-gnb-deem {display: none; top: 0; bottom: 0; left: 0; right: 0; position: fixed; background: rgba(0, 0, 0, 0.3);z-index: 99;}
+  .m-nav {display: block; margin: 8px 0 0 -8px;}
+  .m-nav .btn-nav {position: relative; outline: none; width: 34px; height: 34px; text-indent:-999em;}
+  .m-nav .btn-nav:after {@include common__after($t:50%, $l:50%); width:20px; height:15px; margin-top:-7.5px; margin-left:-10px; background: url(/images/common/btn_m_nav.png) no-repeat 0 0; background-size:cover;}
+}
 
 /***************************************************
 * footer
 ****************************************************/
-.footer {height:100px; text-align: center; background:red;}
+.footer {padding: 43px 0 46px; background-color: #222;}
+.footer .footer-menu {display: inline-block;overflow: hidden;margin: 4px 0 24px 0;}
 
+.footer .footer-menu li {position: relative; float: left;}
+.footer .footer-menu li:before {content: ''; @include position($t:7px, $l:-1px); width: 1px; height: 10px; background-color: #fff;}
+.footer .footer-menu li a {display: block; padding: 0 12px; font-family: 'SpoqaR'; font-size: 16px; color: #e0e0e0;}
+.footer .footer-menu li:first-child a {padding-left: 0;}
 
-// 컨테이너 
-.container .contents {max-width:1280px; margin: 0 auto; padding: 90px 40px 95px; }
+.footer .company-title {margin-bottom:10px; font-family:'SpoqaR'; font-size:14px; color:#c8c8c8;}
+.footer .company-list {width: calc(100% - 300px); overflow: hidden;}
+.footer .company-list li {position: relative; float: left; padding-left:10px; margin-right:10px; font-family: 'SpoqaR'; font-size: 14px; line-height: 1.5; color: #666;}
+.footer .company-list li:before {@include common__after($t:9px, $l:0); width:4px; height:4px; background-color:#666; border-radius:50%;}
+// .footer .company-list li:before {@include common__after; @include position($t:6px, $l:0); height: 8px; border-left:1px solid #666;}
+/*
+.footer .company-list li:first-of-type {padding-left:0;}
+.footer .company-list li:first-of-type:before {display:none;}
+*/
+.footer .company-list li a {vertical-align: top; color: inherit; text-decoration: underline;}
+.footer .copyright {font-family: 'SpoqaR'; font-size: 14px; line-height: 1.5; color: #666;}
 
-// 기본 Key visual
-.key-visual .inner { height: 400px; padding: 170px 0; background: url(../../public/images/common/sub_visual_common.jpg) no-repeat 50% 50%; background-size: cover; text-align: center;}
+.footer .family {@include position($t:0, $r:40px); z-index: 1; width: 210px;}
+.footer .family .btn-family {display: block; position: relative; padding: 0 0 0 9px; font-family: 'SpoqaR'; font-size: 14px; color: #666; z-index: 1; border: 1px solid rgba(102, 102, 102, 0.5); line-height: 30px; background-color: rgba(255, 255, 255, 0.1); box-sizing: border-box; width: 100%; text-align: left;}
+.footer .family .btn-family:before {@include common__after($t:-1px, $r:-1px); width: 32px; height: 32px; background: #666 url(/images/common/ico_family_arrow.png) no-repeat 50% 50%}
+.footer .family .family-list {display: none; position: absolute; bottom: 100%; left: 0; width: 100%;}
+.footer .family .family-list.is-active {display:block; animation: animate__slideInUp 1.5s forwards; -webkit-animation: animate__slideInUp 1.5s forwards;}
+.footer .family .family-list li {margin: 0 0 -1px 0;}
+.footer .family .family-list li > * {display: block; position: relative; padding: 0 0 0 9px; font-family: 'SpoqaR'; font-size: 14px; color: #666; border: 1px solid #3d3d3d; line-height: 30px; background-color: #222;}
+.footer .sns-wrap {@include position($r:70px,$b:0);}
+.footer .sns-list li {float: left;}
+.footer .sns-list li + li {margin-left: 15px;}
+.footer .sns-list .btn-sns {display: inline-block; width: 40px; height: 40px; text-indent: -999em; background-repeat:no-repeat; background-position:50% 50%; background-size:cover;}
+.footer .sns-list .btn-fb {background-image: url(/images/common/btn_fb.png);}
+.footer .sns-list .btn-insta {background-image: url(/images/common/btn_insta.png);}
+.footer .sns-list .btn-blog {background-image: url(/images/common/btn_blog.png);}
+
+@media screen and (max-width: 960px) {
+  .footer .width-fix {padding-bottom: 160px;}
+  .footer .footer-menu li:before {top: 5px; left: 1px;}
+  .footer .footer-menu li a {padding: 0 10px; font-size:14px;}
+  .footer .company-list li {font-size: 12px;}
+  .footer .family {@include position($t:initial, $r:20px, $b:0);}
+  .footer .company-list {width:100%;}
+  .footer .sns-wrap {@include position($r:initial,$b:70px,$l:20px);}
+  .footer .copyright {font-size:12px;}
+}
+
+/***************************************************
+* container(key-visual, contents)
+****************************************************/
+/**************************************************
+* Key visual(default)
+***************************************************/
+.key-visual .inner {height: 400px; padding: 170px 0; background: url(/images/common/sub_visual_common.jpg) no-repeat 50% 50%; background-size: cover; text-align: center;}
 // 상품 key visual
-.key-visual.product .inner {background-image:url(../../public/images/common/sub_visual_market.jpg);}
-.key-visual .title {margin-bottom:10px; font-size:32px; color:#fff; letter-spacing: -2px;}
-.key-visual .desc {margin: 0 0 60px 0; font-size: 18px; color: rgba(255, 255, 255, 0.8); font-family:'SpoqaR';letter-spacing:0;}
+.key-visual.product .inner {background-image:url(/images/common/sub_visual_market.jpg);}
+.key-visual .title {opacity:0; margin-bottom:10px; font-size:32px; color:#fff; letter-spacing: -2px; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards;}
+.key-visual .desc {opacity:0; margin: 0 0 60px 0; font-size: 18px; color: rgba(255, 255, 255, 0.8); font-family:'SpoqaR';letter-spacing:0; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards; -webkit-animation-delay:1s; animation-delay: 1s;}
 .key-visual .btn-wrap {display:none;}
 
 @media screen and (max-width: 960px) {
   .container .contents {padding: 55px 20px 35px;}
+  .key-visual .desc {display: none;}
+  .key-visual .title {font-size:36px;}
   .key-visual .inner {height: 250px; padding:80px 0 50px; background-position:70% 50%;background-size: cover;}
+}
+
+/**************************************************
+* contents
+***************************************************/
+.container .contents {max-width:1280px; margin: 0 auto; padding: 90px 40px 95px; }
+
+.contents-head {max-width:1280px; margin:0 auto; padding:0 40px;}
+.contents-head .title {display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px;}
+.contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222;}
+.contents-head .desc {display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999;}
+.contents-body {margin: 40px 0 0 0;}
+
+.contents-details {}
+.contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
+.contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
+.contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
+.contents-details .desc-wrap .item-desc {position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
+.contents-details .desc-wrap:nth-of-type(even) {background: #f8f8f8;}
+
+@media screen and (max-width: 960px) {
+  .contents-head {padding:0 20px;}
+  .container .contents {padding: 60px 0px 45px;}
+  .contents-head .title {font-size: 20px;}
+  .contents-head .title:after {margin-top:15px;}  
+  .btn-wrap.app-down,
+  .contents-head .desc {display:none;}
+  .contents-details .contents-visual {padding: 40px 20px 160px;}
+  .contents-details .desc-wrap {padding: 40px 0;}
+  .contents-details .visual-title {font-size:34px; line-height:40px;}
 }

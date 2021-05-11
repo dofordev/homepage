@@ -26,21 +26,11 @@
 }
 
 /**************************************************
-* contents
+* 버튼 : Google, Apple
 ***************************************************/
-.contents-head {max-width:1280px; margin:0 auto; padding-left:40px; padding-right:40px}
-.contents-head .title {display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px;}
-.contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222;}
-.contents-head .desc {display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999;}
-.contents-body {margin: 40px 0 0 0;}
-
-.contents-details {}
-.contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
-.contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
-.contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
-.contents-details .desc-wrap .item-desc {position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
-.contents-details .desc-wrap:nth-of-type(even) {background: #f8f8f8;}
-
-@media screen and (max-width: 960px) {
-  .contents-details .desc-wrap {padding: 40px 0;}  
-}
+.btn-wrap.app-down {position: relative; top: 0; left: 0; width: 48.388%; margin-top: 30px;}
+.app-down .btn {display: inline-block; height: 50px; line-height: 46px; width: calc(50% - 12px); border: solid 1px #c8c8c8; font-size: 16px; text-align:center; border-radius: 4px; font-family: 'SpoqaB';}
+.app-down .btn + .btn {margin-left:20px;}
+.app-down .btn span {display: inline-block; height: 100%; padding: 0 0 0 25px; font-family: 'SpoqaB'; letter-spacing: 0;}
+.app-down .btn-apple span {color:#222; background: url(../../public/images/common/ico_apple.png) no-repeat 0 50%; background-size: 19px;}
+.app-down .btn-google span {color:#666; letter-spacing:-1px; background: url(../../public/images/common/ico_google.png) no-repeat 0 50%; background-size: 19px;}
