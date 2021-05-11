@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+
+/****************************************
+* MIXIN 정의
+******************************************/
+
+/* 가상선택자 : before, after 공통 사용.  */
+@mixin common__after {display:block; position:absolute; content:"";}
+
+/* 박스 : shadow 형태  */
+@mixin shadow__box {border-radius:8px; background:#fff; box-shadow:0px 2px 8px rgba(0,0,0,0.1); box-sizing:border-box;}
+
+@mixin text__indent {white-space: nowrap; overflow: hidden; text-indent:100%;}
+
+/* 말줄임 Mixin */
+@mixin text__overflow {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+@mixin mulit__overflow($line:2) {	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $line; 
+	-webkit-box-orient: vertical;
+} 
+
+/* 포지션 타입 정의 */
+@mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
+	position: $p;
+	top: $t;
+	bottom: $b;
+	left: $l;
+	right: $r;
+}
