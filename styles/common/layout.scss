@@ -66,8 +66,8 @@
 .footer .family {@include position($t:0, $r:40px); z-index: 1; width: 210px;}
 .footer .family .btn-family {display: block; position: relative; padding: 0 0 0 9px; font-family: 'SpoqaR'; font-size: 14px; color: #666; z-index: 1; border: 1px solid rgba(102, 102, 102, 0.5); line-height: 30px; background-color: rgba(255, 255, 255, 0.1); box-sizing: border-box; width: 100%; text-align: left;}
 .footer .family .btn-family:before {@include common__after($t:-1px, $r:-1px); width: 32px; height: 32px; background: #666 url(/images/common/ico_family_arrow.png) no-repeat 50% 50%}
-.footer .family .family-list {display: none; position: absolute; bottom: 100%; left: 0; width: 100%;}
-.footer .family .family-list.is-active {display:block; animation: animate__slideInUp 1.5s forwards; -webkit-animation: animate__slideInUp 1.5s forwards;}
+.footer .family .family-list {display:none; opacity:0;; position: absolute; bottom: 100%; left: 0; width: 100%;}
+.footer .family .family-list.is-active {display:block; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards;}
 .footer .family .family-list li {margin: 0 0 -1px 0;}
 .footer .family .family-list li > * {display: block; position: relative; padding: 0 0 0 9px; font-family: 'SpoqaR'; font-size: 14px; color: #666; border: 1px solid #3d3d3d; line-height: 30px; background-color: #222;}
 .footer .sns-wrap {@include position($r:70px,$b:0);}
@@ -119,8 +119,6 @@
 .contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222;}
 .contents-head .desc {display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999;}
 .contents-body {margin: 40px 0 0 0;}
-
-.contents-details {}
 .contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
 .contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
 .contents-details .desc-wrap {padding:80px 0; overflow: hidden;}

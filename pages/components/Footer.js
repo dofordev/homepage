@@ -1,11 +1,6 @@
 export default function Footer() {
-  // const isActive = document.getElementsByClassName('is-active');
-  // if (isActive.length > 0) {
-  //
-  // }
-
   const menuActive = () => {
-    document.getElementById("family-list").classList.toggle("is-active");
+    document.querySelector(".family-list").classList.toggle("is-active");
   };
 
   return (
@@ -116,7 +111,7 @@ export default function Footer() {
           <button type="button" className="btn-family" onClick={menuActive}>
             계열사
           </button>
-          <ul className="family-list" id="family-list">
+          <ul className="family-list">
             <li>
               <a href="http://www.hanafn.com" target="_blank" title="새창 열림">
                 하나금융그룹
