@@ -112,7 +112,7 @@
 /**************************************************
 * contents
 ***************************************************/
-.container .contents {max-width:1280px; margin: 0 auto; padding: 90px 40px 95px; }
+.container .contents {margin: 0 auto; padding:90px 0px 15px; }
 
 .contents-head {max-width:1280px; margin:0 auto; padding:0 40px;}
 .contents-head .title {display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px;}
@@ -122,8 +122,11 @@
 .contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
 .contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
 .contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
-.contents-details .desc-wrap .item-desc {position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
-.contents-details .desc-wrap:nth-of-type(even) {background: #f8f8f8;}
+.contents-details .desc-wrap .sub-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
+.contents-details .desc-wrap .sub-desc {font-size: 20px; line-height: 30px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR';}
+
+.contents-details .desc-wrap .item-desc {display:flex; align-items:center; justify-content: space-between; position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
+.contents-details .desc-wrap:nth-of-type(odd) {background: #f8f8f8;}
 
 @media screen and (max-width: 960px) {
   .contents-head {padding:0 20px;}

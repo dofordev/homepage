@@ -1,9 +1,10 @@
 
-import Layout from '../components/Layout'
+import Layout from '../../components/Layout'
 import Head from 'next/head'
 import Styles from '../../styles/FinnqmarketCard.module.scss'
 import { useState, useEffect } from 'react';
 
+import Tabs from '../../components/Tabs'
 
 const content = {
   0 : <FinnqCard/>,
@@ -14,14 +15,18 @@ const content = {
 
 export default function FinnqmarketCard() {
   
-  const [activeTab, setActiveTab] = useState(0);
+  const [tabNum, setTabNum] = useState(0);
 
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    if(urlParams.has('tabNum')) setActiveTab(urlParams.get('tabNum'));
+    if(urlParams.has('tabNum')) setTabNum(urlParams.get('tabNum'));
   }, []);
 
+
+  function clickCallback(index){
+    setTabNum(index);
+  }
   return (
       <Layout> 
         <Head>
@@ -48,22 +53,17 @@ export default function FinnqmarketCard() {
 
             <section className="contents-body">
               <article className="tab-wrap">
-                <ul>
-                  <li className={activeTab == 0 ? 'is-active' : ''} onClick={() => setActiveTab(0)}>
-                    <button type="button">핀크카드</button>
-                  </li>
-                  <li className={activeTab == 1 ? 'is-active' : ''} onClick={() => setActiveTab(1)}>
-                    <button type="button">투뿔카드</button>
-                  </li>
-                  <li className={activeTab == 2 ? 'is-active' : ''} onClick={() => setActiveTab(2)}>
-                    <button type="button">웨이브카드</button>
-                  </li>
-                  <li className={activeTab == 3 ? 'is-active' : ''} onClick={() => setActiveTab(3)}>
-                    <button type="button">핀크 체크카드</button>
-                  </li>
-                </ul>
+
+                  <Tabs clickEvent={clickCallback} activeTab={tabNum} list={[
+                    {title:'핀크카드'}
+                    , {title:'투뿔카드'}
+                    , {title:'웨이브카드'}
+                    , {title: '핀크체크카드'}]}>
+                    </Tabs>
+
+                  
               </article>
-              {content[activeTab]}
+              {content[tabNum]}
               
             </section>
           </div>
