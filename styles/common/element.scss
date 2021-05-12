@@ -7,9 +7,11 @@
 /**************************************************
 * 탭 : li의 자식요소는 버튼, a 등 상황에 맞게 사용 가능 
 ***************************************************/
-.tab-wrap {}
 .tab-wrap ul {position: relative; max-width: 1280px; margin: 0 auto; padding:0 40px; z-index: 1; height:59px; border-bottom: 1px solid #c8c8c8;}
-.tab-wrap ul:before {position: absolute; left: 0; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
+.tab-wrap ul:before, 
+.tab-wrap ul:after {position: absolute; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
+.tab-wrap ul:before {left: 0;}
+.tab-wrap ul:after {right: 0;}
 .tab-wrap li {float: left; width: 20%;}
 .tab-wrap li > * {display:block; width:100%; box-sizing:border-box; background-color:#f8f8f8; height: 58px; border: 1px solid #c8c8c8; border-right: 0; border-bottom: 0; font-family: 'SpoqaR'; font-size: 16px; line-height: 56px; color: #666; text-align: center;}
 .tab-wrap li.is-active > * {background-color:#fff; height: 59px; border: 2px solid #731aed; border-bottom: 0; font-family: 'SpoqaB'; color: #731aed;}

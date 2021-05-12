@@ -1,16 +1,35 @@
+import { useEffect } from "react";
+
 export default function Header() {
-  const mouseEnter = () => {
-    document.querySelector("header").classList.add("fixed");
+  // const header = document.querySelector(".header");
+
+  const eventIn = () => {
+    document.querySelector(".header").classList.add("fixed");
   };
-  const mouseLeave = () => {
-    document.querySelector("header").classList.remove("fixed");
+  const eventLeave = () => {
+    document.querySelector(".header").classList.remove("fixed");
   };
+
+  useEffect(() => {
+    function onScroll() {
+      let currentPosition = window.pageYOffset;
+      if (currentPosition <= 0) {
+        document.querySelector(".header").classList.remove("fixed");
+      } else {
+        document.querySelector(".header").classList.add("fixed");
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header
       className="header"
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
+      onMouseEnter={eventIn}
+      onMouseLeave={eventLeave}
+      onFocus={eventIn}
+      onBlur={eventLeave}
     >
       <div className="width-fix">
         <h1 className="header-logo">
