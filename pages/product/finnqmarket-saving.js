@@ -1,37 +1,32 @@
 
-import Layout from '../components/Layout'
-<<<<<<< HEAD
-
-export default function finnqmarketCard() {
-  return (
-<Layout> 
-예적금
-</Layout>
-  )
-}
-=======
+import Layout from '../../components/Layout'
 import Head from 'next/head'
-import Styles from '../../styles/FinnqmarketCard.module.scss'
+import Styles from '../../styles/FinnqmarketSaving.module.scss'
 import { useState, useEffect } from 'react';
+
+import Tabs from '../../components/Tabs'
 
 
 const content = {
-  0 : <FinnqCard/>,
-  1 : <TwoPlusCard/>,
-  2 : <WaveCard/>,
-  3 : <FinnqCheckCard/>
+  0 : <HabitSaving/>,
+  1 : <TFinnqInstallmentSavings/>,
+  2 : <KDBXThigh5InstallmentSavings/>,
+  3 : <TProfitPassbook/>
 }
 
 export default function FinnqmarketCard() {
   
-  const [activeTab, setActiveTab] = useState(0);
+  const [tabNum, setTabNum] = useState(0);
 
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    if(urlParams.has('tabNum')) setActiveTab(urlParams.get('tabNum'));
+    if(urlParams.has('tabNum')) setTabNum(urlParams.get('tabNum'));
   }, []);
 
+  function clickCallback(index){
+    setTabNum(index);
+  }
   return (
       <Layout> 
         <Head>
@@ -50,7 +45,7 @@ export default function FinnqmarketCard() {
 
           <div className="contents">
             <section className="contents-head">
-              <p className="title">카드</p>
+              <p className="title">예적금</p>
               <em className="desc">
                 오직 핀크에서만 누릴 수 있는 특별한 금융상품
               </em>
@@ -58,22 +53,16 @@ export default function FinnqmarketCard() {
 
             <section className="contents-body">
               <article className="tab-wrap">
-                <ul>
-                  <li className={activeTab == 0 ? 'is-active' : ''} onClick={() => setActiveTab(0)}>
-                    <button type="button">핀크카드</button>
-                  </li>
-                  <li className={activeTab == 1 ? 'is-active' : ''} onClick={() => setActiveTab(1)}>
-                    <button type="button">투뿔카드</button>
-                  </li>
-                  <li className={activeTab == 2 ? 'is-active' : ''} onClick={() => setActiveTab(2)}>
-                    <button type="button">웨이브카드</button>
-                  </li>
-                  <li className={activeTab == 3 ? 'is-active' : ''} onClick={() => setActiveTab(3)}>
-                    <button type="button">핀크 체크카드</button>
-                  </li>
-                </ul>
+
+                <Tabs clickEvent={clickCallback} activeTab={tabNum} list={[
+                    {title:'습관저금'}
+                    , {title:'T핀크적금'}
+                    , {title:'KDB X T high5 적금'}
+                    , {title: 'T이득통장'}]}>
+                </Tabs>
+
               </article>
-              {content[activeTab]}
+              {content[tabNum]}
               
             </section>
           </div>
@@ -85,13 +74,13 @@ export default function FinnqmarketCard() {
 
 }
 
-function FinnqCard(){
+function HabitSaving(){
   return (
     <article className="contents-details">
       <div className="contents-visual">
         <p className="visual-title">
-          쓸 만큼만 <br className="mobile" />덜어 쓰는 
-          <br />소비습관의 시작
+          습관이 돈이
+          <br />되는 방법
         </p>
       </div>
       <div className="desc-wrap">
@@ -107,14 +96,13 @@ function FinnqCard(){
   )
 }
 
-function TwoPlusCard(){
+function TFinnqInstallmentSavings(){
   return (
     <article className="contents-details">
       <div className="contents-visual">
         <p className="visual-title">
-          혜택이 별거있나
-          <br />쓴만큼 적립이
-          <br className="mobile" />최고지
+          SKT 고객이라면,
+          <br />최대 연 2.6%
         </p>
       </div>
       <div className="desc-wrap">
@@ -130,14 +118,13 @@ function TwoPlusCard(){
   )
 }
 
-function WaveCard(){
+function KDBXThigh5InstallmentSavings(){
   return (
     <article className="contents-details">
       <div className="contents-visual">
         <p className="visual-title">
-          웨이브 구독만 하면 
-          <br />누구나 파도치는
-          <br />혜택!
+          상식을 뛰어넘는
+          <br /><span class="cl_r">최대 <em>연 <mark>5.0%</mark></em> 자유적금</span>
         </p>
       </div>
       <div className="desc-wrap">
@@ -153,14 +140,13 @@ function WaveCard(){
   )
 }
 
-function FinnqCheckCard(){
+function TProfitPassbook(){
   return (
     <article className="contents-details">
       <div className="contents-visual">
-        <p className={Styles.product__name}>핀크 체크카드</p>
         <p className="visual-title">
-          체크카드의 <br className="mobile" />새로운 기준
-          <br />실시간 2%적립
+          매월 이자가 늘어나는
+          <br />T이득통장!
         </p>
       </div>
       <div className="desc-wrap">
@@ -175,4 +161,3 @@ function FinnqCheckCard(){
     </article>
   )
 }
->>>>>>> af768b42f6d4c15200335eb459b9ff9d5231984d
