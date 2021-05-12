@@ -50,7 +50,7 @@ export default function FinnqmarketLoan() {
             <article className="contents-details">
               <div className="contents-visual">
                 <p className="visual-title">
-                  같은 상품을 <br class="mobile"></br>다른 금리로 제공하는
+                  같은 상품을 <br className="mobile"></br>다른 금리로 제공하는
                   <br></br>대출 비교 서비스
                 </p>
               </div>

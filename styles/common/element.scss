@@ -7,9 +7,11 @@
 /**************************************************
 * 탭 : li의 자식요소는 버튼, a 등 상황에 맞게 사용 가능 
 ***************************************************/
-.tab-wrap {}
 .tab-wrap ul {position: relative; max-width: 1280px; margin: 0 auto; padding:0 40px; z-index: 1; height:59px; border-bottom: 1px solid #c8c8c8;}
-.tab-wrap ul:before {position: absolute; left: 0; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
+.tab-wrap ul:before, 
+.tab-wrap ul:after {position: absolute; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
+.tab-wrap ul:before {left: 0;}
+.tab-wrap ul:after {right: 0;}
 .tab-wrap li {float: left; width: 20%;}
 .tab-wrap li > * {display:block; width:100%; box-sizing:border-box; background-color:#f8f8f8; height: 58px; border: 1px solid #c8c8c8; border-right: 0; border-bottom: 0; font-family: 'SpoqaR'; font-size: 16px; line-height: 56px; color: #666; text-align: center;}
 .tab-wrap li.is-active > * {background-color:#fff; height: 59px; border: 2px solid #731aed; border-bottom: 0; font-family: 'SpoqaB'; color: #731aed;}
@@ -26,21 +28,11 @@
 }
 
 /**************************************************
-* contents
+* 버튼 : Google, Apple
 ***************************************************/
-.contents-head {max-width:1280px; margin:0 auto; padding-left:40px; padding-right:40px}
-.contents-head .title {display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px;}
-.contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222;}
-.contents-head .desc {display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999;}
-.contents-body {margin: 40px 0 0 0;}
-
-.contents-details {}
-.contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
-.contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
-.contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
-.contents-details .desc-wrap .item-desc {position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
-.contents-details .desc-wrap:nth-of-type(even) {background: #f8f8f8;}
-
-@media screen and (max-width: 960px) {
-  .contents-details .desc-wrap {padding: 40px 0;}  
-}
+.btn-wrap.app-down {position: relative; top: 0; left: 0; width: 48.388%; margin-top: 30px;}
+.app-down .btn {display: inline-block; height: 50px; line-height: 46px; width: calc(50% - 12px); border: solid 1px #c8c8c8; font-size: 16px; text-align:center; border-radius: 4px; font-family: 'SpoqaB';}
+.app-down .btn + .btn {margin-left:20px;}
+.app-down .btn span {display: inline-block; height: 100%; padding: 0 0 0 25px; font-family: 'SpoqaB'; letter-spacing: 0;}
+.app-down .btn-apple span {color:#222; background: url(../../public/images/common/ico_apple.png) no-repeat 0 50%; background-size: 19px;}
+.app-down .btn-google span {color:#666; letter-spacing:-1px; background: url(../../public/images/common/ico_google.png) no-repeat 0 50%; background-size: 19px;}
