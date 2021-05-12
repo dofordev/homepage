@@ -14,8 +14,9 @@
 .tab-wrap ul:after {right: 0;}
 .tab-wrap li {float: left; width: 20%;}
 .tab-wrap li > * {display:block; width:100%; box-sizing:border-box; background-color:#f8f8f8; height: 58px; border: 1px solid #c8c8c8; border-right: 0; border-bottom: 0; font-family: 'SpoqaR'; font-size: 16px; line-height: 56px; color: #666; text-align: center;}
-.tab-wrap li.is-active > * {background-color:#fff; height: 59px; border: 2px solid #731aed; border-bottom: 0; font-family: 'SpoqaB'; color: #731aed;}
 .tab-wrap li:last-child > * {border-right: 1px solid #c8c8c8;}
+.tab-wrap li.is-active > * {background-color:#fff; height: 59px; border: 2px solid #731aed; border-bottom: 0; font-family: 'SpoqaB'; color: #731aed;}
+.tab-wra li.is-active + li > * {border-left: 0;}
 
 @media screen and (max-width: 960px) {
   .tab-wrap ul {display: table; table-layout: fixed; width: 100%; height: auto; padding-left: 20px; padding-right: 20px; border-bottom: 0;}  
@@ -30,7 +31,7 @@
 /**************************************************
 * 버튼 : Google, Apple
 ***************************************************/
-.btn-wrap.app-down {position: relative; top: 0; left: 0; width: 48.388%; margin-top: 30px;}
+.app-down {position: relative; top: 0; left: 0; width: 48.388%; margin-top: 30px;}
 .app-down .btn {display: inline-block; height: 50px; line-height: 46px; width: calc(50% - 12px); border: solid 1px #c8c8c8; font-size: 16px; text-align:center; border-radius: 4px; font-family: 'SpoqaB';}
 .app-down .btn + .btn {margin-left:20px;}
 .app-down .btn span {display: inline-block; height: 100%; padding: 0 0 0 25px; font-family: 'SpoqaB'; letter-spacing: 0;}
