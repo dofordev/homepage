@@ -1,13 +1,31 @@
 .btn-cercle {display: inline-block; font-size: 14px; height: 29px; line-height: 27px; box-sizing: border-box; padding: 0 22px; border-radius: 14.5px; color: #999; border: 1px solid #e0e0e0; background-color: #f8f8f8;}
 .btn-cercle .arrow {margin-left: 5px;}
-
+.num {letter-spacing:0;;}
 /********************************
 * 대출 탭 : 대출 비교
 *********************************/
 .loan-compare .inner-box {position: relative; top: 0; left: 0; margin-top: 29px;}
 .loan-compare .inner-box .text-wrap {font-size: 20px; line-height: 30px; color: #666;}
+.loan-compare .compare--visual {background: url(/images/product/loan/loan-compare/bg_finnq_loantscore.png) no-repeat right 110px bottom 48px;
+  background-size: 400px 370px;}
 .loan-compare .inner-box .text {margin-right:10px;}
-.loan-compare .app-down {margin-top:107px;}
+.loan-compare .compare--btn-wrap {margin-top:107px;}
+.loan-compare .img-info {width: 450px;}
+.loan-compare .img-info img {width:100%; height:auto;}
+.loan-compare .compare--sub-desc {line-height: 30px; padding-top: 30px;}
+
+.loan-compare .table-box {width: 400px;}
+.loan-compare .finance-title {margin-bottom: 24px; font-family: 'SpoqaR'; font-size: 20px; line-height: 34px; color: #222; text-align: left;}
+.loan-compare .finance-list col:first-of-type(1){width:45%;}
+.loan-compare .finance-list col:first-of-type(2){width:34%;}
+.loan-compare .finance-list col:first-of-type(3){width:21%;}
+.loan-compare .finance-list th,
+.loan-compare .finance-list td{padding-top: 2px; font-family: 'SpoqaR'; font-size: 16px; line-height: 28px; color: #666; text-align: left;}
+.loan-compare .finance-list td {letter-spacing:0;}
+.loan-compare .finance-list .ico-bank {display: inline-block; margin: 7px 8px 0 0; width: 16px; height: 16px; vertical-align: top;}
+.loan-compare .finance-list .ico-bank img {width: 100%; max-width: 100%; vertical-align: top;}
+.loan-compare .finance-list a {display: block; color: #666;}
+
 @media screen and (max-width: 960px) {}
 
 /********************************
