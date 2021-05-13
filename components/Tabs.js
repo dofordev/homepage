@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 /**
  * @props : {
@@ -9,31 +8,33 @@ import { useState, useEffect } from 'react';
  * }
  */
 export default function Tabs(props) {
-
-  const [activeTab, setActiveTab] = useState(props.activeTab ? props.activeTab  : 0);
+  const [activeTab, setActiveTab] = useState(
+    props.activeTab ? props.activeTab : 0
+  );
 
   useEffect(() => {
-    const li = document.querySelectorAll('.tab-li');
-    li.forEach((item,i) => {
-      item.addEventListener('click', e => {
+    const li = document.querySelectorAll(".tab-li");
+    li.forEach((item, i) => {
+      item.addEventListener("click", (e) => {
         setActiveTab(i);
       });
     });
-  },[])
+  }, []);
   return (
     <ul>
-      {
-        props.list.map((item, i) => {
-          return (
-            <li className={`tab-li ${activeTab == i ? 'is-active' : ''}`} onClick={()=> {props.clickEvent.call(this,i)}} key={i}> 
-              < button type="button">{item.title}</button>
-            </li>
-            
-          )
-        })
-      }
-
+      {props.list.map((item, i) => {
+        return (
+          <li
+            className={`tab-li ${activeTab == i ? "is-active" : ""}`}
+            onClick={() => {
+              props.clickEvent.call(this, i);
+            }}
+            key={i}
+          >
+            <button type="button">{item.title}</button>
+          </li>
+        );
+      })}
     </ul>
-        
-  )
+  );
 }

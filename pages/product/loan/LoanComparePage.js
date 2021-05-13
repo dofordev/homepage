@@ -10,7 +10,7 @@ const LoanComparePage = () => {
           <br></br>대출 비교 서비스
         </p>
         <div className={styles["inner-box"]}>
-          <ph scope="row" className={styles["text-wrap"]}>
+          <p scope="row" className={styles["text-wrap"]}>
             <span className={styles.text}>
               신용도에 영향없이 한번에 조회 가능
             </span>
@@ -21,7 +21,7 @@ const LoanComparePage = () => {
             >
               대출 금리 비교하러 가기 <em className={styles.arrow}>&gt;</em>
             </a>
-          </ph>
+          </p>
 
           <div className={`${styles["compare--btn-wrap"]} app-down`}>
             <a href="#none" className="btn btn-google">
@@ -41,7 +41,7 @@ const LoanComparePage = () => {
               조회 한번으로 <br></br>여러 금융사의 대출조건을
               <br></br>한번에 확인
             </p>
-            <p className={`${styles["compare--sub-desc"]} sub-desc`}>
+            <p className={`${styles["common--sub-desc"]} sub-desc`}>
               핀크 T스코어 활용 시<br></br>최대 1.0% 금리할인 혜택
             </p>
           </article>
@@ -59,7 +59,7 @@ const LoanComparePage = () => {
             <p className="sub-title">
               서류, 방문 필요없이<br></br>모바일로 조회부터 약정까지
             </p>
-            <p className={`${styles["compare--sub-desc"]} sub-desc`}>
+            <p className={`${styles["common--sub-desc"]} sub-desc`}>
               공인인증서가 없어도 간편하게 조회 가능
             </p>
           </article>
@@ -77,7 +77,7 @@ const LoanComparePage = () => {
             <p className="sub-title">
               스팸 전화나 문자없이<br></br>간편하게 대출 신청 가능
             </p>
-            <p className={`${styles["compare--sub-desc"]} sub-desc`}>
+            <p className={`${styles["common--sub-desc"]} sub-desc`}>
               공인인증서가 없어도 간편하게 조회 가능
             </p>
           </article>
@@ -93,7 +93,8 @@ const LoanComparePage = () => {
         <div className="width-fix">
           <p className={styles["finance-title"]}>제휴 금융기관 안내</p>
         </div>
-        <div className="item-desc">
+
+        <div className={`${styles["finance-list--wrap"]} item-desc`}>
           <div className={styles["table-box"]}>
             <table className={styles["finance-list"]}>
               <caption>
@@ -101,9 +102,9 @@ const LoanComparePage = () => {
                 순으로 표시되어있습니다.
               </caption>
               <colgroup>
-                <col></col>
-                <col></col>
-                <col></col>
+                <col className={styles.col1}></col>
+                <col className={styles.col2}></col>
+                <col className={styles.col3}></col>
               </colgroup>
               <tbody>
                 <tr>
@@ -237,9 +238,9 @@ const LoanComparePage = () => {
                 순으로 표시되어있습니다.
               </caption>
               <colgroup>
-                <col></col>
-                <col></col>
-                <col></col>
+                <col className={styles.col1}></col>
+                <col className={styles.col2}></col>
+                <col className={styles.col3}></col>
               </colgroup>
               <tbody>
                 <tr>

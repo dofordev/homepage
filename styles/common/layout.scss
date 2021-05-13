@@ -2,10 +2,14 @@
 /*****************************************************
 * Layout (Header, Footer, Nav, Container)
 ******************************************************/
+.blind {display:none;}
 .width-fix {position: relative; max-width: 1280px; margin: 0 auto; padding: 0 40px;}
 @media screen and (max-width: 960px) {
   .width-fix {padding:0 20px;}
 }
+html.preventScroll, 
+html.preventScroll body {overflow-y: hidden;}
+
 
 /***************************************************
 * header
@@ -13,9 +17,10 @@
 .header {@include position($p:fixed, $t:0, $l:0); width: 100%; height: 100px; z-index: 10;}
 .header .header-logo {float: left; margin: 38px 0 0 0; width: 80px; height: 24px; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 80px 25px; text-indent: -999em;}
 .header .nav {float: right; margin: 38px 0 0 0; font-size: 16px;}
+.header .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new.png) no-repeat 0 0; background-size: 100% auto;}
 .header .nav .nav-list li {float: left;}
 .header .nav .nav-list li a {position: relative; display: block; padding: 0 20px; font-family: 'SpoqaB'; font-size: 18px; line-height: 18px; color: #fff;}
-.header .nav .nav-list > li > a:after {display: inline-block; @include position($t: 1px, $r: 0); width: 1px; height: 15px; background: rgba(255, 255, 255,0.3); content: '';}
+.header .nav .nav-list li a:after {display: inline-block; @include position($t: 1px, $r: 0); width: 1px; height: 15px; background: rgba(255, 255, 255,0.3); content: '';}
 .header .nav .nav-list .cerfi > a {padding-right: 26px; background: url(/images/common/ico_cerfi.png) no-repeat 100% 50%; background-size: 16px auto; font-family: 'SpoqaR'; font-size: 16px; line-height: 17px;}
 .m-gnb,
 .m-gnb-deem,
@@ -24,20 +29,56 @@
 // 해더 고정(mouseenter 효과)
 .header.fixed {position:fixed;background:rgba(255, 255, 255, 0.9);box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);}
 .header.fixed .header-logo {background-image:url(/images/common/finnq_logo_color.png);}
-.header.fixed .nav .nav-list > li > a {color:#222}
-.header.fixed .nav .nav-list > li > a:after{background:rgba(0, 0, 0,0.3);}
+.header.fixed .nav .nav-list li a {color:#222}
+.header.fixed .nav .nav-list li a:hover,
+.header.fixed .nav .nav-list li a:focus {color:#5008b2;}
+.header.fixed .nav .nav-list li a:after{background:rgba(0, 0, 0,0.3);}
 .header.fixed .nav .nav-list .cerfi > a {color:#222; background-image: url(/images/common/ico_cerfi_fixed.png);}
+.header.fixed .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background-image: url(/images/common/img_new_m.png);}
 
 @media screen and (max-width: 960px) {
   .header {position: absolute;}
-  .header .header-logo {@include position($t:10px, $l:50%); margin: 0 0 0 -30px; width: 60px; background-size: 60px auto;}
+  .header .header-logo {@include position($t:10px, $l:50%); margin: 0 0 0 -30px; width: 60px; background-size: 60px auto; }
   .nav {display: none;}
-  .m-gnb {display: block; left: -100%; @include position($p:fixed, $t:0, $b:0); width: 240px; background: #fff; z-index: 999; height: auto; max-height: 100%; overflow: auto;}
-  .m-gnb .m-gnb-inner {margin: 60px 20px 0;}
-  .m-gnb-deem {display: none; top: 0; bottom: 0; left: 0; right: 0; position: fixed; background: rgba(0, 0, 0, 0.3);z-index: 99;}
+  .m-gnb {display: none; -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);  @include position($p:fixed, $t:0, $b:0, $l:0); width: 240px; background: #fff; z-index: 999; height: auto; max-height: 100%; overflow: auto;}
+  .m-gnb.is-active {display:block; animation: slideInLeft 1.5s forwards; -webkit-animation: slideInLeft 1.5s forwards; overflow: hidden;}
   .m-nav {display: block; margin: 8px 0 0 -8px;}
   .m-nav .btn-nav {position: relative; outline: none; width: 34px; height: 34px; text-indent:-999em;}
   .m-nav .btn-nav:after {@include common__after($t:50%, $l:50%); width:20px; height:15px; margin-top:-7.5px; margin-left:-10px; background: url(/images/common/btn_m_nav.png) no-repeat 0 0; background-size:cover;}
+  .m-gnb .m-gnb-logo {display: inline-block; margin: 15px 0 0 15px; padding:5px; width:60px; height:30px; background:url(/images/common/logo_finnq_gnb.png) no-repeat 50% 50%; background-size:60px auto;}
+  .m-gnb .m-gnb-close {display:block; outline: none; @include position($t:12px, $r:12px); width: 30px; height: 30px; background:url(/images/common/btn_close_gnb.png) no-repeat 50% 50%; background-size:16px auto; cursor: pointer;}
+  .m-gnb .m-gnb-inner {margin: 60px 20px 0;}
+  .m-gnb-inner .menu-title {display: block; padding-bottom: 18px; border-bottom: 1px solid #222; font-size: 22px; line-height: 24px; font-family: 'SpoqaB'; color: #222;}
+  .m-gnb .m-gnb-inner .m-sub-menu {margin-top: 4px;}
+  @for $i from 1 through 5 {
+    .m-gnb .m-gnb-inner .m-sub-menu li:nth-child(#{$i}) {
+      opacity:0;
+      animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards;
+      -webkit-animation-delay:$i * 0.3s; animation-delay: $i * 0.3s;
+    }
+  }
+  .m-gnb .m-gnb-inner .m-sub-menu li .new {display: inline-block; position: relative; top: 2px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new_m.png) no-repeat 0 0; background-size: 100% auto;}
+  .m-gnb .m-gnb-inner .m-sub-menu li a {display: block; position: relative; padding-top: 13px; padding-bottom: 13px; font-size: 16px; font-family: 'SpoqaR'; color: #666;}
+  .m-gnb .m-gnb-inner .m-sub-menu li a:after {position: absolute; bottom: 0; left: 0; display: inline-block; width: 10px; height: 1px; background: #e0e0e0; content: '';}
+  .m-gnb .m-gnb-inner .m-sub-menu li.is-active a {font-family: 'SpoqaB';}  
+  .m-gnb .m-sns {margin: 18px 20px 20px;
+    -webkit-transform: translateY(1200px) scale(0.7);
+    transform: translateY(1200px) scale(0.7);
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards;
+    -webkit-animation-delay:2s; animation-delay:2s;
+  }
+  .m-gnb .m-sns ul {overflow: hidden; position: relative; height: 50px; display: flex;
+    justify-content: space-between;}
+  .m-gnb .m-sns ul li {float: left;width: 50px;height: 50px;}
+  .m-gnb .m-sns .btn-sns {display: inline-block; width: 50px; height: 50px; text-indent: -999em; background-repeat:no-repeat; background-position:50% 50%; background-size:cover;}
+  .m-gnb .m-sns .btn-sns.fb {background-image:url(/images/common/btn_gnb_fb.png);}
+  .m-gnb .m-sns .btn-sns.insta {background-image:url(/images/common/btn_gnb_insta.png);}
+  .m-gnb .m-sns .btn-sns.blog {background-image:url(/images/common/btn_gnb_blog.png);}
+  .m-gnb-deem {display: none; top: 0; bottom: 0; left: 0; right: 0; position: fixed; background: rgba(0, 0, 0, 0.3); z-index: 99;}
+  .m-gnb-deem.is-active {display:block;}
+  
 }
 
 /***************************************************
@@ -115,9 +156,9 @@
 .container .contents {margin: 0 auto; padding:90px 0px 15px; }
 
 .contents-head {max-width:1280px; margin:0 auto; padding:0 40px;}
-.contents-head .title {display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px;}
-.contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222;}
-.contents-head .desc {display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999;}
+.contents-head .title {opacity:0; display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards; -webkit-animation-delay:0.5s; animation-delay: 0.5s;}
+.contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards; -webkit-animation-delay:0.5s; animation-delay:0.5s;}
+.contents-head .desc {opacity:0; display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999; animation: fadeInLeft 1.5s forwards; -webkit-animation: fadeInLeft 1.5s forwards; -webkit-animation-delay:2s; animation-delay: 2s;}
 .contents-body {margin: 40px 0 0 0;}
 .contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
 .contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
@@ -125,7 +166,7 @@
 .contents-details .desc-wrap .sub-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
 .contents-details .desc-wrap .sub-desc {font-size: 20px; line-height: 30px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR';}
 
-.contents-details .desc-wrap .item-desc {display:flex; align-items:center; justify-content: space-between; position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding-top: 0; padding-left: 40px; padding-right: 40px;}
+.contents-details .desc-wrap .item-desc {display:flex; align-items:center; justify-content: space-between; position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding:0 40px;}
 .contents-details .desc-wrap:nth-of-type(odd) {background: #f8f8f8;}
 
 @media screen and (max-width: 960px) {
@@ -138,4 +179,8 @@
   .contents-details .contents-visual {padding: 40px 20px 160px;}
   .contents-details .desc-wrap {padding: 40px 0;}
   .contents-details .visual-title {font-size:34px; line-height:40px;}
+  .contents-details .desc-wrap .item-desc {display:block; text-align:center; padding:0 20px;}
+  .contents-details .desc-wrap .sub-title {font-size: 26px; line-height: 30px; text-align: center;}
+  .contents-details .desc-wrap .sub-desc {text-align: center;
+    font-size: 16px; line-height:20px;}
 }

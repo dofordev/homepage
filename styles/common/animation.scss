@@ -4070,3 +4070,39 @@
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
 }
+
+
+/***********************************************
+* CUSTOM 추가 
+* 기본 정의되어 있는 Animation 이외에 추가 
+* Custom Animation은 아래에 추가해서 사용합니다.
+************************************************/
+
+@-webkit-keyframes slideInFadeUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+@keyframes slideInFadeUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}

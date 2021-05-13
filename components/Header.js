@@ -1,27 +1,67 @@
-import { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Header() {
-  // const header = document.querySelector(".header");
+  const headerRef = useRef(null);
+  const mobileNavRef = useRef(null);
+  const mobileDimRef = useRef(null);
 
-  const eventIn = () => {
-    document.querySelector(".header").classList.add("fixed");
+  const [isMobile, setIsMobile] = useState(false);
+  const [windowSize, setWindowSize] = useState(null);
+
+  // window Size 확인
+  const getWindowSize = () => {
+    setWindowSize(window.innerWidth);
+    if (windowSize <= 960) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
   };
-  const eventLeave = () => {
-    document.querySelector(".header").classList.remove("fixed");
-  };
+  useEffect(() => {
+    getWindowSize();
+    window.addEventListener("resize", getWindowSize);
+    return () => window.removeEventListener("resize", getWindowSize);
+  }, [windowSize]);
 
   useEffect(() => {
     function onScroll() {
       let currentPosition = window.pageYOffset;
-      if (currentPosition <= 0) {
-        document.querySelector(".header").classList.remove("fixed");
-      } else {
-        document.querySelector(".header").classList.add("fixed");
+      // 모바일이 아닌 경우에만 동작
+      if (isMobile === false) {
+        if (currentPosition <= 0) {
+          headerRef.current.classList.remove("fixed");
+        } else if (currentPosition > 0) {
+          headerRef.current.classList.add("fixed");
+        }
       }
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [windowSize]);
+
+  // Web 메뉴일 때 이벤트 공통(focus, hover)
+  const eventIn = () => {
+    if (!isMobile) {
+      headerRef.current.classList.add("fixed");
+    }
+  };
+  const eventLeave = () => {
+    if (!isMobile) {
+      headerRef.current.classList.remove("fixed");
+    }
+  };
+
+  // 모바일 메뉴 클릭 시
+  const isMobileMenuOpen = () => {
+    mobileNavRef.current.classList.add("is-active");
+    mobileDimRef.current.classList.add("is-active");
+    document.querySelector("html").classList.add("preventScroll");
+  };
+  const isMobileMenuClose = () => {
+    mobileNavRef.current.classList.remove("is-active");
+    mobileDimRef.current.classList.remove("is-active");
+    document.querySelector("html").classList.remove("preventScroll");
+  };
 
   return (
     <header
@@ -30,6 +70,7 @@ export default function Header() {
       onMouseLeave={eventLeave}
       onFocus={eventIn}
       onBlur={eventLeave}
+      ref={headerRef}
     >
       <div className="width-fix">
         <h1 className="header-logo">
@@ -37,22 +78,22 @@ export default function Header() {
         </h1>
         <nav className="nav">
           <ul className="nav-list">
-            <li className="finnqmarket">
+            <li>
               <a href="/product/finnqmarket-card.html?tabNum=0&tabItem=0">
                 카드
               </a>
             </li>
-            <li className="finnqmarket">
+            <li>
               <a href="/product/finnqmarket-saving.html?tabNum=0&tabItem=0">
                 예적금
               </a>
             </li>
-            <li className="finnqmarket">
+            <li>
               <a href="/product/finnqmarket-loan.html?tabNum=0&tabItem=0">
                 대출
               </a>
             </li>
-            <li className="finnqmarket">
+            <li>
               <a
                 href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
                 target="_blank"
@@ -60,7 +101,7 @@ export default function Header() {
                 대출금리비교<i className="new"></i>
               </a>
             </li>
-            <li className="finnqmarket">
+            <li>
               <a href="/product/finnqmarket-insurance.html?tabNum=0&tabItem=0">
                 보험 맞춤 추천
               </a>
@@ -71,18 +112,21 @@ export default function Header() {
           </ul>
         </nav>
         <nav className="m-nav">
-          <button type="button" className="btn-nav">
+          <button type="button" className="btn-nav" onClick={isMobileMenuOpen}>
             메뉴
           </button>
         </nav>
-        <div className="m-gnb">
+        <div className="m-gnb" ref={mobileNavRef}>
           <a href="index.html" className="m-gnb-logo">
             <span className="blind">finnq</span>
           </a>
           <div className="m-gnb-inner">
             <ul>
               <li>
-                <a href="/product/finnqmarket-card.html?tabNum=0&tabItem=0">
+                <a
+                  className="menu-title"
+                  href="/product/finnqmarket-card.html?tabNum=0&tabItem=0"
+                >
                   금융상품
                 </a>
                 <ul className="m-sub-menu">
@@ -123,7 +167,7 @@ export default function Header() {
               <li>
                 <a
                   href="https://www.facebook.com/Finnq.official/"
-                  className="btn-gnb-fb"
+                  className="btn-sns fb"
                   target="_blank"
                   title="새창 열림"
                 >
@@ -133,7 +177,7 @@ export default function Header() {
               <li>
                 <a
                   href="https://www.instagram.com/finnq_official/"
-                  className="btn-gnb-insta"
+                  className="btn-sns insta"
                   target="_blank"
                   title="새창 열림"
                 >
@@ -143,7 +187,7 @@ export default function Header() {
               <li>
                 <a
                   href="https://post.naver.com/finnq"
-                  className="btn-gnb-blog"
+                  className="btn-sns blog"
                   target="_blank"
                   title="새창 열림"
                 >
@@ -152,11 +196,15 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <button type="button" className="m-gnb-close">
+          <button
+            type="button"
+            className="m-gnb-close"
+            onClick={isMobileMenuClose}
+          >
             <span className="blind">닫기</span>
           </button>
         </div>
-        <div className="m-gnb-deem"></div>
+        <div className="m-gnb-deem" ref={mobileDimRef}></div>
       </div>
     </header>
   );

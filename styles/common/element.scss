@@ -37,3 +37,6 @@
 .app-down .btn span {display: inline-block; height: 100%; padding: 0 0 0 25px; font-family: 'SpoqaB'; letter-spacing: 0;}
 .app-down .btn-apple span {color:#222; background: url(/images/common/ico_apple.png) no-repeat 0 50%; background-size: 19px;}
 .app-down .btn-google span {color:#666; letter-spacing:-1px; background: url(/images/common/ico_google.png) no-repeat 0 50%; background-size: 19px;}
+@media screen and (max-width: 960px) {
+  .app-down {display:none;}
+}
