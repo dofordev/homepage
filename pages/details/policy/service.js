@@ -1,6 +1,42 @@
 import Layout from "../../components/Layout";
+import { useState, useEffect } from "react";
+import LoanComparePage from "./loan-tab/LoanComparePage";
+import LoanEmergencyPage from "./loan-tab/LoanEmergencyPage";
+import LoanSmartPage from "./loan-tab/LoanSmartPage";
+import LoanLivingPage from "./loan-tab/LoanLivingPage";
 
-export default function FinnqmarketLoan() {
+const content = {
+  0: <LoanCompare />,
+  1: <LoanEmergency />,
+  2: <LoanSmart />,
+  3: <LoanLiving />,
+};
+
+function LoanCompare() {
+  return <LoanComparePage />;
+}
+
+function LoanEmergency() {
+  return <LoanEmergencyPage />;
+}
+
+function LoanSmart() {
+  return <LoanSmartPage />;
+}
+
+function LoanLiving() {
+  return <LoanLivingPage />;
+}
+
+export default function FinnqLoan() {
+  const [activeTab, setActiveTab] = useState(0);
+  useEffect(() => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    console.log("URLSearchParams", URLSearchParams);
+    if (urlParams.has("tabNum")) setActiveTab(urlParams.get("tabNum"));
+  }, []);
+
   return (
     <Layout>
       <section className="container">
@@ -10,14 +46,6 @@ export default function FinnqmarketLoan() {
             <p className="desc">
               오직 핀크에서만 누릴 수 있는 특별한 금융상품을 만나보세요!
             </p>
-            <div className="btn-wrap app-down">
-              <a href="javascript:void(0);" className="btn-google">
-                <span>Google Play</span>
-              </a>
-              <a href="javascript:void(0);" className="btn-apple">
-                <span>App Store</span>
-              </a>
-            </div>
           </div>
         </article>
 
@@ -32,38 +60,33 @@ export default function FinnqmarketLoan() {
           <section className="contents-body">
             <article className="tab-wrap">
               <ul>
-                <li className="is-active">
+                <li
+                  className={activeTab === 0 ? "is-active" : ""}
+                  onClick={() => setActiveTab(0)}
+                >
                   <button type="button">대출비교</button>
                 </li>
-                <li>
+                <li
+                  className={activeTab === 1 ? "is-active" : ""}
+                  onClick={() => setActiveTab(1)}
+                >
                   <button type="button">비상금대출</button>
                 </li>
-                <li>
+                <li
+                  className={activeTab === 2 ? "is-active" : ""}
+                  onClick={() => setActiveTab(2)}
+                >
                   <button type="button">똑똑대출</button>
                 </li>
-                <li>
+                <li
+                  className={activeTab === 3 ? "is-active" : ""}
+                  onClick={() => setActiveTab(3)}
+                >
                   <button type="button">생활비대출</button>
                 </li>
               </ul>
             </article>
-
-            <article className="contents-details">
-              <div className="contents-visual">
-                <p className="visual-title">
-                  같은 상품을 <br className="mobile"></br>다른 금리로 제공하는
-                  <br></br>대출 비교 서비스
-                </p>
-              </div>
-              <div className="desc-wrap">
-                <div className="item-desc">detail 1</div>
-              </div>
-              <div className="desc-wrap">
-                <div className="item-desc">detail 2</div>
-              </div>
-              <div className="desc-wrap">
-                <div className="item-desc">detail 3</div>
-              </div>
-            </article>
+            {content[activeTab]}
           </section>
         </div>
       </section>

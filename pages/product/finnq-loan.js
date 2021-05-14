@@ -1,7 +1,9 @@
 import Layout from "../../components/Layout";
 import { useState, useEffect } from "react";
-import LoanComparePage from "./loan/LoanComparePage";
-import LoanEmergencyPage from "./loan/LoanEmergencyPage";
+import LoanComparePage from "./loan-tab/LoanComparePage";
+import LoanEmergencyPage from "./loan-tab/LoanEmergencyPage";
+import LoanSmartPage from "./loan-tab/LoanSmartPage";
+import LoanLivingPage from "./loan-tab/LoanLivingPage";
 
 const content = {
   0: <LoanCompare />,
@@ -10,13 +12,28 @@ const content = {
   3: <LoanLiving />,
 };
 
+function LoanCompare() {
+  return <LoanComparePage />;
+}
+
+function LoanEmergency() {
+  return <LoanEmergencyPage />;
+}
+
+function LoanSmart() {
+  return <LoanSmartPage />;
+}
+
+function LoanLiving() {
+  return <LoanLivingPage />;
+}
+
 export default function FinnqLoan() {
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     const queryString = window.location.search;
-    console.log("queryString", queryString);
     const urlParams = new URLSearchParams(queryString);
-    console.log("urlParams", urlParams);
+    console.log("URLSearchParams", URLSearchParams);
     if (urlParams.has("tabNum")) setActiveTab(urlParams.get("tabNum"));
   }, []);
 
@@ -44,25 +61,25 @@ export default function FinnqLoan() {
             <article className="tab-wrap">
               <ul>
                 <li
-                  className={activeTab == 0 ? "is-active" : ""}
+                  className={activeTab === 0 ? "is-active" : ""}
                   onClick={() => setActiveTab(0)}
                 >
                   <button type="button">대출비교</button>
                 </li>
                 <li
-                  className={activeTab == 1 ? "is-active" : ""}
+                  className={activeTab === 1 ? "is-active" : ""}
                   onClick={() => setActiveTab(1)}
                 >
                   <button type="button">비상금대출</button>
                 </li>
                 <li
-                  className={activeTab == 2 ? "is-active" : ""}
+                  className={activeTab === 2 ? "is-active" : ""}
                   onClick={() => setActiveTab(2)}
                 >
                   <button type="button">똑똑대출</button>
                 </li>
                 <li
-                  className={activeTab == 3 ? "is-active" : ""}
+                  className={activeTab === 3 ? "is-active" : ""}
                   onClick={() => setActiveTab(3)}
                 >
                   <button type="button">생활비대출</button>
@@ -74,72 +91,5 @@ export default function FinnqLoan() {
         </div>
       </section>
     </Layout>
-  );
-}
-
-function LoanCompare() {
-  return <LoanComparePage />;
-}
-
-function LoanEmergency() {
-  return <LoanEmergencyPage />;
-}
-
-function LoanSmart() {
-  return (
-    <article className="contents-details">
-      <div className="contents-visual">
-        <p className="visual-title">
-          입금까지<br className="mobile"></br>번개처럼 빠른 똑똑대출
-        </p>
-        <div className="btn-wrap app-down">
-          <a href="#none" className="btn btn-google">
-            <span>Google Play</span>
-          </a>
-          <a href="#none" className="btn btn-apple">
-            <span>App Store</span>
-          </a>
-        </div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 1</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 2</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 3</div>
-      </div>
-    </article>
-  );
-}
-
-function LoanLiving() {
-  return (
-    <article className="contents-details">
-      <div className="contents-visual">
-        <p className="visual-title">
-          급전이 필요할 땐<br></br>
-          핀크 생활비대출
-        </p>
-        <div className="btn-wrap app-down">
-          <a href="#none" className="btn btn-google">
-            <span>Google Play</span>
-          </a>
-          <a href="#none" className="btn btn-apple">
-            <span>App Store</span>
-          </a>
-        </div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 1</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 2</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 3</div>
-      </div>
-    </article>
   );
 }

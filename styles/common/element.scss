@@ -7,6 +7,7 @@
 /**************************************************
 * 탭 : li의 자식요소는 버튼, a 등 상황에 맞게 사용 가능 
 ***************************************************/
+.tab-wrap {margin-top:40px;}
 .tab-wrap ul {position: relative; max-width: 1280px; margin: 0 auto; padding:0 40px; z-index: 1; height:59px; border-bottom: 1px solid #c8c8c8;}
 .tab-wrap ul:before, 
 .tab-wrap ul:after {position: absolute; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
@@ -39,4 +40,21 @@
 .app-down .btn-google span {color:#666; letter-spacing:-1px; background: url(/images/common/ico_google.png) no-repeat 0 50%; background-size: 19px;}
 @media screen and (max-width: 960px) {
   .app-down {display:none;}
+}
+
+/**************************************************
+* 리스트 타입 
+* 공통 : list-type
+* Custom : mark (※), dash(-)
+* ex ) <ul class="list-type mark">
+***************************************************/
+// 별도 article이 아닌 설명 하단에 추가 되는 경우
+.item-desc + .list-type {margin-top:80px;}
+
+.list-type li {position: relative; font-size: 16px; line-height: 24px; color: #666; font-family: 'SpoqaR';}
+.list-type.mark li {padding-left:20px;}
+.list-type.mark li:before {@include common__after($l:0, $t:0px); content:"※";}
+
+@media screen and (max-width: 960px) {
+  .list-type li {font-size: 14px; line-height: 18px;}
 }

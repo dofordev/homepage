@@ -159,7 +159,7 @@ html.preventScroll body {overflow-y: hidden;}
 .contents-head .title {opacity:0; display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards; -webkit-animation-delay:0.5s; animation-delay: 0.5s;}
 .contents-head .title:after {display: block; content: ''; margin: 33px 0 0 2px; width: 30px; height: 2px; background-color: #222; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards; -webkit-animation-delay:0.5s; animation-delay:0.5s;}
 .contents-head .desc {opacity:0; display:inline-block; margin: 0 0 0 16px; font-size: 19px; color: #999; animation: fadeInLeft 1.5s forwards; -webkit-animation: fadeInLeft 1.5s forwards; -webkit-animation-delay:2s; animation-delay: 2s;}
-.contents-body {margin: 40px 0 0 0;}
+.contents-details mark {letter-spacing: 0; color: inherit; background: transparent;}
 .contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
 .contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
 .contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
@@ -171,7 +171,7 @@ html.preventScroll body {overflow-y: hidden;}
 
 @media screen and (max-width: 960px) {
   .contents-head {padding:0 20px;}
-  .container .contents {padding: 60px 0px 45px;}
+  .container .contents {padding: 60px 0px 15px;}
   .contents-head .title {font-size: 20px;}
   .contents-head .title:after {margin-top:15px;}  
   .btn-wrap.app-down,

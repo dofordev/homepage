@@ -4,7 +4,7 @@ import styles from "../../../styles/product/FinnqLoan.module.scss";
 const LoanComparePage = () => {
   return (
     <article className={`${styles["loan-compare"]} contents-details`}>
-      <div className={`${styles["compare--visual"]} contents-visual`}>
+      <div className={`${styles["visual"]} contents-visual`}>
         <p className="visual-title">
           같은 상품을 <br className="mobile"></br>다른 금리로 제공하는
           <br></br>대출 비교 서비스
