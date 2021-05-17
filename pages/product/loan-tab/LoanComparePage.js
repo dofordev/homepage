@@ -36,56 +36,58 @@ const LoanComparePage = () => {
 
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               조회 한번으로 <br></br>여러 금융사의 대출조건을
               <br></br>한번에 확인
             </p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
+            <p className="sub-desc">
               핀크 T스코어 활용 시<br></br>최대 1.0% 금리할인 혜택
             </p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-compare/img_market_loantscore.png"
-              alt="T앱(5%), B앱(5%), 핀크(??) T스코어 혜택, P앱(5%)"
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-compare/img_market_loantscore.png"
+                alt="T앱(5%), B앱(5%), 핀크(??) T스코어 혜택, P앱(5%)"
+              ></img>
+            </div>
           </article>
         </div>
       </section>
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               서류, 방문 필요없이<br></br>모바일로 조회부터 약정까지
             </p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
-              공인인증서가 없어도 간편하게 조회 가능
-            </p>
+            <p className="sub-desc">공인인증서가 없어도 간편하게 조회 가능</p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-compare/img_market_loantscorephone.png"
-              alt="Finnq 조회 이미지"
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-compare/img_market_loantscorephone.png"
+                alt="Finnq 조회 이미지"
+              ></img>
+            </div>
           </article>
         </div>
       </section>
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               스팸 전화나 문자없이<br></br>간편하게 대출 신청 가능
             </p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
-              공인인증서가 없어도 간편하게 조회 가능
-            </p>
+            <p className="sub-desc">공인인증서가 없어도 간편하게 조회 가능</p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-compare/img_market_loantscoreinfo.png"
-              alt="스팸전화,문자 X, 선택한 금융기관만 정보 제공"
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-compare/img_market_loantscoreinfo.png"
+                alt="스팸전화,문자 X, 선택한 금융기관만 정보 제공"
+              ></img>
+            </div>
           </article>
         </div>
       </section>

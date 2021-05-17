@@ -30,19 +30,21 @@ const LoanEmergencyPage = () => {
 
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               서류, 방문 필요없이<br></br>모바일로<br></br>조회부터 약정까지
             </p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
+            <p className="sub-desc">
               1금융권 DGB대구은행의<br></br>비상금 대출 가능여부를 바로 확인
             </p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-emergency/img_market_dgbfqloan.png"
-              alt="1금융권 은행대출 / 24시간,365일 간편한 모바일 신청"
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-emergency/img_market_dgbfqloan.png"
+                alt="1금융권 은행대출 / 24시간,365일 간편한 모바일 신청"
+              ></img>
+            </div>
           </article>
         </div>
       </section>
@@ -51,7 +53,7 @@ const LoanEmergencyPage = () => {
           <p className="sub-title">원하는 약정 방식 선택</p>
         </div>
         <div className={`${styles["split-cont"]} item-desc`}>
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <div className={styles["box-wrapper"]}>
               <p className={styles["text-title"]}>만기일시상환 방식</p>
               <div className={styles.detail}>
@@ -70,7 +72,7 @@ const LoanEmergencyPage = () => {
               </div>
             </div>
           </article>
-          <article className={styles["img-info"]}>
+          <article className="desc-info">
             <div className={styles["box-wrapper"]}>
               <p className={styles["text-title"]}>마이너스통장 방식</p>
               <div className={styles.detail}>
@@ -95,23 +97,23 @@ const LoanEmergencyPage = () => {
       </section>
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">중도상환수수료 0원</p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
-              부담없이 사용하고 여유자금이 생길때 갚기
-            </p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
+            <p className="sub-desc">부담없이 사용하고 여유자금이 생길때 갚기</p>
+            <p className="sub-desc">
               <span className={styles["text-point"]}>
                 다시 신청시에는 신용등급 변동 등의 사유로 재약정이<br></br>{" "}
                 불가능할 수 있습니다.
               </span>
             </p>
           </article>
-          <article className={`${styles["img-info"]} ${styles["loan-style"]}`}>
-            <img
-              src="/images/product/loan/loan-emergency/img_market_dgbfqloan02.png"
-              alt="1금융권 은행대출 / 24시간,365일 간편한 모바일 신청"
-            ></img>
+          <article className={`${styles["loan-style"]} desc-info`}>
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-emergency/img_market_dgbfqloan02.png"
+                alt="1금융권 은행대출 / 24시간,365일 간편한 모바일 신청"
+              ></img>
+            </div>
           </article>
         </div>
       </section>

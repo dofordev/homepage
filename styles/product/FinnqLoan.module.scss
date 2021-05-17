@@ -1,18 +1,12 @@
 .btn-cercle {display: inline-block; font-size: 14px; height: 29px; line-height: 27px; box-sizing: border-box; padding: 0 22px; border-radius: 14.5px; color: #999; border: 1px solid #e0e0e0; background-color: #f8f8f8;}
 .btn-cercle .arrow {margin-left: 5px;}
-.common--sub-desc {margin-top: 30px;}
-.common--sub-desc + .common--sub-desc {margin-top:15px;}
-.img-info {width: 450px;}
-.img-info img {width:100%; height:auto;}
 
 .list-desc {overflow: hidden; padding-top: 40px;}
 .list-desc li {margin-top:10px; margin-right: 14.033%; font-size: 20px; line-height: 24px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR'; word-break: keep-all;}
 .list-desc li:first-of-type {margin-top:0;}
 .loan-symbol {display: block;padding-left: 30px;position: relative;font-weight: bold;color: #731aed;font-size: 20px;line-height: initial; font-family:"spoqaB"; margin-bottom: 12px;background: url(/images/product/loan/ico_smart_symbol.png) no-repeat 0 50%;background-size: 24px 24px;}
 
-@media screen and (max-width: 960px) {
-  .common--sub-desc {margin-top:15px;}
-  .img-info {margin:40px auto 0; width: 308px;}
+@media screen and (max-width: 960px) {  
   .list-desc {padding-top:15px;}
   .list-desc li {font-size: 14px; line-height: 18px;}
 }
@@ -55,10 +49,7 @@
 *********************************/
 .loan-emergency .visual {background: url(/images/product/loan/loan-emergency/bg_finnq_dgbfq.png) no-repeat right 110px bottom 108px; background-size: 400px 370px;}
 
-.loan-emergency .split-cont .desc-info,
-.loan-emergency .split-cont .img-info {width:420px}
-
-.loan-emergency .box-wrapper {margin-top:30px;}
+.loan-emergency .box-wrapper {margin-top:30px; width:420px; word-break:keep-all;}
 .loan-emergency .box-wrapper .text-title {font-size: 30px; line-height: 34px; font-family: 'SpoqaR';}
 .loan-emergency .box-wrapper .detail {display:flex; justify-content: space-between; align-items:center; margin-top:40px; overflow: hidden;}
 .loan-emergency .box-wrapper .icon {display:inline-block; width: 150px; height: 150px;}
@@ -69,13 +60,12 @@
   line-height: 30px; font-family:'SpoqaR';}
 .loan-emergency .box-wrapper .text-wrap .text {margin-top: 13px; font-size: 20px; line-height: 30px; color: #666; font-family: 'SpoqaR';}
 .loan-emergency .loan-style {text-align:center;}
-.loan-emergency .loan-style img {width:200px;}
+.loan-emergency .loan-style.loan-style img {width:200px;}
 
 @media screen and (max-width: 960px) {
   .loan-emergency .visual {background: url(/images/product/loan/loan-emergency/bg_finnq_dgbfq.png) no-repeat right 20px top 108px; background-size: 300px 278px;}
   .loan-emergency .box-wrapper .text-title {font-size: 22px; line-height: 30px;}
-  .loan-emergency .split-cont .desc-info,
-  .loan-emergency .split-cont .img-info {width:100%}
+  .loan-emergency .box-wrapper {width:100%}
   .loan-emergency .box-wrapper .detail {display:block; margin-top:25px;}
   .loan-emergency .box-wrapper .icon {display: block; margin: 0 auto; width: auto; height: auto; width:120px;}
   .loan-emergency .loan-style img {width:170px;}
@@ -98,4 +88,7 @@
 * 대출 탭 : 생활비대출
 *********************************/
 .loan-living .visual {background: url(/images/product/loan/loan-living/img_product_hana01.png) no-repeat right 97px top 45px; background-size: 400px 370px;}
-@media screen and (max-width: 960px) {}
+
+@media screen and (max-width: 960px) {
+  .loan-living .visual {padding:40px 20px 200px; background: url(/images/product/loan/loan-living/img_product_hana01.png) no-repeat right 0px bottom 20px; background-size: 300px 278px;}  
+}

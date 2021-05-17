@@ -29,20 +29,22 @@ const LoanComparePage = () => {
 
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">원하는 계좌로 즉시 입금</p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-smart/img_visual_smart2.png"
-              alt=""
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-smart/img_visual_smart2.png"
+                alt=""
+              ></img>
+            </div>
           </article>
         </div>
       </section>
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               핀크 비밀번호로 <br></br> 대출심사 바로 확인
             </p>
@@ -50,11 +52,13 @@ const LoanComparePage = () => {
               핀크 T스코어 활용 시<br></br>최대 1.0% 금리할인 혜택
             </p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-smart/img_visual_smart3.png"
-              alt=""
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-smart/img_visual_smart3.png"
+                alt=""
+              ></img>
+            </div>
           </article>
         </div>
 

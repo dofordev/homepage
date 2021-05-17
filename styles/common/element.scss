@@ -58,3 +58,17 @@
 @media screen and (max-width: 960px) {
   .list-type li {font-size: 14px; line-height: 18px;}
 }
+
+/**************************************************
+* 정의 목록 : card, 보험 맞춤 추천 등
+***************************************************/
+.definition-list {position: relative; width: calc(50% - 40px);}
+.definition-list dt {padding-bottom: 18px; margin-bottom:18px; border-bottom: 1px solid #e0e0e0;font-size: 20px;line-height: 24px;letter-spacing: -1px;color: #222;font-family: 'SpoqaB';}
+.definition-list dd {margin-right: 4.5%; font-size: 20px; line-height: 24px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR'; word-break: keep-all;}
+
+@media screen and (max-width: 960px) {
+  .definition-list {width:100%;}
+  .definition-list dt,
+  .definition-list dd {font-size:14px; line-height:18px;}
+  .definition-list dd {margin-right:0;}
+}

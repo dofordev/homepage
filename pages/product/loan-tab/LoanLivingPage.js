@@ -29,35 +29,37 @@ const LoanComparePage = () => {
 
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               휴대폰 본인인증만 하면 <br></br> 대출심사 끝!
             </p>
-            <p className={`${styles["common--sub-desc"]} sub-desc`}>
-              24시간, 365일 간편 신청
-            </p>
+            <p className="sub-desc">24시간, 365일 간편 신청</p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-living/img_product_hana02.png"
-              alt=""
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-living/img_product_hana02.png"
+                alt=""
+              ></img>
+            </div>
           </article>
         </div>
       </section>
       <section className="desc-wrap">
         <div className="item-desc">
-          <article className={styles["desc-info"]}>
+          <article className="desc-info">
             <p className="sub-title">
               1금융권 하나은행 <br></br> 대출신청부터
               <br className="mobile"></br> 관리까지 한 번에
             </p>
           </article>
-          <article className={styles["img-info"]}>
-            <img
-              src="/images/product/loan/loan-living/img_product_hana03.png"
-              alt=""
-            ></img>
+          <article className="desc-info">
+            <div className="img-wrap">
+              <img
+                src="/images/product/loan/loan-living/img_product_hana03.png"
+                alt=""
+              ></img>
+            </div>
           </article>
         </div>
         <ul className="list-type mark width-fix">

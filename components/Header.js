@@ -11,10 +11,18 @@ export default function Header() {
   // window Size 확인
   const getWindowSize = () => {
     setWindowSize(window.innerWidth);
+    headerRef.current.classList.remove("fixed");
+
+    console.log(windowSize);
+
     if (windowSize <= 960) {
       setIsMobile(true);
+      // document.querySelector("body").classList.remove("web");
+      // document.querySelector("body").classList.add("mobile");
     } else {
       setIsMobile(false);
+      // document.querySelector("body").classList.remove("mobile");
+      // document.querySelector("body").classList.add("web");
     }
   };
   useEffect(() => {
@@ -26,11 +34,12 @@ export default function Header() {
   useEffect(() => {
     function onScroll() {
       let currentPosition = window.pageYOffset;
+      console.log(isMobile);
       // 모바일이 아닌 경우에만 동작
       if (isMobile === false) {
         if (currentPosition <= 0) {
           headerRef.current.classList.remove("fixed");
-        } else if (currentPosition > 0) {
+        } else {
           headerRef.current.classList.add("fixed");
         }
       }
