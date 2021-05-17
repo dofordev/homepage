@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+
+.container .visual{
+  height: 463px;
+  background: url(/images/product/card/finnq-card/bg_market_card.png) no-repeat right 95px bottom 48px;
+  background-size: 400px 370px;
+}
+.container .guide-title{
+  padding-bottom: 18px;
+  padding-top:100px;
+  width: calc(50% - 40px);
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -1px;
+  color: #222;
+  font-family: 'SpoqaB';
+}
+
+
+.container .guide-desc{
+  padding-top :  5px;
+  margin-right: 4.5%;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -1px;
+  color: #666;
+  font-family: 'SpoqaR';
+}
+
+.txt-desc{
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -1px;
+  color: #666;
+  font-family: 'SpoqaR';
+}
+.auto-charge-info-wrap{
+  margin-top: 33px;
+  max-width: 500px;
+  font-size: 18px;
+  line-height: 22px;
+  color: #999;
+}
+.auto-charge-info:before{
+  position: absolute;
+  top: 4px;
+  left: 0;
+  display: block;
+  content: "*";
+}
+
+.auto-charge-info{
+  padding-left:11px;
+  position:relative;
+}
+.card-desc{
+  position: relative;
+  padding-left: 8px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #999;
+}
+.card-desc:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "-";
+}
+.deli-wrap{
+  max-width: 1280px;
+  margin: 68px auto 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.deli-txt{
+  padding-left: 18px;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -1px;
+  color: #666;
+  font-family: 'SpoqaR';
+  text-indent: -18px;
+}

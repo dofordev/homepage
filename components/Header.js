@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import Link from 'next/link'
 
 export default function Header() {
   const headerRef = useRef(null);
@@ -88,19 +89,13 @@ export default function Header() {
         <nav className="nav">
           <ul className="nav-list">
             <li>
-              <a href="/product/finnqmarket-card.html?tabNum=0&tabItem=0">
-                카드
-              </a>
+              <Link href="/product/finnq-card">카드</Link>
             </li>
             <li>
-              <a href="/product/finnqmarket-saving.html?tabNum=0&tabItem=0">
-                예적금
-              </a>
+              <Link href="/product/finnqmarket-saving">예적금</Link>
             </li>
             <li>
-              <a href="/product/finnqmarket-loan.html?tabNum=0&tabItem=0">
-                대출
-              </a>
+              <Link href="/product/finnq-loan">대출</Link>
             </li>
             <li>
               <a
@@ -116,7 +111,7 @@ export default function Header() {
               </a>
             </li>
             <li className="cerfi">
-              <a href="/cert/cert.html">공동인증센터</a>
+              <Link href="/details/cert/finnq-cert">공인인증센터</Link>
             </li>
           </ul>
         </nav>

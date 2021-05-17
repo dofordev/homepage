@@ -35,7 +35,8 @@ a, a:hover, a:focus, a:active, a:visited, a:link { font-family: inherit; text-de
 * 공통 요소 정의 
 *****************************************************/
 br.mobile {display:none;}
-.txt-purple {color:#731aed;}
+.txt-purple {color:#731aed !important;}
+.txt-black {color:#222 !important;}
 .fl {float:left;}
 .fr {float:right;}
 .clearfix:after {display:block; content:""; clear:both;}
@@ -44,3 +45,46 @@ br.mobile {display:none;}
 @media screen and (max-width: 960px) {
   br.mobile {display:block;}
 }
+
+
+
+/**
+  margin, padding 자동생성
+*/
+@function size($start, $end) {
+  $size : ();
+  @for $i from $start through $end {
+    $value : $i + 0;
+    $size : append($size, $value);
+  }
+  @return $size;
+}
+@function getPx($value) {
+  @if $value == 0 {
+    @return $value;
+  } @else {
+    @return $value + 0px;
+  }
+}
+$size : size(0, 100);
+$position : ('l':'left', 'r':'right', 't':'top', 'b':'bottom');
+$nameMap : ('m':'margin', 'p':'padding');
+/**
+  m-0 : { margin : 0; }
+  mt-1 : { margin-top : 1px; }
+*/
+@mixin generate($nameMap : (), $position : (), $size : ()) {
+  @each $preKey, $preValue in $nameMap {
+    @each $px in $size {
+      .#{$preKey}-#{$px} {
+        #{$preValue} : getPx($px);
+      }
+      @each $sufKey, $sufValue in $position {
+        .#{$preKey}#{$sufKey}-#{$px} {
+          #{$preValue}-#{$sufValue} : getPx($px) !important;
+        }
+      }
+    }
+  }
+}
+@include generate($nameMap, $position, $size);
