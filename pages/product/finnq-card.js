@@ -1,10 +1,10 @@
 
-import Layout from '../../components/Layout'
-import styles from '../../styles/product/FinnqCard.module.scss'
+import Layout from '/components/Layout'
+import styles from '/styles/product/FinnqCard.module.scss'
 import { useState, useEffect } from 'react';
 import Image from 'next/image'
 
-import Tabs from '../../components/Tabs'
+import Tabs from '/components/Tabs'
 
 const content = {
   0 : <FinnqHanaCard/>,

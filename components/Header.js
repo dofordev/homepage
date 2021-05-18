@@ -6,22 +6,30 @@ export default function Header() {
   const mobileNavRef = useRef(null);
   const mobileDimRef = useRef(null);
 
-  const [isMobile, setIsMobile] = useState(false);
-  const [windowSize, setWindowSize] = useState(null);
+  let isMobile = false;
+  let windowSize = null;
+  // const [isMobile, setIsMobile] = useState(false);
+  // const [windowSize, setWindowSize] = useState(null);
 
   // window Size 확인
   const getWindowSize = () => {
-    setWindowSize(window.innerWidth);
+    windowSize = window.innerWidth;
+    // setWindowSize(window.innerWidth);
     headerRef.current.classList.remove("fixed");
 
     console.log(windowSize);
 
     if (windowSize <= 960) {
-      setIsMobile(true);
+      isMobile = true;
+
+
+      // setIsMobile(true);
       // document.querySelector("body").classList.remove("web");
       // document.querySelector("body").classList.add("mobile");
     } else {
-      setIsMobile(false);
+      isMobile = false;
+      onScroll();
+      // setIsMobile(false);
       // document.querySelector("body").classList.remove("mobile");
       // document.querySelector("body").classList.add("web");
     }
@@ -30,24 +38,24 @@ export default function Header() {
     getWindowSize();
     window.addEventListener("resize", getWindowSize);
     return () => window.removeEventListener("resize", getWindowSize);
-  }, [windowSize]);
-
-  useEffect(() => {
-    function onScroll() {
-      let currentPosition = window.pageYOffset;
-      console.log(isMobile);
-      // 모바일이 아닌 경우에만 동작
-      if (isMobile === false) {
-        if (currentPosition <= 0) {
-          headerRef.current.classList.remove("fixed");
-        } else {
-          headerRef.current.classList.add("fixed");
-        }
+  }, []);
+  function onScroll() {
+    let currentPosition = window.pageYOffset;
+    console.log(isMobile);
+    // 모바일이 아닌 경우에만 동작
+    if (isMobile === false) {
+      if (currentPosition <= 0) {
+        headerRef.current.classList.remove("fixed");
+      } else {
+        headerRef.current.classList.add("fixed");
       }
     }
+  }
+  useEffect(() => {
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [windowSize]);
+  }, []);
 
   // Web 메뉴일 때 이벤트 공통(focus, hover)
   const eventIn = () => {

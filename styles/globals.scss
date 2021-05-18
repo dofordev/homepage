@@ -81,7 +81,7 @@ $nameMap : ('m':'margin', 'p':'padding');
       }
       @each $sufKey, $sufValue in $position {
         .#{$preKey}#{$sufKey}-#{$px} {
-          #{$preValue}-#{$sufValue} : getPx($px) !important;
+          #{$preValue}-#{$sufValue} : getPx($px);
         }
       }
     }
