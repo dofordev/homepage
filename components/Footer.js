@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   const menuActive = () => {
     document.querySelector(".family-list").classList.toggle("is-active");
@@ -24,16 +26,18 @@ export default function Footer() {
             </a>
           </li>
           <li>
-            <a href="/policy/service.html">서비스이용약관</a>
+            <Link href="/details/policy/service">서비스이용약관</Link>
           </li>
           <li>
-            <a href="/policy/privacy.html">개인정보처리방침</a>
+            <Link href="/details/policy/privacy">개인정보처리방침</Link>
           </li>
           <li>
-            <a href="/policy/customer_information.html">고객정보취급방침</a>
+            <Link href="/details/policy/customer-information">
+              고객정보취급방침
+            </Link>
           </li>
           <li>
-            <a href="/hfg/vision_group.html">하나금융그룹</a>
+            <a href="/details/hfg/vision_group">하나금융그룹</a>
           </li>
         </ul>
         <div className="info">

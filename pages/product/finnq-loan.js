@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout";
 import { useState, useEffect } from "react";
+import Tabs from "../../components/Tabs";
 import LoanComparePage from "./loan-tab/LoanComparePage";
 import LoanEmergencyPage from "./loan-tab/LoanEmergencyPage";
 import LoanSmartPage from "./loan-tab/LoanSmartPage";
@@ -29,13 +30,17 @@ function LoanLiving() {
 }
 
 export default function FinnqLoan() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [tabNum, setTabNum] = useState(0);
+
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    console.log("URLSearchParams", URLSearchParams);
-    if (urlParams.has("tabNum")) setActiveTab(urlParams.get("tabNum"));
+    if (urlParams.has("tabNum")) setTabNum(urlParams.get("tabNum"));
   }, []);
+
+  function clickCallback(index) {
+    setTabNum(index);
+  }
 
   return (
     <Layout>
@@ -59,34 +64,18 @@ export default function FinnqLoan() {
 
           <section className="contents-body">
             <article className="tab-wrap">
-              <ul>
-                <li
-                  className={activeTab === 0 ? "is-active" : ""}
-                  onClick={() => setActiveTab(0)}
-                >
-                  <button type="button">대출비교</button>
-                </li>
-                <li
-                  className={activeTab === 1 ? "is-active" : ""}
-                  onClick={() => setActiveTab(1)}
-                >
-                  <button type="button">비상금대출</button>
-                </li>
-                <li
-                  className={activeTab === 2 ? "is-active" : ""}
-                  onClick={() => setActiveTab(2)}
-                >
-                  <button type="button">똑똑대출</button>
-                </li>
-                <li
-                  className={activeTab === 3 ? "is-active" : ""}
-                  onClick={() => setActiveTab(3)}
-                >
-                  <button type="button">생활비대출</button>
-                </li>
-              </ul>
+              <Tabs
+                clickEvent={clickCallback}
+                activeTab={tabNum}
+                list={[
+                  { title: "대출비교" },
+                  { title: "비상금대출" },
+                  { title: "똑똑대출" },
+                  { title: "생활비대출" },
+                ]}
+              ></Tabs>
             </article>
-            {content[activeTab]}
+            {content[tabNum]}
           </section>
         </div>
       </section>

@@ -40,9 +40,12 @@ html.preventScroll body {overflow-y: hidden;}
   .header {position: absolute;}
   .header .header-logo {@include position($t:10px, $l:50%); margin: 0 0 0 -30px; width: 60px; background-size: 60px auto; }
   .nav {display: none;}
-  .m-gnb {display: none; -webkit-transform: translate3d(-100%, 0, 0);
+  .m-gnb {display: none; -webkit-transform: translate3d(-100%, -100%, 0);
     transform: translate3d(-100%, 0, 0);  @include position($p:fixed, $t:0, $b:0, $l:0); width: 240px; background: #fff; z-index: 999; height: auto; max-height: 100%; overflow: auto;}
-  .m-gnb.is-active {display:block; animation: slideInLeft 1.5s forwards; -webkit-animation: slideInLeft 1.5s forwards; overflow: hidden;}
+  .m-gnb.is-active {display:block; animation: fadeDownRight 1.5s forwards; -webkit-animation: fadeDownRight 1s forwards; overflow: hidden;}
+
+  
+
   .m-nav {display: block; margin: 8px 0 0 -8px;}
   .m-nav .btn-nav {position: relative; outline: none; width: 34px; height: 34px; text-indent:-999em;}
   .m-nav .btn-nav:after {@include common__after($t:50%, $l:50%); width:20px; height:15px; margin-top:-7.5px; margin-left:-10px; background: url(/images/common/btn_m_nav.png) no-repeat 0 0; background-size:cover;}
@@ -153,7 +156,8 @@ html.preventScroll body {overflow-y: hidden;}
 /**************************************************
 * contents
 ***************************************************/
-.container .contents {margin: 0 auto; padding:90px 0px 15px; }
+.container .contents {margin: 0 auto; padding:90px 0px 15px;}
+.container .contents.pages {padding:90px 0px 95px;}
 
 .contents-head {max-width:1280px; margin:0 auto; padding:0 40px;}
 .contents-head .title {opacity:0; display:inline-block; font-family: 'SpoqaR'; font-size: 36px; color: #222; letter-spacing: -2px; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards; -webkit-animation-delay:0.5s; animation-delay: 0.5s;}

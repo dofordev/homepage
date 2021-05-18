@@ -4078,7 +4078,21 @@
 * Custom Animation은 아래에 추가해서 사용합니다.
 ************************************************/
 
-@-webkit-keyframes slideInFadeUp {
+@-webkit-keyframes fadeUpRight {
+  from {
+    -webkit-transform: translate3d(-100%, 100%, 0);
+    transform: translate3d(-100%, 100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+@keyframes fadeUpRight {
   from {
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
@@ -4092,10 +4106,83 @@
     opacity:1;
   }
 }
-@keyframes slideInFadeUp {
+
+@-webkit-keyframes fadeUpLeft {
   from {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+@keyframes fadeUpLeft {
+  from {
+    -webkit-transform: translate3d(100%, 100%, 0);
+    transform: translate3d(100%, 100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeDownRight {
+  from {
+    -webkit-transform: translate3d(-100%, -100%, 0);
+    transform: translate3d(-100%, -100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+@keyframes fadeDownRight {
+  from {
+    -webkit-transform: translate3d(-100%, -100%, 0);
+    transform: translate3d(-100%, -100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+  
+@-webkit-keyframes fadeDownLeft {
+  from {
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
+    visibility: visible;
+    opacity:0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity:1;
+  }
+}
+@keyframes fadeDownLeft {
+  from {
+    -webkit-transform: translate3d(100%, -100%, 0);
+    transform: translate3d(100%, -100%, 0);
     visibility: visible;
     opacity:0;
   }

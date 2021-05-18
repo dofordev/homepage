@@ -1,5 +1,4 @@
-.btn-cercle {display: inline-block; font-size: 14px; height: 29px; line-height: 27px; box-sizing: border-box; padding: 0 22px; border-radius: 14.5px; color: #999; border: 1px solid #e0e0e0; background-color: #f8f8f8;}
-.btn-cercle .arrow {margin-left: 5px;}
+.btn-loan {display:inline-block; margin-top:16px; height:40px; line-height:40px; font-size:14px;; background-color:#222; border-radius: 4px;  background-color: #222; padding:0 24px; color:#fff; font-family: "SpoqaR" !important;}
 
 .list-desc {overflow: hidden; padding-top: 40px;}
 .list-desc li {margin-top:10px; margin-right: 14.033%; font-size: 20px; line-height: 24px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR'; word-break: keep-all;}
@@ -9,6 +8,7 @@
 @media screen and (max-width: 960px) {  
   .list-desc {padding-top:15px;}
   .list-desc li {font-size: 14px; line-height: 18px;}
+  .btn-loan {margin-top:8px; height:30px; padding:0 16px; font-size:14px; line-height:28px;}
 }
 
 /********************************

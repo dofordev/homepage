@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import Link from 'next/link'
+import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const headerRef = useRef(null);
@@ -8,37 +8,7 @@ export default function Header() {
 
   let isMobile = false;
   let windowSize = null;
-  // const [isMobile, setIsMobile] = useState(false);
-  // const [windowSize, setWindowSize] = useState(null);
 
-  // window Size 확인
-  const getWindowSize = () => {
-    windowSize = window.innerWidth;
-    // setWindowSize(window.innerWidth);
-    headerRef.current.classList.remove("fixed");
-
-    console.log(windowSize);
-
-    if (windowSize <= 960) {
-      isMobile = true;
-
-
-      // setIsMobile(true);
-      // document.querySelector("body").classList.remove("web");
-      // document.querySelector("body").classList.add("mobile");
-    } else {
-      isMobile = false;
-      onScroll();
-      // setIsMobile(false);
-      // document.querySelector("body").classList.remove("mobile");
-      // document.querySelector("body").classList.add("web");
-    }
-  };
-  useEffect(() => {
-    getWindowSize();
-    window.addEventListener("resize", getWindowSize);
-    return () => window.removeEventListener("resize", getWindowSize);
-  }, []);
   function onScroll() {
     let currentPosition = window.pageYOffset;
     console.log(isMobile);
@@ -51,8 +21,27 @@ export default function Header() {
       }
     }
   }
-  useEffect(() => {
 
+  // window Size 확인
+  const getWindowSize = () => {
+    windowSize = window.innerWidth;
+    headerRef.current.classList.remove("fixed");
+
+    if (windowSize <= 960) {
+      isMobile = true;
+    } else {
+      isMobile = false;
+      onScroll();
+    }
+  };
+
+  useEffect(() => {
+    getWindowSize();
+    window.addEventListener("resize", getWindowSize);
+    return () => window.removeEventListener("resize", getWindowSize);
+  }, []);
+
+  useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -92,7 +81,7 @@ export default function Header() {
     >
       <div className="width-fix">
         <h1 className="header-logo">
-          <a href="/index.html">Finnq</a>
+          <a href="/">Finnq</a>
         </h1>
         <nav className="nav">
           <ul className="nav-list">
@@ -100,7 +89,7 @@ export default function Header() {
               <Link href="/product/finnq-card">카드</Link>
             </li>
             <li>
-              <Link href="/product/finnqmarket-saving">예적금</Link>
+              <Link href="/product/finnq-saving">예적금</Link>
             </li>
             <li>
               <Link href="/product/finnq-loan">대출</Link>
@@ -114,9 +103,7 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="/product/finnqmarket-insurance.html?tabNum=0&tabItem=0">
-                보험 맞춤 추천
-              </a>
+              <Link href="/product/finnq-insurance">보험 맞춤 추천</Link>
             </li>
             <li className="cerfi">
               <Link href="/details/cert/finnq-cert">공인인증센터</Link>
@@ -135,27 +122,18 @@ export default function Header() {
           <div className="m-gnb-inner">
             <ul>
               <li>
-                <a
-                  className="menu-title"
-                  href="/product/finnqmarket-card.html?tabNum=0&tabItem=0"
-                >
+                <a className="menu-title" href="/product/finnq-card">
                   금융상품
                 </a>
                 <ul className="m-sub-menu">
                   <li>
-                    <a href="/product/finnqmarket-card.html?tabNum=0&tabItem=0">
-                      카드
-                    </a>
+                    <Link href="/product/finnq-card">카드</Link>
                   </li>
                   <li>
-                    <a href="/product/finnqmarket-saving.html?tabNum=0&tabItem=0">
-                      예적금
-                    </a>
+                    <Link href="/product/finnq-saving">예적금</Link>
                   </li>
                   <li>
-                    <a href="/product/finnqmarket-loan.html?tabNum=0&tabItem=0">
-                      대출
-                    </a>
+                    <Link href="/product/finnq-loan">대출</Link>
                   </li>
                   <li>
                     <a
@@ -166,9 +144,7 @@ export default function Header() {
                     </a>
                   </li>
                   <li>
-                    <a href="/product/finnqmarket-insurance.html?tabNum=0&tabItem=0">
-                      보험 맞춤 추천
-                    </a>
+                    <Link href="/product/finnq-insurance">보험 맞춤 추천</Link>
                   </li>
                 </ul>
               </li>
@@ -177,34 +153,34 @@ export default function Header() {
           <div className="m-sns">
             <ul>
               <li>
-                <a
+                <Link
                   href="https://www.facebook.com/Finnq.official/"
                   className="btn-sns fb"
                   target="_blank"
                   title="새창 열림"
                 >
                   페이스북 공유하기
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://www.instagram.com/finnq_official/"
                   className="btn-sns insta"
                   target="_blank"
                   title="새창 열림"
                 >
                   인스타그램 공유하기
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="https://post.naver.com/finnq"
                   className="btn-sns blog"
                   target="_blank"
                   title="새창 열림"
                 >
                   네이버블로그 공유하기
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

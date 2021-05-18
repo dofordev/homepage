@@ -17,7 +17,7 @@ const LoanComparePage = () => {
             <a
               href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
               target="_blank"
-              className={styles["btn-cercle"]}
+              className={styles["btn-loan"]}
             >
               대출 금리 비교하러 가기 <em className={styles.arrow}>&gt;</em>
             </a>
