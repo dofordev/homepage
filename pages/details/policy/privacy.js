@@ -1,10 +1,10 @@
 import Layout from "../../../components/Layout";
 import { useState, useEffect } from "react";
-import TermsFinnqPage from "./service-tab/TermsFinnqPage";
 import Tabs from "../../../components/Tabs";
-// import LoanEmergencyPage from "./loan-tab/LoanEmergencyPage";
-// import LoanSmartPage from "./loan-tab/LoanSmartPage";
-// import LoanLivingPage from "./loan-tab/LoanLivingPage";
+import TermsFinnqPage from "./service-tab/TermsFinnqPage";
+import TermsRewordPage from "./service-tab/TermsRewordPage";
+import TermsCooperatePage from "./service-tab/TermsCooperatePage";
+import TermsSendPage from "./service-tab/TermsSendPage";
 
 const content = {
   0: <TermsFinnq />,

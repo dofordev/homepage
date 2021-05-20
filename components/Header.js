@@ -11,7 +11,6 @@ export default function Header() {
 
   function onScroll() {
     let currentPosition = window.pageYOffset;
-    console.log(isMobile);
     // 모바일이 아닌 경우에만 동작
     if (isMobile === false) {
       if (currentPosition <= 0) {

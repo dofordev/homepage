@@ -105,35 +105,23 @@
 * Select 
 ***************************************************/
 // 셀렉트 영역 불러오은 곳
-.load-area {padding-top:40px}
-	
-	.select-group:after { right: 22px; top: 15px; }
-	.select-group.select-open:after { top: 20px; }
-	.select-group a { height: 45px; line-height: 45px; padding: 0 60px 0 20px; border-top: 0; }
-	.select-group .is-active > * { color: #999; }
-	.select-group.select-open .is-active > * { height: 46px; }	
 
-.select-group {width: 242px;height: 46px; overflow: hidden; position: absolute; top:0px; right:40px; border: 1px solid #e0e0e0; border-radius: 4px; z-index: 1; background-color: #fff;}
-.select-group:after {content: ''; position: absolute; right: 21px; top: 12px; display: block; width: 9px; height: 9px; border-right: 2px solid #222; border-bottom: 2px solid #222; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
-.select-group.select-open {overflow: visible; background-color: #666; border-color: #e0e0e0; border-radius: 2px 2px 0 0;}
-.select-group.select-open:after {top: 15px; -webkit-transform: rotate(225deg); -ms-transform: rotate(225deg); transform: rotate(225deg);}
-.select-group.select-open .is-active > * {background-color: #eee;}
-
-.select-group ul {position: absolute; top:45px; left: -1px; right: -1px; background: #fff; border: 1px solid #ccc; border-bottom: 2px solid #ccc;}
-.select-group ul:after {content: ''; display: block; clear: both;}
-.select-group.select-open ul {border: 1px solid #e0e0e0;}
-
-.select-group li {float: left; position: relative; width: 100%;}
-.select-group li > * {display: block; font-family: 'SpoqaR'; font-size: 16px; color: #999; text-align: left; padding: 0 60px 0 20px; height: 45px; line-height: 45px;}
-.select-group .is-active {position: absolute; width: 100%; top: -46px;}
-.select-group .is-active > * {border: 0 none; border-bottom: 1px solid #dedede;}
+.select-group {text-align:right;}
+.select-group .select-design {display:inline-block; position:relative; width: 242px; height: 46px; border: 1px solid #e0e0e0; border-radius:4px; z-index:5; background-color: #fff; color:#999;}
+.select-group .select-design:after {display:block; content: ''; position: absolute; right: 21px; top:16px; width:9px; height:9px; border-right:2px solid #222; border-bottom:2px solid #222; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
+.select-group.is-active .select-design:after {top: 15px; -webkit-transform: rotate(225deg); -ms-transform: rotate(225deg); transform: rotate(225deg);}
+.select-group .select-button {display:block; height:100%; font-family: 'SpoqaR'; font-size: 16px; color: #999; text-align: left; padding: 0 60px 0 20px; line-height: 45px; box-sizing:border-box;}
+.select-group.is-active .select-button {background-color:#eee;}
+.select-group .select-list {display:none; position: absolute; top:45px; left: -1px; right: -1px; background: #fff; border: 1px solid #e0e0e0;}
+.select-group .select-list:after {content: ''; display: block; clear: both;}
+.select-group .select-list li {position: relative; width: 100%;}
+.select-group .select-list li > * {display: block; }
 
 
 @media screen and (max-width:960px) {
 	.select-group {width: 220px; height: 40px; top:-10px; right:20px}	
-  .select-group ul {top:39px;}
-  .select-group li > * {font-size: 14px; padding: 0 12px; height: 40px; line-height: 38px;}
-  .select-group .is-active {top:-40px}
+  .select-group .select-list {top:39px;}
+  .select-group .select-list li > * {font-size: 14px; padding: 0 12px; height: 40px; line-height: 38px;}  
 }
 
 

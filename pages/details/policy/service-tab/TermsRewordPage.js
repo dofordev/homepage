@@ -20,15 +20,15 @@ function LoadReword2() {
 const TermsRewordPage = () => {
   const [tabNum, setTabNum] = useState(0);
 
+  const selectClick = () => {};
+
   useEffect(() => {
-    const selectGroup = document.querySelector(".select-group");
-    let openCheck = selectGroup.classList.contains("select-open");
+    const selectBtnTag = document.querySelector(".select-button");
+    const selectGroupTag = document.querySelector(".select-group");
 
     // document.querySelector(".contents").addEventListener("click", () => {
     //   selectGroup.classList.remove("select-open");
     // });
-
-    const selectEvent = document.querySelectorAll(".target");
 
     selectEvent.forEach((item, i) => {
       item.addEventListener("click", (e) => {
@@ -48,14 +48,23 @@ const TermsRewordPage = () => {
   }, []);
 
   return (
-    <article className={`${styles["terms"]} contents-details`}>
+    <article className="contents-details">
       <div className="notice-wrap width-fix">
         <div className="select-group">
-          <ul>
-            <li className="is-active target">
+          <div className="select-design">
+            <button
+              type="button"
+              className="select-button"
+              onClick={selectClick}
+            >
+              2018.05.02
+            </button>
+          </div>
+          <ul className="select-list">
+            <li>
               <a href="#none">2018.05.02</a>
             </li>
-            <li className="target">
+            <li>
               <a href="#none">2019.06.01</a>
             </li>
           </ul>

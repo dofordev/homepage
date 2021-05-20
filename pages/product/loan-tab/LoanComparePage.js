@@ -14,14 +14,15 @@ const LoanComparePage = () => {
             <span className={styles.text}>
               신용도에 영향없이 한번에 조회 가능
             </span>
-            <a
-              href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
-              target="_blank"
-              className={styles["btn-loan"]}
-            >
-              대출 금리 비교하러 가기 <em className={styles.arrow}>&gt;</em>
-            </a>
           </p>
+
+          <a
+            href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
+            target="_blank"
+            className={styles["btn-loan"]}
+          >
+            대출 금리 비교하러 가기
+          </a>
 
           <div className={`${styles["compare--btn-wrap"]} app-down`}>
             <a href="#none" className="btn btn-google">
