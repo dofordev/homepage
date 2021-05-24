@@ -58,6 +58,9 @@ const Layout = (props) => (
         sizes="152x152"
       />
       <script src="https://pop.finnq.com/finnq_home/js/videoplayer.js"></script>
+
+
+      <script src="https://unpkg.com/type-hangul"></script>
     </Head>
     <Header></Header>
 

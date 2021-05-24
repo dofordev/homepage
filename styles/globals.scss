@@ -37,6 +37,7 @@ a, a:hover, a:focus, a:active, a:visited, a:link { font-family: inherit; text-de
 br.mobile {display:none;}
 .txt-purple {color:#731aed !important;}
 .txt-black {color:#222 !important;}
+.txt-orange {color:#f07400 !important;}
 .fl {float:left;}
 .fr {float:right;}
 .clearfix:after {display:block; content:""; clear:both;}
@@ -46,11 +47,29 @@ br.mobile {display:none;}
   br.mobile {display:block;}
 }
 
+/****************************************************
+* 페이지 전환 효과
+*****************************************************/
+.page-enter {
+  //opacity: 0;
+}
+.page-enter-active {
+  //opacity: 1;
+  //transition: all 0.3s ease;
+}
+.page-exit {
+  //opacity: 1;
+}
+
+.page-exit-active {
+  //opacity: 0;
+  //transition: all 0.3s ease;
+}
 
 
-/**
-  margin, padding 자동생성
-*/
+/****************************************************
+* margin, padding 자동생성
+*****************************************************/
 @function size($start, $end) {
   $size : ();
   @for $i from $start through $end {

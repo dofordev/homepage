@@ -52,7 +52,7 @@ export default function Header() {
     }
   };
   const eventLeave = () => {
-    if (!isMobile) {
+    if (!isMobile && window.pageYOffset == 0) {
       headerRef.current.classList.remove("fixed");
     }
   };

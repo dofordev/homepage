@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 /**
  * @props : {
@@ -7,19 +7,19 @@ import { useState, useEffect } from "react";
  *  clickEvent : function - 클릭시 호출될 이벤트
  * }
  */
-export default function Tabs(props) {
-  const [activeTab, setActiveTab] = useState(
-    props.activeTab ? props.activeTab : 0
-  );
+function Tabs(props) {
+  let activeTab = props.activeTab ? props.activeTab : 0;
 
   useEffect(() => {
     const li = document.querySelectorAll(".tab-li");
     li.forEach((item, i) => {
       item.addEventListener("click", (e) => {
-        setActiveTab(i);
+        activeTab = i;
       });
     });
   }, []);
+
+
   return (
     <ul>
       {props.list.map((item, i) => {
@@ -38,3 +38,4 @@ export default function Tabs(props) {
     </ul>
   );
 }
+export default Tabs;
