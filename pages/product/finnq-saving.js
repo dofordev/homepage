@@ -4,13 +4,33 @@ import Styles from "../../styles/FinnqmarketSaving.module.scss";
 import { useState, useEffect } from "react";
 
 import Tabs from "../../components/Tabs";
+import SavingHabitSavingPage from "./saving-tab/SavingHabitSavingPage"
+import SavingKDBXThigh5InstallmentSavingsPage from "./saving-tab/SavingKDBXThigh5InstallmentSavingsPage"
+import SavingTFinnqInstallmentSavingsPage from "./saving-tab/SavingTFinnqInstallmentSavingsPage"
+import SavingTProfitPassbookPage from "./saving-tab/SavingTProfitPassbookPage"
 
 const content = {
-  0: <HabitSaving />,
-  1: <TFinnqInstallmentSavings />,
-  2: <KDBXThigh5InstallmentSavings />,
-  3: <TProfitPassbook />,
+  0: <SavingHabitSaving />,
+  1: <SavingTFinnqInstallmentSavings />,
+  2: <SavingKDBXThigh5InstallmentSavings />,
+  3: <SavingTProfitPassbook />,
 };
+
+function SavingHabitSaving() {
+  return <SavingHabitSavingPage />;
+}
+
+function SavingTFinnqInstallmentSavings() {
+  return <SavingTFinnqInstallmentSavingsPage />;
+}
+
+function SavingKDBXThigh5InstallmentSavings() {
+  return <SavingKDBXThigh5InstallmentSavingsPage />;
+}
+
+function SavingTProfitPassbook() {
+  return <SavingTProfitPassbookPage />;
+}
 
 export default function FinnqmarketCard() {
   const [tabNum, setTabNum] = useState(0);
@@ -65,103 +85,5 @@ export default function FinnqmarketCard() {
         </div>
       </section>
     </Layout>
-  );
-}
-
-function HabitSaving() {
-  return (
-    <article className="contents-details">
-      <div className="contents-visual">
-        <p className="visual-title">
-          습관이 돈이
-          <br />
-          되는 방법
-        </p>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 1</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 2</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 3</div>
-      </div>
-    </article>
-  );
-}
-
-function TFinnqInstallmentSavings() {
-  return (
-    <article className="contents-details">
-      <div className="contents-visual">
-        <p className="visual-title">
-          SKT 고객이라면,
-          <br />
-          최대 연 2.6%
-        </p>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 1</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 2</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 3</div>
-      </div>
-    </article>
-  );
-}
-
-function KDBXThigh5InstallmentSavings() {
-  return (
-    <article className="contents-details">
-      <div className="contents-visual">
-        <p className="visual-title">
-          상식을 뛰어넘는
-          <br />
-          <span class="cl_r">
-            최대{" "}
-            <em>
-              연 <mark>5.0%</mark>
-            </em>{" "}
-            자유적금
-          </span>
-        </p>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 1</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 2</div>
-      </div>
-      <div className="desc-wrap">
-        <div className="item-desc">detail 3</div>
-      </div>
-    </article>
-  );
-}
-
-function TProfitPassbook() {
-  return (
-    <article className="contents-details">
-      <div className="contents-visual">
-        <p className="visual-title">
-          매월 이자가 늘어나는
-          <br />
-          T이득통장!
-        </p>
-      </div>
-      <section className="desc-wrap">
-        <div className="item-desc">detail 1</div>
-      </section>
-      <section className="desc-wrap">
-        <div className="item-desc">detail 2</div>
-      </section>
-      <section className="desc-wrap">
-        <div className="item-desc">detail 3</div>
-      </section>
-    </article>
   );
 }
