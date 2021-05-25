@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../styles/product/FinnqLoan.module.scss";
+import styles from "/styles/product/FinnqLoan.module.scss";
 
 const LoanEmergencyPage = () => {
   return (

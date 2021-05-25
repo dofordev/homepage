@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout";
-import styles from "../../styles/insurance/FinnqInsurance.module.scss";
+import Layout from "/components/Layout";
+import styles from "/styles/insurance/FinnqInsurance.module.scss";
 
 export default function FinnqInsurance() {
   return (

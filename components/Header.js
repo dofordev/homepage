@@ -15,8 +15,10 @@ export default function Header() {
     if (isMobile === false) {
       if (currentPosition <= 0) {
         headerRef.current.classList.remove("fixed");
+        headerRef.current.classList.remove("is-scroll");
       } else {
         headerRef.current.classList.add("fixed");
+        headerRef.current.classList.add("is-scroll");
       }
     }
   }
@@ -25,7 +27,6 @@ export default function Header() {
   const getWindowSize = () => {
     windowSize = window.innerWidth;
     headerRef.current.classList.remove("fixed");
-
     if (windowSize <= 960) {
       isMobile = true;
     } else {
@@ -47,12 +48,14 @@ export default function Header() {
 
   // Web 메뉴일 때 이벤트 공통(focus, hover)
   const eventIn = () => {
-    if (!isMobile) {
+    let isScroll = headerRef.current.classList.contains("is-scroll");
+    if (!isMobile && !isScroll) {
       headerRef.current.classList.add("fixed");
     }
   };
   const eventLeave = () => {
-    if (!isMobile && window.pageYOffset == 0) {
+    let isScroll = headerRef.current.classList.contains("is-scroll");
+    if (!isMobile && !isScroll) {
       headerRef.current.classList.remove("fixed");
     }
   };
