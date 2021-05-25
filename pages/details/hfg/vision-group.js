@@ -1,12 +1,9 @@
-import Layout from "../../../components/Layout";
+import Layout from "/components/Layout";
+import Tabs from "/components/Tabs";
 import { useState, useEffect } from "react";
 import HanaVisionPage from "./vision-tab/HanaVisionPage";
 import HanaValuePage from "./vision-tab/HanaValuePage";
 import HanaCooperatePage from "./vision-tab/HanaCooperatePage";
-import Tabs from "../../../components/Tabs";
-// import LoanEmergencyPage from "./loan-tab/LoanEmergencyPage";
-// import LoanSmartPage from "./loan-tab/LoanSmartPage";
-// import LoanLivingPage from "./loan-tab/LoanLivingPage";
 
 const content = {
   0: <HanaVision />,

@@ -1,11 +1,11 @@
-import Layout from "../../../components/Layout";
-import styles from "../../../styles/cert/FinnqCert.module.scss";
+import Layout from "/components/Layout";
+import styles from "/styles/cert/FinnqCert.module.scss";
 
-export default function FinnqInsurance() {
+export default function FinnqCert() {
   return (
     <Layout>
       <section className="container">
-        <article className="key-visual ">
+        <article className="key-visual">
           <div className="inner">
             <p className="title">뱅크 말고, 핀크</p>
             <p className="desc">

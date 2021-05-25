@@ -3,7 +3,7 @@ import React from "react";
 const RewordPage1 = () => {
   return (
     <>
-      <h3 className="title">주식회사 핀크 리워드 서비스 약관</h3>
+      <p className="title">주식회사 핀크 리워드 서비스 약관</p>
       <div className="index">
         <p>- 순서 -</p>
         <dl>

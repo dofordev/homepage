@@ -1,51 +1,40 @@
 import React, { useEffect, useState } from "react";
-import Tabs from "../../../../components/Tabs";
-import styles from "../../../../styles/policy/FinnqPolicy.module.scss";
-import RewordPage1 from "../load-reword/RewordPage1";
-import RewordPage2 from "../load-reword/RewordPage2";
+import RewordPage1 from "/pages/details/policy/load-reword/RewordPage1";
+import RewordPage2 from "/pages/details/policy/load-reword/RewordPage2";
 
 const content = {
-  0: <LoadReword1 />,
-  1: <LoadReword2 />,
+  0: <RewordPage1 />,
+  1: <RewordPage2 />,
 };
-
-function LoadReword1() {
-  return <RewordPage1 />;
-}
-
-function LoadReword2() {
-  return <RewordPage2 />;
-}
 
 const TermsRewordPage = () => {
   const [tabNum, setTabNum] = useState(0);
 
-  const selectClick = () => {};
+  const selectClick = () => {
+    const selectGroupTag = document.querySelector(".select-group");
+    let state = selectGroupTag.classList.contains("is-active");
+    if (!state) {
+      selectGroupTag.classList.add("is-active");
+    } else {
+      selectGroupTag.classList.remove("is-active");
+    }
+  };
 
   useEffect(() => {
-    const selectBtnTag = document.querySelector(".select-button");
     const selectGroupTag = document.querySelector(".select-group");
+    const listLiTag = document.querySelectorAll(".select-list li");
+    const selectButtonTag = document.querySelector(".select-button");
 
-    // document.querySelector(".contents").addEventListener("click", () => {
-    //   selectGroup.classList.remove("select-open");
-    // });
-
-    selectEvent.forEach((item, i) => {
+    listLiTag.forEach((item, i) => {
       item.addEventListener("click", (e) => {
-        selectEvent[i].classList.remove("is-active");
         setTabNum(i);
-
-        item.classList.add("is-active");
-
-        if (openCheck) {
-          selectGroup.classList.remove("select-open");
-        } else {
-          selectGroup.classList.add("select-open");
-        }
-        e.target.className = "is-active";
+        selectButtonTag.textContent = item.textContent;
+        selectGroupTag.classList.remove("is-active");
       });
     });
   }, []);
+
+  const rewordDate = ["2018.05.02", "2019.06.01"];
 
   return (
     <article className="contents-details">
@@ -61,15 +50,13 @@ const TermsRewordPage = () => {
             </button>
           </div>
           <ul className="select-list">
-            <li>
-              <a href="#none">2018.05.02</a>
-            </li>
-            <li>
-              <a href="#none">2019.06.01</a>
-            </li>
+            {rewordDate.map((rewordDate, idx) => (
+              <li key={idx}>
+                <button type="button">{rewordDate}</button>
+              </li>
+            ))}
           </ul>
         </div>
-
         <article className="load-area">{content[tabNum]}</article>
       </div>
     </article>

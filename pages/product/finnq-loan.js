@@ -1,6 +1,6 @@
-import Layout from "../../components/Layout";
+import Layout from "/components/Layout";
 import { useState, useEffect } from "react";
-import Tabs from "../../components/Tabs";
+import Tabs from "/components/Tabs";
 import LoanComparePage from "./loan-tab/LoanComparePage";
 import LoanEmergencyPage from "./loan-tab/LoanEmergencyPage";
 import LoanSmartPage from "./loan-tab/LoanSmartPage";

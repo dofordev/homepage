@@ -1,6 +1,6 @@
-import Layout from "../../../components/Layout";
+import Layout from "/components/Layout";
 import { useState, useEffect } from "react";
-import Tabs from "../../../components/Tabs";
+import Tabs from "/components/Tabs";
 import TermsFinnqPage from "./service-tab/TermsFinnqPage";
 import TermsRewordPage from "./service-tab/TermsRewordPage";
 import TermsCooperatePage from "./service-tab/TermsCooperatePage";

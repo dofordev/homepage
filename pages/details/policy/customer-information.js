@@ -1,4 +1,4 @@
-import Layout from "../../../components/Layout";
+import Layout from "/components/Layout";
 import styles from "../../../styles/policy/FinnqPolicy.module.scss";
 
 export default function FinnqInsurance() {

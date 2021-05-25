@@ -91,8 +91,8 @@
 .notice-wrap .index dl dt {padding-top: 10px; line-height: 1.5; font-weight: bold;}
 .notice-wrap .index dl dd {padding-top: 5px; font-family: 'SpoqaR'; font-size: 14px; line-height: 1.5; color: #666;}
 .notice-wrap .index dl dd:first-of-type {padding-top: 10px;}
-.notice-wrap .sub-title {padding-top: 35px; font-family: 'SpoqaB'; font-size: 16px; color: #278df5; line-height: 1.3;}
-.notice-wrap .sub-text {padding-top: 30px; font-family: 'SpoqaB'; font-size: 16px; color: #666; line-height: 1.3;}
+.notice-wrap .sub-title {padding-top: 35px; font-family: 'SpoqaB'; font-size: 16px; color: #666; line-height: 1.3;}
+.notice-wrap .sub-text {padding-top: 30px; font-family: 'SpoqaR'; font-size: 16px; color: #666; line-height: 1.3;}
 .notice-wrap p {padding-top: 15px; font-family: 'SpoqaR'; font-size: 14px; line-height: 1.71; color: #666;}
 .notice-wrap li {font-family: 'SpoqaR'; font-size: 14px; line-height: 1.71; color: #666;}
 .notice-wrap .depth01 > li {padding-top: 10px;}
@@ -105,25 +105,47 @@
 * Select 
 ***************************************************/
 // 셀렉트 영역 불러오은 곳
-
-.select-group {text-align:right;}
-.select-group .select-design {display:inline-block; position:relative; width: 242px; height: 46px; border: 1px solid #e0e0e0; border-radius:4px; z-index:5; background-color: #fff; color:#999;}
+.select-group {position: relative; text-align:right;}
+.select-group .select-design {display:inline-block; position:relative; width: 240px; height: 100%; border: 1px solid #e0e0e0; border-radius:4px; z-index:5; background-color: #fff; color:#999;}
 .select-group .select-design:after {display:block; content: ''; position: absolute; right: 21px; top:16px; width:9px; height:9px; border-right:2px solid #222; border-bottom:2px solid #222; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
-.select-group.is-active .select-design:after {top: 15px; -webkit-transform: rotate(225deg); -ms-transform: rotate(225deg); transform: rotate(225deg);}
-.select-group .select-button {display:block; height:100%; font-family: 'SpoqaR'; font-size: 16px; color: #999; text-align: left; padding: 0 60px 0 20px; line-height: 45px; box-sizing:border-box;}
+.select-group.is-active .select-design:after {top:21px; -webkit-transform: rotate(225deg); -ms-transform: rotate(225deg); transform: rotate(225deg);}
+.select-group .select-button {display:block; width:100%; height:100%; font-family: 'SpoqaR'; font-size: 16px; color: #999; text-align: left; padding: 0 60px 0 20px; line-height: 45px; box-sizing:border-box;}
+.select-group.is-active .select-design {border-radius:4px 4px 0 0;}
 .select-group.is-active .select-button {background-color:#eee;}
-.select-group .select-list {display:none; position: absolute; top:45px; left: -1px; right: -1px; background: #fff; border: 1px solid #e0e0e0;}
+.select-group .select-list {display:none; position: absolute; top:45px; right:0; background: #fff; width:240px; border: 1px solid #e0e0e0;}
+.select-group.is-active .select-list {display:block;}
 .select-group .select-list:after {content: ''; display: block; clear: both;}
 .select-group .select-list li {position: relative; width: 100%;}
-.select-group .select-list li > * {display: block; }
+.select-group .select-list li > * {display: block; font-size:16px; color: #999;
+  text-align: left; font-family: 'SpoqaR'; height: 45px; line-height: 45px; padding: 0 60px 0 20px;}
 
 
 @media screen and (max-width:960px) {
-	.select-group {width: 220px; height: 40px; top:-10px; right:20px}	
+	.select-group {height: 40px;}	
+  .select-group .select-design button {line-height:38px; font-size: 14px; padding: 0 60px 0 12px;}
   .select-group .select-list {top:39px;}
-  .select-group .select-list li > * {font-size: 14px; padding: 0 12px; height: 40px; line-height: 38px;}  
+  .select-group .select-list li > * {font-size: 14px; padding: 0 12px; height: 40px; line-height: 38px;}
+  .select-group .select-design:after {top:13px;}
+  .select-group.is-active .select-design:after {top:17px;}
 }
 
 
+/**************************************************
+* table 
+***************************************************/
+// 가로타입 Table
+.table-row table { width: 100%; border-bottom: 1px solid #d4d4d4; border-collapse: collapse; }
+.table-row table tbody th { padding: 13px 10px; height: 30px; border-top: 1px solid #d4d4d4; background: #f9f9f9; color: #999; text-align: left; line-height: 1.3; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: normal; }
+.table-row table tbody td { padding: 13px 10px; height: 30px; border-top: 1px solid #d4d4d4; text-align: left; line-height: 1.3; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+// 세로타입 Table
+.table-col {overflow: hidden;}
+.table-col {margin-left: -1px;}
+.table-col table { width: 100%; border-bottom: 1px solid #d4d4d4; border-collapse: collapse; margin-left: -1px; box-sizing:border-box;}
+.table-col th, .table-col td { font-weight: normal; color: #444; text-align: center; border-top: 1px solid #d4d4d4; border-left: 1px solid #d4d4d4; -webkit-box-sizing: border-box; box-sizing: border-box; font-family:"SpoqaL";}
+.table-col th { background: #f9f9f9; color: #999; line-height: 30px; }
+.table-col td {padding:5px; text-align: left; line-height: 1.4; vertical-align: top;}
+@media screen and (max-width:960px) {
+
+}
 

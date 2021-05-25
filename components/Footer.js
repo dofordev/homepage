@@ -37,7 +37,7 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <a href="/details/hfg/vision_group">하나금융그룹</a>
+            <a href="/details/hfg/vision-group">하나금융그룹</a>
           </li>
         </ul>
         <div className="info">
