@@ -51,19 +51,44 @@ export default function TwoPlusCard(){
                 </div>
             </div>
             <div className="desc-wrap">
-                <h4 className="visual-title">
-                    청구할인 혜택
-                </h4>
                 <div className="item-desc">
-                    <section className={"desc-info"}>
-ㅁㄴㅇ
-                    </section>
-                    <section className={"desc-info"}>
-ㅇㅇㅇ
-                    </section>
-                    <section className={"desc-info"}>
-ㅇㅇㅇ
-                    </section>
+                    <h4 className="visual-title">
+                        청구할인 혜택
+                    </h4>
+                </div>
+                <div className={`mt-36 mb-79`}>
+                    <div className={`item-desc`}>
+                        <section className={"desc-info"}>
+                            <div className={`${styles["benefit-wrap"]} ${styles["benefit-movie"]}`}>
+                                <dl>
+                                    <dt>영화 <mark>3,000</mark>원 할인</dt>
+                                    <dd><mark>CGV</mark>, 메가박스, 롯데시네마</dd>
+                                </dl>
+                            </div>
+                        </section>
+                        <section className={"desc-info"}>
+                            <div className={`${styles["benefit-wrap"]} ${styles["benefit-coffee"]}`}>
+                                <dl>
+                                    <dt>커피전문점 <mark>5%</mark> 할인</dt>
+                                    <dd>스타벅스, 커피빈, 엔제리너스,<br />
+                                        할리스커피, 카페베네
+                                    </dd>
+                                </dl>
+                            </div>
+                        </section>
+                        <section className={"desc-info"}>
+                            <div className={`${styles["benefit-wrap"]} ${styles["benefit-restaurant"]}`}>
+                                <dl>
+                                    <dt>패밀리 레스토랑<br /><mark>10%</mark> 할인</dt>
+                                    <dd>아웃백, <mark>TGIF</mark></dd>
+                                </dl>
+                            </div>
+                        </section>
+                    </div>
+                    <dl className={`${styles["deli-wrap"]}`}>
+                        <dd className={`${styles["deli-txt"]}`}>※ 준법심의 19-0397 (2019.03.21 ~ 2020.03.20)</dd>
+                        <dd className={`${styles["deli-txt"]} mt-6`}>※ 여신금융협회 심의필 제 2019-C1h-02558호(2019.03.28)</dd>
+                    </dl>
                 </div>
             </div>
 

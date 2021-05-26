@@ -113,11 +113,52 @@
   background-size: 400px 370px;
 }
 
-.two-plus-card-wrap .guide-desc{
+.wave-card-wrap .visual{
+  background: url(/images/product/card/wave-card/img_wavve_visual1.png) no-repeat right 140px bottom 48px;
+  background-size: 400px 370px;
+  height: 100%;
+}
+
+
+.two-plus-card-wrap .guide-desc, .wave-card-wrap .guide-desc{
   display:inline-block;
   margin-right: 80px;
 }
 
-
-
-
+.benefit-movie{
+  min-width: 310px;
+  background: url(/images/product/card/two-plus-card/ico_benefit_movie.png) no-repeat 9px 0;
+  background-size: 64.5px 100px;
+  padding: 20px 20px 20px 103px;
+  height: 100px;
+}
+.benefit-coffee{
+  min-width: 335px;
+  background: url(/images/product/card/two-plus-card/ico_benefit_coffee.png) no-repeat 11.5px 0;
+  background-size: 68.5px 100px;
+  padding: 0 20px 0 103px;
+  height: 100px;
+}
+.benefit-restaurant{
+  min-width: 256px;
+  background: url(/images/product/card/two-plus-card/ico_benefit_restaurant.png) no-repeat 0 0;
+  background-size: 80px 100px;
+  padding: 0 20px 0 103px;
+  height: 100px;
+}
+.benefit-wrap dt{
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: #222;
+  font-family: 'SpoqaR';
+}
+.benefit-wrap dd{
+  margin-top: 14px;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -1px;
+  color: #666;
+  font-family: 'SpoqaR';
+  word-break: keep-all;
+}
