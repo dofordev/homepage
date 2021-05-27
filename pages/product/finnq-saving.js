@@ -63,7 +63,7 @@ export default function FinnqmarketCard() {
           <section className="contents-head">
             <p className="title">예적금</p>
             <em className="desc">
-              오직 핀크에서만 누릴 수asdasdasd 있는 특별한 금융상품 aaaa
+              오직 핀크에서만 누릴 수 있는 특별한 금융상품
             </em>
           </section>
 
