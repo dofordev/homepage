@@ -8,7 +8,7 @@ const LoanComparePage = () => {
       <div className={`${styles["visual"]} contents-visual`}>
         <p className="visual-title">
           같은 상품을 <br className="mobile"></br>다른 금리로 제공하는
-          <br></br>대출 비교 서비스 test
+          <br></br>대출 비교 서비스
         </p>
         <div className={styles["inner-box"]}>
           <p scope="row" className={styles["text-wrap"]}>
@@ -26,12 +26,12 @@ const LoanComparePage = () => {
           </Link>
 
           <div className={`${styles["compare--btn-wrap"]} app-down`}>
-            <Link href="#none" className="btn btn-google">
+            <a href="#none" className="btn btn-google">
               <span>Google Play</span>
-            </Link>
-            <Link href="#none" className="btn btn-apple">
+            </a>
+            <a href="#none" className="btn btn-apple">
               <span>App Store</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

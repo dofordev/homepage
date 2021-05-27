@@ -15,7 +15,8 @@ html.preventScroll body {overflow-y: hidden;}
 * header
 ****************************************************/
 .header {@include position($p:fixed, $t:0, $l:0); width: 100%; height: 100px; z-index: 10;}
-.header .header-logo {float: left; margin: 38px 0 0 0; width: 80px; height: 24px; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 80px 25px; text-indent: -999em;}
+.header .header-logo {float: left; width: 80px; height: 24px;}
+.header .header-logo a {display:inline-block; width:100%; height:100%; margin: 38px 0 0 0; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 80px 25px; text-indent: -999em;}
 .header .nav {float: right; margin: 38px 0 0 0; font-size: 16px;}
 .header .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new.png) no-repeat 0 0; background-size: 100% auto;}
 .header .nav .nav-list li {float: left;}
@@ -28,7 +29,7 @@ html.preventScroll body {overflow-y: hidden;}
 
 // 해더 고정(mouseenter 효과)
 .header.fixed {position:fixed;background:rgba(255, 255, 255, 0.9);box-shadow: 0 2px 5px 0 rgba(125, 125, 125, 0.3);}
-.header.fixed .header-logo {background-image:url(/images/common/finnq_logo_color.png);}
+.header.fixed .header-logo a {background-image:url(/images/common/finnq_logo_color.png);}
 .header.fixed .nav .nav-list li a {color:#222}
 .header.fixed .nav .nav-list li a:hover,
 .header.fixed .nav .nav-list li a:focus {color:#5008b2;}
