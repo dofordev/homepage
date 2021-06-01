@@ -1,14 +1,20 @@
 import React from "react";
 import styles from "../../../styles/product/FinnqLoan.module.scss";
 
-const SavingHabitSavingPage = () => {
+const SavingKDBXThigh5InstallmentSavings = () => {
   return (
     <article className="contents-details">
       <div className="contents-visual">
         <p className="visual-title">
-          습관이 돈이
+          상식을 뛰어넘는
           <br />
-          되는 방법
+          <span class="cl_r">
+            최대{" "}
+            <em>
+              연 <mark>5.0%</mark>
+            </em>{" "}
+            자유적금
+          </span>
         </p>
       </div>
       <div className="desc-wrap">
@@ -20,8 +26,7 @@ const SavingHabitSavingPage = () => {
       <div className="desc-wrap">
         <div className="item-desc">detail 3</div>
       </div>
-    </article>
-  );
+    </article>  );
 };
 
-export default SavingHabitSavingPage;
+export default SavingKDBXThigh5InstallmentSavings;

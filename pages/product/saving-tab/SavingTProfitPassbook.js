@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../../styles/product/FinnqLoan.module.scss";
 
-const SavingTProfitPassbookPage = () => {
+const SavingTProfitPassbook = () => {
   return (
     <article className="contents-details">
       <div className="contents-visual">
@@ -24,4 +24,4 @@ const SavingTProfitPassbookPage = () => {
   );
 };
 
-export default SavingTProfitPassbookPage;
+export default SavingTProfitPassbook;
