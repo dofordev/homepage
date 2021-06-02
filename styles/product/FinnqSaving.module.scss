@@ -44,13 +44,36 @@
   margin-left: 10px;
 }
 
-.step-list-guide li::before {
+.step-list-guide.unordered-list:before {
+  position: absolute;
+  height: calc(100% - 47px);
+  content: "";
+  border-left: 1px dashed #8848ff;
+  top: 9px;
+  left: -1px;
+  bottom: 38px;
+}
+
+.step-list-guide li {
+  margin-left: 10px;
+}
+
+.step-list-guide.list-item {
   z-index: 5;
   top: 7px;
   background: #8848ff;
   width: 12px;
   height: 12px;
   left: -7px;
+}
+
+.step-list-guide li:after {
+  z-index: 10;
+  top: 10px;
+  background: #fff;
+  width: 6px;
+  height: 6px;
+  left: -4px;
 }
 
 .step--list__guide ul {
@@ -78,6 +101,29 @@
 .desc-img {
   margin-top: 20px;
 }
+
+br.notMobile {
+  display:block;
+}
+
+@media screen and (max-width: 960px) {
+  br.notMobile {
+    display:none;
+    line-height: 18px;
+  }
+
+  .container .guide-desc {
+    font-size: 14px;
+  }
+
+  .desc-info .desc-test1 {
+    width: 100%;
+    border: 1px solid red;
+    background-color: #5008b2;
+  }
+}
+
+
 
 /*
 .txt-desc{

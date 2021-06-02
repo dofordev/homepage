@@ -20,7 +20,7 @@ export default function SavingHabitSaving() {
                     <dt className={styles["guide-title"]}>습관저금이란?</dt>
                     <dd className={`${styles["guide-desc"]} pt-17`}>
                         자주 소비하는 카테고리를 지정하면, 해당 카테고리 카드 결제 시
-                        <br className="mobile" ></br>
+                        <br className={styles["notMobile"]} ></br>
                         핀크머니에서 습관저금으로 자동 저금
                     </dd>
                 </dl>
@@ -33,8 +33,9 @@ export default function SavingHabitSaving() {
                             나만의 맞춤 저금 트레이닝
                         </h4>
                     </section>
-                    <section className={"desc-info"}>
+                    <section className={`${styles["desc-info"]} desc-info`}>
                         <Image
+                            className={`${styles["desc-test1"]}`}
                             src="/images/product/saving/saving-habitsaving/img_habit_saving2.png"
                             alt="탁월, 우수, 평균, 주의필요, 경고의 5단 단계 중 2단계인 우수."
                             width={400}
@@ -49,9 +50,9 @@ export default function SavingHabitSaving() {
                         <h4 className="visual-title">
                             습관저금 만들기
                         </h4>
-                        <div className={"step-list-guide"}>
-                            <ul className={`${styles['step--list__guide']}`}>
-                                <li>자주쓰는 카드 연결</li>
+                        <div className={`${styles['step-list-guide']} step-list-guide`}>
+                            <ul className={`${styles['step-list-guide']} ${styles['unordered-list']}`}>
+                                <li className={`${styles['step-list-guide']} ${styles['list-item']}`} >자주쓰는 카드 연결</li>
                                 <li>6가지 습관 중 나의 소비 스타일에 맞는 카테고리 선택
                                     <div className={"desc-img"}>
                                         <Image
