@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    // getWindowSize();
+    getWindowSize();
     window.addEventListener("resize", getWindowSize);
     return () => window.removeEventListener("resize", getWindowSize);
   }, []);
@@ -112,6 +112,9 @@ export default function Header() {
             <li>
               <Link href="/product/finnq-insurance">보험 맞춤 추천</Link>
             </li>
+            <li>
+              <Link href="/proposal/finnq-proposal">마이데이터 제휴</Link>
+            </li>
             <li className="cerfi">
               <Link href="/details/cert/finnq-cert">공인인증센터</Link>
             </li>
@@ -123,7 +126,7 @@ export default function Header() {
           </button>
         </nav>
         <div className="m-gnb" ref={mobileNavRef}>
-          <a href="index.html" className="m-gnb-logo">
+          <a href="/" className="m-gnb-logo">
             <span className="blind">finnq</span>
           </a>
           <div className="m-gnb-inner">
@@ -152,6 +155,9 @@ export default function Header() {
                   </li>
                   <li>
                     <Link href="/product/finnq-insurance">보험 맞춤 추천</Link>
+                  </li>
+                  <li>
+                    <Link href="/proposal/finnq-proposal">마이데이터 제휴</Link>
                   </li>
                 </ul>
               </li>

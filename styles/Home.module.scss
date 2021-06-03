@@ -48,6 +48,16 @@
 .swiper-main--custom .arrow-cont:after {position: absolute; right: 0; top: 50%; margin-top: -25px; width: 50px; height: 50px; content: ""; background: url(/images/main/ico_slide_arrow.png) no-repeat 0 0; background-size: 100% auto;
 }
 
+
+// 레이어 팝업 
+.layer-content {position:relative; top:180px; display:inline-block; vertical-align:middle;padding-top:10px; height:589px; border:1px solid #222; box-sizing:border-box; -webkit-box-shadow: 0px 2px 15px rgba(0,0,0,0.5); box-shadow: 0px 2px 15px rgba(0,0,0,0.5); background-color:#fff;}
+.layer-content .layer-img {padding: 0 40px; height: 524px;}
+.layer-content .layer-img img {height:100%;}
+.layer-content .btn-wrap {}
+.layer-content .btn-wrap span {display:inline-block; position: relative; font-size:0;}
+.layer-content .btn-wrap span:first-of-type {padding-right:22px; margin-right:22px;}
+.layer-content .btn-wrap span:first-of-type:after {position:absolute; top:50%; right:0; margin-top:-5px; content:'';  width: 1px; height: 10px; background:#c8c8c8;}
+.layer-content .btn-wrap button {font-size:16px; cursor: pointer;}
 @media screen and (max-width: 960px) {
   .main-inner {height: 600px; padding: 185px 0;}
   .main-desc {font-size: 16px; line-height: 22px; letter-spacing: -1px; margin-bottom:28px;}

@@ -3,7 +3,7 @@ import Layout from "/components/Layout";
 import styles from "/styles/Home.module.scss";
 import importScript from "/components/ImportScript";
 import Image from "next/image";
-
+import styled, { css } from "styled-components";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -54,6 +54,16 @@ const videoPlayerFunc = () => {
   };
 };
 
+const MainLayerPop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 5;
+`;
+
 export default function Home() {
   const listRef = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -70,8 +80,78 @@ export default function Home() {
   importScript("https://www.youtube.com/iframe_api");
   videoPlayerFunc();
 
+  const [showModal, setShowModal] = useState(false);
+
+  function setCookieMobile(name, value, expiredays) {
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie =
+      name +
+      "=" +
+      escape(value) +
+      "; path=/; expires=" +
+      todayDate.toGMTString() +
+      ";";
+  }
+
+  useEffect(() => {
+    let cookiedata = document.cookie;
+    if (cookiedata.indexOf("todayCookie=done") < 0) {
+      setShowModal(true);
+    } else {
+      setShowModal(false);
+    }
+  }, []);
+
+  const headleMakeCookie = () => {
+    setCookieMobile("todayCookie", "done", 1);
+    setShowModal(false);
+  };
+  const headlePopupClose = () => setShowModal(false);
+
   return (
     <Layout>
+      {showModal && (
+        <MainLayerPop>
+          <div className={styles["layer-content"]}>
+            <div className={styles["layer-img"]}>
+              <img src="/images/main/img_main_popup.png" alt=""></img>
+            </div>
+            <div className="blind">
+              <h1>금융위원회 혁신금융 서비스 선정</h1>
+              <p>
+                핀크가 통신신용평가를 활용하여 대출비교서비스를 제공하는
+                혁신금융서비스 사업자로 선정되었습니다. 통신서비스 이용정보를
+                통해 더 많은 혜택을, 금융거래 정보가 없는 고객에게 차별 없는
+                금융생활을 제공하기 위한 노력의 결과입니다. 오늘의 혁신에 이어
+                내일의 혁신도 끊임없이 추구하여 어려운 금융의 벽을 허무는
+                도전하는 기업이 되겠습니다. 감사합니다.
+              </p>
+            </div>
+            <div className={styles["btn-wrap"]}>
+              <span>
+                <button
+                  type="button"
+                  className={styles["btn-today"]}
+                  onClick={headleMakeCookie}
+                >
+                  오늘 하루 열지 않기
+                </button>
+              </span>
+              <span>
+                <button
+                  type="button"
+                  className={styles["btn-close"]}
+                  onClick={headlePopupClose}
+                >
+                  닫기
+                </button>
+              </span>
+            </div>
+          </div>
+        </MainLayerPop>
+      )}
+
       <div>
         <section>
           <div className={styles["main-inner"]}>
