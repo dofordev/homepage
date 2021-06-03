@@ -10,13 +10,12 @@
 html.preventScroll, 
 html.preventScroll body {overflow-y: hidden;}
 
-
 /***************************************************
 * header
 ****************************************************/
 .header {@include position($p:fixed, $t:0, $l:0); width: 100%; height: 100px; z-index: 10;}
 .header .header-logo {float: left; width: 80px; height: 24px;}
-.header .header-logo a {display:inline-block; width:100%; height:100%; margin: 38px 0 0 0; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 80px 25px; text-indent: -999em;}
+.header .header-logo a {display:inline-block; width:100%; height:100%; margin: 38px 0 0 0; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 100% auto; text-indent: -999em;}
 .header .nav {float: right; margin: 38px 0 0 0; font-size: 16px;}
 .header .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new.png) no-repeat 0 0; background-size: 100% auto;}
 .header .nav .nav-list li {float: left;}
@@ -39,13 +38,25 @@ html.preventScroll body {overflow-y: hidden;}
 
 @media screen and (max-width: 960px) {
   .header {position: absolute;}
-  .header .header-logo {@include position($t:10px, $l:50%); margin: 0 0 0 -30px; width: 60px; background-size: 60px auto; }
+  .header .header-logo {@include position($t:10px, $l:50%); width: 60px;}
+  .header .header-logo a {margin: 0 0 0 -30px;}
   .nav {display: none;}
-  .m-gnb {display: none; -webkit-transform: translate3d(-100%, -100%, 0);
-    transform: translate3d(-100%, 0, 0);  @include position($p:fixed, $t:0, $b:0, $l:0); width: 240px; background: #fff; z-index: 999; height: auto; max-height: 100%; overflow: auto;}
-  .m-gnb.is-active {display:block; animation: fadeDownRight 1.5s forwards; -webkit-animation: fadeDownRight 1s forwards; overflow: hidden;}
+  .m-gnb {display: none; @include position($p:fixed, $t:0, $b:0, $l:0); width: 240px; background:#fff; z-index: 500; height: auto; max-height: 100%; -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);}
+  .m-gnb.is-active {display:block; animation: slideInLeft 0.8s forwards; -webkit-animation: slideInLeft 0.8s forwards;}
+  .m-gnb.is-active.is-closed {animation: menuClose 0.8s forwards; -webkit-animation: menuClose 0.8s forwards;}  
+  @keyframes menuClose {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }  
+    to {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;      
+    }
+  }
 
-  
 
   .m-nav {display: block; margin: 8px 0 0 -8px;}
   .m-nav .btn-nav {position: relative; outline: none; width: 34px; height: 34px; text-indent:-999em;}
@@ -77,8 +88,8 @@ html.preventScroll body {overflow-y: hidden;}
     justify-content: space-between;}
   .m-gnb .m-sns ul li {float: left;width: 50px;height: 50px;}
   .m-gnb .m-sns .btn-sns {display: inline-block; width: 50px; height: 50px; text-indent: -999em; background-repeat:no-repeat; background-position:50% 50%; background-size:cover;}
-  .m-gnb .m-sns .btn-sns.fb {background-image:url(/images/common/btn_gnb_fb.png);}
-  .m-gnb .m-sns .btn-sns.insta {background-image:url(/images/common/btn_gnb_insta.png);}
+  .m-gnb .m-sns .btn-sns.facebook {background-image:url(/images/common/btn_gnb_fb.png);}
+  .m-gnb .m-sns .btn-sns.Instagram {background-image:url(/images/common/btn_gnb_insta.png);}
   .m-gnb .m-sns .btn-sns.blog {background-image:url(/images/common/btn_gnb_blog.png);}
   .m-gnb-deem {display: none; top: 0; bottom: 0; left: 0; right: 0; position: fixed; background: rgba(0, 0, 0, 0.3); z-index: 99;}
   .m-gnb-deem.is-active {display:block;}
@@ -111,8 +122,9 @@ html.preventScroll body {overflow-y: hidden;}
 .footer .family {@include position($t:0, $r:40px); z-index: 1; width: 210px;}
 .footer .family .btn-family {display: block; position: relative; padding: 0 0 0 9px; font-family: 'SpoqaR'; font-size: 14px; color: #666; z-index: 1; border: 1px solid rgba(102, 102, 102, 0.5); line-height: 30px; background-color: rgba(255, 255, 255, 0.1); box-sizing: border-box; width: 100%; text-align: left;}
 .footer .family .btn-family:before {@include common__after($t:-1px, $r:-1px); width: 32px; height: 32px; background: #666 url(/images/common/ico_family_arrow.png) no-repeat 50% 50%}
-.footer .family .family-list {display:none; opacity:0; position: absolute; bottom: 100%; left: 0; width: 100%; animation: fadeOut 1.5s forwards; -webkit-animation: fadeOut 1.5s forwards; z-index:-1;}
-.footer .family .family-list.is-active {display:block; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards;}
+.footer .family .family-list {display:none; opacity:0; position: absolute; bottom: 100%; left: 0; width: 100%; z-index:-1;}
+.footer .family .family-list.is-active.is-closed {animation: fadeOut 1s forwards; -webkit-animation: fadeOut 1s forwards;}
+.footer .family .family-list.is-active {display:block; animation: fadeIn 1s forwards; -webkit-animation: fadeIn 1s forwards;}
 .footer .family .family-list li {margin: 0 0 -1px 0;}
 .footer .family .family-list li > * {display: block; position: relative; padding: 0 0 0 9px; font-family: 'SpoqaR'; font-size: 14px; color: #666; border: 1px solid #3d3d3d; line-height: 30px; background-color: #222;}
 .footer .sns-wrap {@include position($r:70px,$b:0);}

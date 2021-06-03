@@ -36,7 +36,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    getWindowSize();
+    // getWindowSize();
     window.addEventListener("resize", getWindowSize);
     return () => window.removeEventListener("resize", getWindowSize);
   }, []);
@@ -48,6 +48,7 @@ export default function Header() {
 
   // Web 메뉴일 때 이벤트 공통(focus, hover)
   const eventIn = () => {
+    getWindowSize();
     let isScroll = headerRef.current.classList.contains("is-scroll");
     if (!isMobile && !isScroll) {
       headerRef.current.classList.add("fixed");
@@ -67,9 +68,13 @@ export default function Header() {
     document.querySelector("html").classList.add("preventScroll");
   };
   const isMobileMenuClose = () => {
-    mobileNavRef.current.classList.remove("is-active");
-    mobileDimRef.current.classList.remove("is-active");
-    document.querySelector("html").classList.remove("preventScroll");
+    mobileNavRef.current.classList.add("is-closed");
+    setTimeout(function () {
+      mobileNavRef.current.classList.remove("is-closed");
+      mobileNavRef.current.classList.remove("is-active");
+      mobileDimRef.current.classList.remove("is-active");
+      document.querySelector("html").classList.remove("preventScroll");
+    }, 810);
   };
 
   return (
@@ -155,34 +160,34 @@ export default function Header() {
           <div className="m-sns">
             <ul>
               <li>
-                <Link
+                <a
                   href="https://www.facebook.com/Finnq.official/"
-                  className="btn-sns fb"
+                  className="btn-sns facebook"
                   target="_blank"
                   title="새창 열림"
                 >
                   페이스북 공유하기
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="https://www.instagram.com/finnq_official/"
-                  className="btn-sns insta"
+                  className="btn-sns Instagram"
                   target="_blank"
                   title="새창 열림"
                 >
                   인스타그램 공유하기
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="https://post.naver.com/finnq"
                   className="btn-sns blog"
                   target="_blank"
                   title="새창 열림"
                 >
                   네이버블로그 공유하기
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

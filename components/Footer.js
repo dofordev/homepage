@@ -2,7 +2,17 @@ import Link from "next/link";
 
 export default function Footer() {
   const menuActive = () => {
-    document.querySelector(".family-list").classList.toggle("is-active");
+    const footerMenuTag = document.querySelector(".family-list");
+    let activeCheck = footerMenuTag.classList.contains("is-active");
+    if (!activeCheck) {
+      footerMenuTag.classList.add("is-active");
+    } else {
+      footerMenuTag.classList.add("is-closed");
+      setTimeout(function () {
+        footerMenuTag.classList.remove("is-closed");
+        footerMenuTag.classList.remove("is-active");
+      }, 1050);
+    }
   };
 
   return (

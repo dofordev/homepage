@@ -1,6 +1,16 @@
 @charset 'UTF-8';
 
 @font-face { 
+  font-family: 'SpoqaT'; 
+  src: local("※"),
+  // url("/fonts/Spoqa_Han_Sans_Light.woff2") format("woff2"),
+  url("/fonts/Spoqa_Han_Sans_Thin.woff") format("woff"),
+  url("/fonts/Spoqa_Han_Sans_Thin.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+}
+
+@font-face { 
   font-family: 'SpoqaL'; 
   src: local("※"),
   // url("/fonts/Spoqa_Han_Sans_Light.woff2") format("woff2"),
