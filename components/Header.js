@@ -205,7 +205,11 @@ export default function Header() {
             <span className="blind">닫기</span>
           </button>
         </div>
-        <div className="m-gnb-deem" ref={mobileDimRef}></div>
+        <div
+          className="m-gnb-deem"
+          ref={mobileDimRef}
+          onClick={isMobileMenuClose}
+        ></div>
       </div>
     </header>
   );

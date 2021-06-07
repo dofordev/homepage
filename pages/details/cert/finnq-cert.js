@@ -67,7 +67,10 @@ export default function FinnqCert() {
                     <p className={styles["means"]}>
                       우측 ‘공동인증서 복사하기’ 버튼 클릭
                     </p>
-                    <a href="#none" onclick="certificateBtn();">
+                    <a
+                      href="/cert/install/install.html"
+                      onClick="certificateBtn();"
+                    >
                       <button type="button" className={styles["g-btn"]}>
                         공동인증서 복사하기
                       </button>

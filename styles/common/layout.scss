@@ -19,7 +19,7 @@ html.preventScroll body {overflow-y: hidden;}
 .header .nav {float: right; margin: 38px 0 0 0; font-size: 16px;}
 .header .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new.png) no-repeat 0 0; background-size: 100% auto;}
 .header .nav .nav-list li {float: left;}
-.header .nav .nav-list li a {position: relative; display: block; padding: 0 20px; font-family: 'SpoqaB'; font-size: 18px; line-height: 18px; color: #fff;}
+.header .nav .nav-list li a {position: relative; display: block; padding: 0 15px; font-family: 'SpoqaB'; font-size: 18px; line-height: 18px; color: #fff;}
 .header .nav .nav-list li a:after {display: inline-block; @include position($t: 1px, $r: 0); width: 1px; height: 15px; background: rgba(255, 255, 255,0.3); content: '';}
 .header .nav .nav-list .cerfi > a {padding-right: 26px; background: url(/images/common/ico_cerfi.png) no-repeat 100% 50%; background-size: 16px auto; font-family: 'SpoqaR'; font-size: 16px; line-height: 17px;}
 .m-gnb,

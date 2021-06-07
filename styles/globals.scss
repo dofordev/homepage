@@ -16,26 +16,27 @@
 /***************************
 * CSS Default
 ****************************/
-*, *:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; }
-html, body { height: 100%; min-height: 100%; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; font-size: 100%; line-height: 1.4; text-decoration: none; color: #222; vertical-align: middle; -webkit-font-smoothing: antialiased; background: #fff; }
-body { -webkit-text-size-adjust: none; letter-spacing: -0.05em; }
+*, *:before, *:after {-webkit-box-sizing: border-box; box-sizing: border-box;}
+button, a {cursor: pointer;}
+html, body {height: 100%; min-height: 100%; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; font-size: 100%; line-height: 1.4; text-decoration: none; color: #222; vertical-align: middle; -webkit-font-smoothing: antialiased; background: #fff;}
+body {-webkit-text-size-adjust: none; letter-spacing: -0.05em;}
 /*뷰표트 변환시 폰트크기 자동확대 방지*/
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button { font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; margin: 0; padding: 0; /*font-size:14px;*/ letter-spacing: -1px; font-weight: normal; font-style: normal; -webkit-font-smoothing: antialiased; }
-address, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, section { display: block; margin: 0; padding: 0; }
-figcaption { display: block; width: 0; height: 0; position: absolute; top: -9999px; font-size: 0; text-indent: -9999px; }
-hr, caption, legend { display: none; text-indent: -999px; }
-h1, h2, h3, h4, h5, h6 { font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; letter-spacing: inherit; word-break: break-all; white-space: normal; }
-fieldset, img { border: none; vertical-align: middle; }
-ol, ul, li, dl, dt, dd { font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; list-style: none; word-break: break-all; white-space: normal; }
-table, th, td { border: 0px; border-spacing: 0px; border-collapse: collapse; word-break: break-all; white-space: normal; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; }
-table { width: 100%; }
-fieldset, iframe { width: 100%; border: 0px; }
-em, i, address, strong { font-style: normal; font-weight: normal; word-break: break-all; white-space: normal; }
-button, a, select, input, label { border: none; background: none; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; letter-spacing: inherit; vertical-align: middle; word-break: break-all; white-space: normal; }
-button::-moz-focus-inner { padding: 0px; }
-strong { font-family: 'SpoqaB'; }
-button, a { -webkit-tap-highlight-color: rgba(0, 0, 0, 0.18); }
-a, a:hover, a:focus, a:active, a:visited, a:link { font-family: inherit; text-decoration: none; word-break: break-all; white-space: normal;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; margin: 0; padding: 0; /*font-size:14px;*/ letter-spacing: -1px; font-weight: normal; font-style: normal; -webkit-font-smoothing: antialiased;}
+address, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, section {display: block; margin: 0; padding: 0;}
+figcaption {display: block; width: 0; height: 0; position: absolute; top: -9999px; font-size: 0; text-indent: -9999px;}
+hr, caption, legend {display: none; text-indent: -999px;}
+h1, h2, h3, h4, h5, h6 {font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; letter-spacing: inherit; word-break: break-all; white-space: normal;}
+fieldset, img {border: none; vertical-align: middle;}
+ol, ul, li, dl, dt, dd {font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; list-style: none; word-break: break-all; white-space: normal;}
+table, th, td {border: 0px; border-spacing: 0px; border-collapse: collapse; word-break: break-all; white-space: normal; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif;}
+table {width: 100%;}
+fieldset, iframe {width: 100%; border: 0px;}
+em, i, address, strong {font-style: normal; font-weight: normal; word-break: break-all; white-space: normal;}
+button, a, select, input, label {border: none; background: none; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; letter-spacing: inherit; vertical-align: middle; word-break: break-all; white-space: normal;}
+button::-moz-focus-inner {padding: 0px;}
+strong {font-family: 'SpoqaB';}
+button, a {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.18);}
+a, a:hover, a:focus, a:active, a:visited, a:link {font-family: inherit; text-decoration: none; word-break: break-all; white-space: normal;}
 
 /****************************************************
 * 공통 요소 정의 
@@ -110,35 +111,35 @@ br.mobile {display:none;}
   @for $i from $start through $end {
     $value : $i + 0;
     $size : append($size, $value);
-  }
+}
   @return $size;
 }
 @function getPx($value) {
   @if $value == 0 {
     @return $value;
-  } @else {
+} @else {
     @return $value + 0px;
-  }
+}
 }
 $size : size(0, 100);
 $position : ('l':'left', 'r':'right', 't':'top', 'b':'bottom');
 $nameMap : ('m':'margin', 'p':'padding');
 /**
-  m-0 : { margin : 0; }
-  mt-1 : { margin-top : 1px; }
+  m-0 : { margin : 0;}
+  mt-1 : { margin-top : 1px;}
 */
 @mixin generate($nameMap : (), $position : (), $size : ()) {
   @each $preKey, $preValue in $nameMap {
     @each $px in $size {
       .#{$preKey}-#{$px} {
         #{$preValue} : getPx($px);
-      }
+    }
       @each $sufKey, $sufValue in $position {
         .#{$preKey}#{$sufKey}-#{$px} {
           #{$preValue}-#{$sufValue} : getPx($px);
-        }
       }
     }
   }
+}
 }
 @include generate($nameMap, $position, $size);

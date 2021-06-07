@@ -1,7 +1,27 @@
 /********************************
 * 업무 제휴 
 *********************************/
-#proposal .aaa {background-color:red;}
+#proposal .aaa {}
+.input-txt {background-color:#fff; border-radius:4px;}
+.error-message {color:red;}
+
+.btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
+.btn-data--submit:disabled {background-color:#aaa;}
+
+.btn-proposal {border:1px solid black; padding:8px 16px; border-radius:4px;;}
+
+.swiper-proposal--custom {}
+.swiper-proposal--custom .swiper-cont {background-color:blue;}
+
+
+.layer-content {width: 500px; margin: 0 auto; border: 1px solid black; text-align:center;}
+.layer-content .btn-layer {border:1px solid #aaa; padding:8px 15px; text-align: center;}
+
+.checkbox--wrap {position: relative;}
+.checkbox--wrap .custom-checkbox {display:inline-block; width:25px; height:25px; background-color:#eee;}
+.checkbox--wrap  input[type=checkbox]:checked ~ .custom-checkbox {background-color: red;}
+.checkbox--wrap input[type=checkbox] {opacity:0; width:0; height:0;}
+
 @media screen and (max-width: 960px) {
   
 }
