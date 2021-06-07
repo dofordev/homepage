@@ -1,47 +1,34 @@
 @charset "UTF-8";
 
-.container .visual{
-  height: 463px;
-
-}
-.container .guide-title{
-  padding-bottom: 18px;
-  padding-top:100px;
-  width: calc(50% - 40px);
-  border-bottom: 1px solid #e0e0e0;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -1px;
-  color: #222;
-  font-family: 'SpoqaB';
+/********************************
+* 예적금 탭: 공통
+*********************************/
+br.notMobile {
+  display:block;
 }
 
-.container .guide-desc{
-  margin-right: 4.5%;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -1px;
-  color: #666;
-  font-family: 'SpoqaR';
+@media screen and (max-width: 960px) {
+  br.notMobile {
+    display:none;
+    line-height: 18px;
+  }
 }
 
-.finnq-saving-wrap .visual{
-  background: url(/images/product/saving/saving-habitsaving/img_habit_saving1.png) no-repeat right 95px bottom 48px;
+
+
+
+
+/********************************
+* 예적금 탭: 습관저금
+*********************************/
+.saving-habit .visual{
+  background: url(/images/product/saving/saving-habitsaving/img_habit_saving1.png) no-repeat right 110px bottom 48px;
   background-size: 400px 370px;
 }
 
-.cont-wrap {
-  position: relative;
-  overflow: hidden;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-top: 0;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
 .step-list-guide {
-  margin-left: 10px;
+  position: relative;
+  margin-left: 5px;
 }
 
 .step-list-guide.unordered-list:before {
@@ -50,21 +37,42 @@
   content: "";
   border-left: 1px dashed #8848ff;
   top: 9px;
-  left: -1px;
+  left: 0px;
   bottom: 38px;
 }
 
 .step-list-guide li {
-  margin-left: 10px;
+  position: relative;
+  margin-top: 40px;
+  padding-left: 20px;
+  font-size: 20px;
+  word-break: keep-all;
 }
 
-.step-list-guide.list-item {
+.step-list-guide.list-item:before {
   z-index: 5;
   top: 7px;
   background: #8848ff;
   width: 12px;
   height: 12px;
-  left: -7px;
+  left: -11px;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.step-list-guide.list-item:after {
+  z-index: 10;
+  top: 10px;
+  background: #fff;
+  width: 6px;
+  height: 6px;
+  left: -8px;
+  display: inline-block;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
 }
 
 .step-list-guide li:after {
@@ -76,188 +84,144 @@
   left: -4px;
 }
 
-.step--list__guide ul {
-  margin-top: 60px;
+@media screen and (max-width: 960px) {
+  .saving-habit .visual {
+    background: url(/images/product/saving/saving-habitsaving/img_habit_saving1.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
+
+  .step-list-guide {
+    position: relative;
+    margin-left: 16px;
+  }
+
+  .step-list-guide li {
+    font-size: 16px;
+    text-align: left;
+    padding-left: 5px;
+  }
+
+  .step-list-guide.list-item:before {
+    z-index: 5;
+    top: 7px;
+    background: #8848ff;
+    width: 12px;
+    height: 12px;
+    left: -22px;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .step-list-guide.list-item:after {
+    z-index: 10;
+    top: 10px;
+    background: #fff;
+    width: 6px;
+    height: 6px;
+    left: -19px;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .img-info {
+    float: none;
+    margin: 20px 0 0 0;
+    text-align: center;
+    padding: 0 6px;
+  }
+
 }
 
-.step--list__guide ul::before {
-  position: absolute;
-  height: calc(100% - 47px);
-  content: "";
-  border-left: 1px dashed #8848ff;
-  top: 9px;
-  left: -1px;
-  bottom: 38px;
-}
 
-.cont-finnqmarket .step--list__guide li {
-  position: relative;
-  margin-top: 40px;
-  padding-left: 20px;
-  font-size: 20px;
-  word-break: keep-all;
-}
 
-.desc-img {
-  margin-top: 20px;
-}
 
-br.notMobile {
-  display:block;
+
+/********************************
+* 예적금 탭: T핀크적금
+*********************************/
+.saving-tfinnq .visual{
+  background: url(/images/product/saving/saving-tfinnqinstallmentsavings/bg_finnq_savings.png) no-repeat right 110px bottom 48px;
+  background-size: 400px 370px;
 }
 
 @media screen and (max-width: 960px) {
-  br.notMobile {
-    display:none;
-    line-height: 18px;
-  }
-
-  .container .guide-desc {
-    font-size: 14px;
-  }
-
-  .desc-info .desc-test1 {
-    width: 100%;
-    border: 1px solid red;
-    background-color: #5008b2;
-  }
+  .saving-tfinnq .visual {
+    background: url(/images/product/saving/saving-tfinnqinstallmentsavings/bg_finnq_savings.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
 }
 
 
 
-/*
-.txt-desc{
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: -1px;
-  color: #666;
-  font-family: 'SpoqaR';
-}
-.auto-charge-info-wrap{
-  margin-top: 33px;
-  max-width: 500px;
-  font-size: 18px;
-  line-height: 22px;
-  color: #999;
-}
-.auto-charge-info:before{
-  position: absolute;
-  top: 4px;
-  left: 0;
-  display: block;
-  content: "*";
-}
 
-.auto-charge-info{
-  padding-left:11px;
-  position:relative;
-}
-.card-desc{
-  position: relative;
-  padding-left: 8px;
-  font-size: 14px;
-  line-height: 18px;
-  color: #999;
-}
-.card-desc:before{
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  content: "-";
-}
-.deli-wrap{
-  max-width: 1280px;
-  margin: 68px auto 0;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.deli-txt{
-  padding-left: 18px;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -1px;
-  color: #666;
-  font-family: 'SpoqaR';
-  text-indent: -18px;
-}
-.price{
-  margin-top: 6px;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -1px;
-  color: #666;
-  font-family: 'SpoqaR';
-  word-break: keep-all;
-}
-
-
-.master-saving:before{
-  content: "";
-  display: inline-block;
-  margin-right: 5px;
-  width: 28px;
-  height: 18px;
-  vertical-align: -2px;
-  background: url(/images/product/card/ico_master.png) no-repeat 0 0;
-  background-size: contain;
-}
-
-
-.two-plus-saving-wrap .visual{
-  background: url(/images/product/card/two-plus-card/bg_twoplus_card.png) no-repeat right 95px bottom 48px;
+/********************************
+* 예적금 탭: KDB X T high5 적금
+*********************************/
+.saving-kdb .visual{
+  background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5kdbsavings.png) no-repeat right 110px bottom 48px;
   background-size: 400px 370px;
 }
 
-.wave-saving-wrap .visual{
-  background: url(/images/product/card/wave-card/img_wavve_visual1.png) no-repeat right 140px bottom 48px;
+.bgImageT{
+  display: table-cell;
+  padding-left: 169px;
+  height: 150px;
+  vertical-align: middle;
+  background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_01.png) no-repeat 0 0;
+  background-size: 150px 150px;
+}
+
+.bgImageV{
+  display: table-cell;
+  padding-left: 169px;
+  height: 150px;
+  vertical-align: middle;
+  background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_04.png) no-repeat 0 0;
+  background-size: 150px 150px;
+}
+
+@media screen and (max-width: 960px) {
+  .saving-kdb .visual {
+    background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5kdbsavings.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
+
+  .bgImageT{
+    display: table-cell;
+    padding-left: 169px;
+    height: 150px;
+    vertical-align: middle;
+    background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_01.png) no-repeat 0 0;
+    background-size: auto 90px;
+  }
+
+  .bgImageV{
+    display: table-cell;
+    padding-left: 169px;
+    height: 150px;
+    vertical-align: middle;
+    background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_04.png) no-repeat 0 0;
+    background-size: auto 90px;
+  }
+
+}
+
+
+
+
+
+/********************************
+* 예적금 탭: T이득통장
+*********************************/
+.saving-tprofit .visual{
+  background: url(/images/product/saving/saving-tprofitpassbook/img_finnq_pla1.png) no-repeat right 110px bottom 48px;
   background-size: 400px 370px;
-  height: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  .saving-tprofit .visual {
+    background: url(/images/product/saving/saving-tprofitpassbook/img_finnq_pla1.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
+
 }
 
 
-.two-plus-saving-wrap .guide-desc, .wave-saving-wrap .guide-desc{
-  display:inline-block;
-  margin-right: 80px;
-}
 
-.benefit-movie{
-  min-width: 310px;
-  background: url(/images/product/card/two-plus-card/ico_benefit_movie.png) no-repeat 9px 0;
-  background-size: 64.5px 100px;
-  padding: 20px 20px 20px 103px;
-  height: 100px;
-}
-.benefit-coffee{
-  min-width: 335px;
-  background: url(/images/product/card/two-plus-card/ico_benefit_coffee.png) no-repeat 11.5px 0;
-  background-size: 68.5px 100px;
-  padding: 0 20px 0 103px;
-  height: 100px;
-}
-.benefit-restaurant{
-  min-width: 256px;
-  background: url(/images/product/card/two-plus-card/ico_benefit_restaurant.png) no-repeat 0 0;
-  background-size: 80px 100px;
-  padding: 0 20px 0 103px;
-  height: 100px;
-}
-.benefit-wrap dt{
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: -1px;
-  color: #222;
-  font-family: 'SpoqaR';
-}
-.benefit-wrap dd{
-  margin-top: 14px;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: -1px;
-  color: #666;
-  font-family: 'SpoqaR';
-  word-break: keep-all;
-}
-
-*/
 
