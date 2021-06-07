@@ -8,12 +8,14 @@ import FinnqHanaCard from '/pages/product/card-tab/FinnqHanaCard'
 import TwoPlusCard from '/pages/product/card-tab/TwoPlusCard'
 import WaveCard from '/pages/product/card-tab/WaveCard'
 import FinnqCheckCard from '/pages/product/card-tab/FinnqCheckCard'
+import RefreshCard from '/pages/product/card-tab/RefreshCard'
 
 const content = {
   0 : <FinnqHanaCard/>,
   1 : <TwoPlusCard/>,
   2 : <WaveCard/>,
-  3 : <FinnqCheckCard/>
+  3 : <FinnqCheckCard/>,
+  4 : <RefreshCard/>
 }
 
 function FinnqCard() {
@@ -56,7 +58,8 @@ function FinnqCard() {
                   {title:'핀크카드'}
                   , {title:'투뿔카드'}
                   , {title:'웨이브카드'}
-                  , {title: '핀크체크카드'}]}>
+                  , {title: '핀크체크카드'}
+                  , {title: '새로고침카드'}]}>
                 </Tabs>
 
 
