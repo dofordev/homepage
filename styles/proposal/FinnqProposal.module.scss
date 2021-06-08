@@ -1,27 +1,32 @@
 /********************************
 * 업무 제휴 
 *********************************/
-#proposal .aaa {}
-.input-txt {background-color:#fff; border-radius:4px;}
-.error-message {color:red;}
-
-.btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
-.btn-data--submit:disabled {background-color:#aaa;}
-
 .btn-proposal {border:1px solid black; padding:8px 16px; border-radius:4px;;}
 
 .swiper-proposal--custom {}
 .swiper-proposal--custom .swiper-cont {background-color:blue;}
 
 
-.layer-content {width: 500px; margin: 0 auto; border: 1px solid black; text-align:center;}
-.layer-content .btn-layer {border:1px solid #aaa; padding:8px 15px; text-align: center;}
-
 .checkbox--wrap {position: relative;}
-.checkbox--wrap .custom-checkbox {display:inline-block; width:25px; height:25px; background-color:#eee;}
-.checkbox--wrap  input[type=checkbox]:checked ~ .custom-checkbox {background-color: red;}
-.checkbox--wrap input[type=checkbox] {opacity:0; width:0; height:0;}
+.checkbox--wrap .custom-checkbox {display:inline-block; position: relative;  vertical-align:text-bottom; width:25px; height:25px; background-color:#eee;}
+.checkbox--wrap input[type=checkbox] {display: inline-block; width: 25px; height: 25px; vertical-align: middle;	 box-shadow: none; -webkit-appearance: none; line-height: 13px; border: none; background-color: transparent; margin-right:5px; background-color:#eee;}
+.checkbox--wrap input[type=checkbox]:checked {background-color:red;}
 
+#insert-proposal {}
+#insert-proposal label {display:block;}
+#insert-proposal form {width:100%;}
+#insert-proposal .input-txt,
+#insert-proposal textarea {box-sizing:border-box; width:100%;}
+#insert-proposal .input-txt {background-color:#fff; border-radius:4px;   padding:8px 10px; outline: none;}
+#insert-proposal textarea {display: block; padding: 8px 10px; font-size: 16px; color: #000; line-height: 21px; overflow-x: hidden; overflow-y: auto;}
+#insert-proposal .error-message {color:red;}
+#insert-proposal .btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
+#insert-proposal .btn-data--submit:disabled {background-color:#aaa;}
+#insert-proposal .group {overflow:hidden;}
+#insert-proposal .group > * {width:calc(50% - 10px);}
+#insert-proposal .group > *:nth-of-type(odd) {float:left;}
+#insert-proposal .group > *:nth-of-type(even) {float:right;}
+#insert-proposal .group > *:nth-of-type(n+3) {margin-top:10px;}
 @media screen and (max-width: 960px) {
-  
+  #insert-proposal .group > * {width:calc(100px); float:none;}
 }

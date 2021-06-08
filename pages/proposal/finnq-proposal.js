@@ -5,32 +5,43 @@ import { useEffect, useRef, useState } from "react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styled, { css } from "styled-components";
+import axios from "axios";
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function FinnqInsurance() {
-  const formRef = useRef(null);
   const btnSubmitRef = useRef(null);
   const [activeBtn, setActiveBtn] = useState(false);
   const [showGuideModal, setShowGuideModal] = useState(false);
   const [showSuccessModal, setSuccessShowModal] = useState(false);
-  const [sendData, setSendData] = useState(null);
 
   const {
     handleSubmit,
     register,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({});
 
   const onSubmit = (data, e) => {
-    setSuccessShowModal(true);
-    // data.phone = data.phone.replace(/\-/g, "");
-    data.agreeCheck = "Y";
-    e.target.reset();
+    data.phoneNumber = data.phoneNumber.replace(/\-/g, "");
+    data.agreementYn = "Y";
     setActiveBtn(false);
-    setSendData(data);
+
+    axios({
+      method: "post",
+      url: "https://dwww.finnq.com/api/affiliation/inquiry/mydata",
+      data: { data },
+    })
+      .then(function (response) {
+        setSuccessShowModal(true);
+        console.log("Success ========>", response);
+      })
+      .catch(function (error) {
+        console.log("Error ========>", error);
+      });
+
+    reset();
   };
 
   const handleCheckbox = (e) => {
@@ -43,14 +54,10 @@ export default function FinnqInsurance() {
     }
   };
 
-  useEffect(async () => {
-    // console.log(sendData);
-    // const result = await fetch("./api/formValues.json");
-    // reset(result); // asynchronously reset your form values
-  }, [sendData]);
-
   const layerGuideClose = () => setShowGuideModal(false);
-  const layerSuccessClose = () => setSuccessShowModal(false);
+  const layerSuccessClose = () => {
+    setSuccessShowModal(false);
+  };
 
   const LayerGuidePop = styled.div`
     position: fixed;
@@ -164,61 +171,19 @@ export default function FinnqInsurance() {
 
               <section className="desc-wrap">
                 <div className="item-desc top">
-                  <article className="desc-info">
-                    <p className="sub-title">
-                      20만명 빅데이터 기반으로<br></br>꼭 필요한 보험만 추천!
-                    </p>
-                    <p className="sub-desc">
-                      10명의 고객 중 9.4명이 추천 결과에 만족
-                    </p>
-                    <div className="img-wrap">
-                      <img
-                        src="/images/product/insurance/img_insurance1.png"
-                        alt=""
-                      ></img>
-                    </div>
-                  </article>
-                  <article className="desc-info img-content">
-                    <p className="sub-title">
-                      원하는 보험군만 골라서<br></br>원하는 가격대로 설정!
-                    </p>
-                    <p className="sub-desc">
-                      총 203,476명의 고객이<br></br>매월 불필요한 보험료
-                      15,376원 절감
-                    </p>
-                    <div className="img-wrap">
-                      <img
-                        src="/images/product/insurance/img_insurance2.png"
-                        alt=""
-                      ></img>
-                    </div>
-                  </article>
+                  <article className="desc-info">1</article>
+                  <article className="desc-info img-content">2</article>
                 </div>
               </section>
               <section className="desc-wrap">
                 <div className="item-desc">
-                  <article className="desc-info">
-                    <p className="sub-title">
-                      정보를 쉽게 제공하고,<br></br>전문가의 무료 설명까지!
-                    </p>
-                    <p className="sub-desc">
-                      궁금한 것 부담 없이 물어보면서<br></br> 나에게 딱 맞는
-                      플랜 설계
-                    </p>
-                  </article>
-                  <article className="desc-info">
-                    <div className="img-wrap">
-                      <img
-                        src="/images/product/insurance/img_insurance3.png"
-                        alt=""
-                      ></img>
-                    </div>
-                  </article>
+                  <article className="desc-info">1</article>
+                  <article className="desc-info">2</article>
                 </div>
               </section>
-              <section className="desc-wrap" id="insert-proposal">
+              <section className="desc-wrap" id={styles["insert-proposal"]}>
                 <div className="item-desc">
-                  <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
+                  <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
                       <label htmlFor="companyName">회사명/담당부서명</label>
                       <input
@@ -236,30 +201,29 @@ export default function FinnqInsurance() {
                         </p>
                       )}
                     </div>
-                    {/* 
                     <div>
-                      <label htmlFor="userName">성명</label>
+                      <label htmlFor="name">성명</label>
                       <input
                         type="text"
-                        id="userName"
-                        {...register("userName", {
+                        id="name"
+                        {...register("name", {
                           required: "성명을 입력해주세요",
                         })}
                         className={styles["input-txt"]}
                         placeholder="김핀크"
                       ></input>
-                      {errors.userName && (
+                      {errors.name && (
                         <p className={styles["error-message"]}>
-                          {errors.userName.message}
+                          {errors.name.message}
                         </p>
                       )}
                     </div>
                     <div>
-                      <label htmlFor="phone">전화번호</label>
+                      <label htmlFor="phoneNumber">전화번호</label>
                       <input
                         type="tel"
-                        id="phone"
-                        {...register("phone", {
+                        id="phoneNumber"
+                        {...register("phoneNumber", {
                           required: true,
                           maxLength: 13,
                           // pattern: /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/,
@@ -268,18 +232,19 @@ export default function FinnqInsurance() {
                         className={styles["input-txt"]}
                         placeholder="010-1234-5678"
                       ></input>
-                      {errors.phone && errors.phone.type === "required" && (
-                        <p className={styles["error-message"]}>
-                          전화번호을 입력해주세요
-                        </p>
-                      )}
+                      {errors.phoneNumber &&
+                        errors.phoneNumber.type === "required" && (
+                          <p className={styles["error-message"]}>
+                            전화번호을 입력해주세요
+                          </p>
+                        )}
                     </div>
                     <div>
-                      <label htmlFor="email">이메일</label>
+                      <label htmlFor="emailAddress">이메일</label>
                       <input
                         type="text"
-                        id="email"
-                        {...register("email", {
+                        id="emailAddress"
+                        {...register("emailAddress", {
                           required: true,
                           pattern:
                             /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -287,49 +252,48 @@ export default function FinnqInsurance() {
                         className={styles["input-txt"]}
                         placeholder="info@finnq.com"
                       ></input>
-                      {errors.email && errors.email.type === "required" && (
-                        <p className={styles["error-message"]}>
-                          이메일을 입력해주세요
-                        </p>
-                      )}
-                      {errors.email && errors.email.type === "pattern" && (
-                        <p className={styles["error-message"]}>
-                          올바른 이메일을 입력해주세요
-                        </p>
-                      )}
+                      {errors.emailAddress &&
+                        errors.emailAddress.type === "required" && (
+                          <p className={styles["error-message"]}>
+                            이메일을 입력해주세요
+                          </p>
+                        )}
+                      {errors.emailAddress &&
+                        errors.emailAddress.type === "pattern" && (
+                          <p className={styles["error-message"]}>
+                            올바른 이메일을 입력해주세요
+                          </p>
+                        )}
                     </div>
-
                     <div>
-                      <label htmlFor="inquire">문의사항</label>
+                      <label htmlFor="contents">문의사항</label>
                       <textarea
                         cols="30"
                         rows="5"
-                        id="inquire"
-                        {...register("inquire", {
+                        id="contents"
+                        {...register("contents", {
                           required: "문의사항을 입력해주세요",
                         })}
                         placeholder="문의 내용을 입력해주세요. (개인정보 기입은 삼가해주세요)"
                       ></textarea>
-                      {errors.inquire && (
+                      {errors.contents && (
                         <p className={styles["error-message"]}>
-                          {errors.inquire.message}
+                          {errors.contents.message}
                         </p>
                       )}
                     </div>
-                    */}
                     <div>
                       <label
-                        htmlFor="agreeCheck"
+                        htmlFor="agreementYn"
                         className={styles["checkbox--wrap"]}
                       >
                         <input
                           type="checkbox"
-                          {...register("agreeCheck", { required: true })}
+                          {...register("agreementYn", { required: true })}
                           className="custom-checkbox"
-                          id="agreeCheck"
+                          id="agreementYn"
                           onClick={handleCheckbox}
                         ></input>
-                        <span className={styles["custom-checkbox"]}></span>
                         개인정보 보호 정책에 동의합니다.
                       </label>
                       <button
