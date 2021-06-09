@@ -28,9 +28,11 @@ export default function FinnqInsurance() {
     data.agreementYn = "Y";
     setActiveBtn(false);
 
+    // https://dwww.finnq.com/api/affiliation/inquiry/mydata
+
     axios({
       method: "post",
-      url: "https://dwww.finnq.com/api/affiliation/inquiry/mydata",
+      url: "/api/affiliation/inquiry/mydata",
       data: { data },
     })
       .then(function (response) {
@@ -119,12 +121,20 @@ export default function FinnqInsurance() {
         </LayerSuccessPop>
       )}
       <section className="container">
-        <article className="key-visual product">
+        <article className="key-visual" id={styles["proposal-visual"]}>
           <div className="inner">
-            <p className="title">차별화된 금융상품</p>
-            <p className="desc">
-              오직 핀크에서만 누릴 수 있는 특별한 금융상품을 만나보세요!
+            <p className="title">
+              <span className={styles.bold}>마이데이터 ADD-ON</span>
             </p>
+            <div className="desc">
+              고객사의 성공적인 마이데이터 비즈니스를 위해 핀크가 최적의
+              솔루션을 제공합니다.
+            </div>
+            <div className={styles["btn-wrap"]}>
+              <button type="button">
+                마이데이터 &amp; 핀크리얼리 제휴 문의
+              </button>
+            </div>
           </div>
         </article>
 
