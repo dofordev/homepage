@@ -310,7 +310,7 @@ const RewordPage6 = () => {
         <li>
           <span>②</span> 회사는 다음과 같이 개인정보를 제3자에게 제공하고
           있습니다.
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table>
               <caption></caption>
               <colgroup>
@@ -496,7 +496,7 @@ const RewordPage6 = () => {
         <li>
           <span>③</span> 회사는 다음과 같이 개인정보 제3자 제공을 통해
           개인정보를 처리하고 있습니다.
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table>
               <caption></caption>
               <colgroup>
@@ -549,7 +549,7 @@ const RewordPage6 = () => {
         <li>
           <span>①</span> 회사는 원활한 개인정보 업무처리를 위하여 다음과 같이
           개인정보 처리업무를 위탁하고 있습니다.
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table>
               <caption></caption>
               <colgroup>

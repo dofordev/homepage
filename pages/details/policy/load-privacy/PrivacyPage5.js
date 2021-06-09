@@ -21,7 +21,7 @@ const RewordPage5 = () => {
         </li>
         <li>
           - 변경 전후 조문 대비표
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table className="mt-5">
               <caption></caption>
               <colgroup>

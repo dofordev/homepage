@@ -7,7 +7,7 @@
 /**************************************************
 * 탭 : li의 자식요소는 버튼, a 등 상황에 맞게 사용 가능 
 ***************************************************/
-.tab-wrap {margin-top:40px;}
+.tab-wrap {}
 .tab-wrap ul {position: relative; max-width: 1280px; margin: 0 auto; padding:0 40px; z-index: 1; height:59px; border-bottom: 1px solid #c8c8c8;}
 .tab-wrap ul:before, 
 .tab-wrap ul:after {position: absolute; bottom: -1px; display: inline-block; width: 40px; height: 1px; background: #fff; content: "";}
@@ -84,9 +84,9 @@
 /**************************************************
 * 공지성 알림(약관, 운용공시 등)
 ***************************************************/
-.notice-wrap {margin-top:40px}
+.notice-wrap {}
 .notice-wrap .title {font-family: 'SpoqaB'; font-size: 20px; color: #444;}
-.notice-wrap .index > p {font-family: 'SpoqaR'; font-size: 18px; color: #222; padding-top: 30px; line-height: 1.5;}
+.notice-wrap .index > p {font-family: 'SpoqaR'; font-size: 18px; color: #222; line-height: 1.5;}
 .notice-wrap .index dl {padding: 20px 0 0;}
 .notice-wrap .index dl dt {padding-top: 10px; line-height: 1.5; font-weight: bold;}
 .notice-wrap .index dl dd {padding-top: 5px; font-family: 'SpoqaR'; font-size: 14px; line-height: 1.5; color: #666;}
@@ -98,7 +98,7 @@
 .notice-wrap .depth01 > li {padding-top: 10px;}
 @media screen and (max-width: 960px) {
   .notice-wrap {min-height: 350px;min-height: 350px;}
-  .notice-wrap .title {font-family: 'SpoqaR'; font-size:18px;}
+  .notice-wrap .title {font-size:18px;}
 }
 
 /**************************************************
@@ -117,7 +117,10 @@
 .select-group .select-list:after {content: ''; display: block; clear: both;}
 .select-group .select-list li {position: relative; width: 100%;}
 .select-group .select-list li > * {display: block; font-size:16px; color: #999;
-  text-align: left; font-family: 'SpoqaR'; height: 45px; line-height: 45px; padding: 0 60px 0 20px;}
+  text-align: left; font-family: 'SpoqaR'; height: 45px; line-height: 45px; padding: 0 60px 0 20px; width: 100%;
+  box-sizing: border-box;}
+  .select-group .select-list li > *:hover,
+  .select-group .select-list li > *:focus {background-color:#eee;}
 
 
 @media screen and (max-width:960px) {
@@ -134,9 +137,11 @@
 * table 
 ***************************************************/
 // 가로타입 Table
+.table-row {position: relative; overflow: hidden;}
+.table-row:after {display:block; position:absolute; right:0; top:0; height:100%; z-index:2; border-right:1px solid #fff; content:"";}
 .table-row table { width: 100%; border-bottom: 1px solid #d4d4d4; border-collapse: collapse; }
-.table-row table tbody th { padding: 13px 10px; height: 30px; border-top: 1px solid #d4d4d4; background: #f9f9f9; color: #999; text-align: left; line-height: 1.3; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: normal; }
-.table-row table tbody td { padding: 13px 10px; height: 30px; border-top: 1px solid #d4d4d4; text-align: left; line-height: 1.3; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.table-row table tbody th { padding: 13px 10px; height: 30px; border-top: 1px solid #d4d4d4; border-right: 1px solid #d4d4d4; background: #f9f9f9; color: #999; text-align: left; line-height: 1.3; -webkit-box-sizing: border-box; box-sizing: border-box; font-weight: normal; }
+.table-row table tbody td { padding: 13px 10px; height: 30px; border-top: 1px solid #d4d4d4; border-right: 1px solid #d4d4d4; text-align: left; line-height: 1.3; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 // 세로타입 Table
 .table-col {overflow: hidden;}

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "/styles/product/FinnqLoan.module.scss";
 import Link from "next/link";
+import BtnAppDown from "../../../components/BtnAppDown";
 
 const LoanComparePage = () => {
   return (
@@ -17,21 +18,16 @@ const LoanComparePage = () => {
             </span>
           </p>
 
-          <Link
+          <a
             href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
             target="_blank"
             className={styles["btn-loan"]}
           >
             대출 금리 비교하러 가기
-          </Link>
+          </a>
 
           <div className={`${styles["compare--btn-wrap"]} app-down`}>
-            <a href="#none" className="btn btn-google">
-              <span>Google Play</span>
-            </a>
-            <a href="#none" className="btn btn-apple">
-              <span>App Store</span>
-            </a>
+            <BtnAppDown></BtnAppDown>
           </div>
         </div>
       </div>

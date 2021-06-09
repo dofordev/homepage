@@ -312,10 +312,10 @@ const RewordPage7 = () => {
             <table>
               <caption></caption>
               <colgroup>
-                <col style={{ width: "20%" }}></col>;
-                <col style={{ width: "25%" }}></col>;
-                <col style={{ width: "25%" }}></col>;
-                <col style={{ width: "30%" }}></col>;
+                <col style={{ width: "20%" }}></col>
+                <col style={{ width: "25%" }}></col>
+                <col style={{ width: "25%" }}></col>
+                <col style={{ width: "30%" }}></col>
               </colgroup>
               <thead>
                 <tr>

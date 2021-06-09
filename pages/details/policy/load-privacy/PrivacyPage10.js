@@ -320,7 +320,7 @@ const RewordPage10 = () => {
         <li>
           <span>②</span> 회사는 다음과 같이 개인정보를 제3자에게 제공하고
           있습니다.
-          <div className="tbl_v01 mt10">
+          <div className="table-col mt10">
             <table>
               <caption></caption>
               <colgroup>
@@ -534,7 +534,7 @@ const RewordPage10 = () => {
           <span>③</span> 회사는 다음과 같이 개인정보 제3자 제공(에스케이 텔레콤
           주식회사/DGB 대구은행/KDB산업은행→주식회사 핀크)을 통해 개인정보를
           처리하고 있습니다.
-          <div className="tbl_v01 mt10">
+          <div className="table-col mt10">
             <table>
               <caption></caption>
               <colgroup>
@@ -652,7 +652,7 @@ const RewordPage10 = () => {
         <li>
           <span>①</span> 회사는 원활한 개인정보 업무처리를 위하여 다음과 같이
           개인정보 처리업무를 위탁하고 있습니다.
-          <div className="tbl_v01 mt10">
+          <div className="table-col mt10">
             <table>
               <caption></caption>
               <colgroup>

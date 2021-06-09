@@ -13,20 +13,23 @@
 .checkbox--wrap input[type=checkbox]:checked {background-color:red;}
 
 #insert-proposal {}
-#insert-proposal label {display:block;}
+#insert-proposal label {display:block; text-align:left;}
 #insert-proposal form {width:100%;}
 #insert-proposal .input-txt,
 #insert-proposal textarea {box-sizing:border-box; width:100%;}
 #insert-proposal .input-txt {background-color:#fff; border-radius:4px;   padding:8px 10px; outline: none;}
 #insert-proposal textarea {display: block; padding: 8px 10px; font-size: 16px; color: #000; line-height: 21px; overflow-x: hidden; overflow-y: auto;}
 #insert-proposal .error-message {color:red;}
-#insert-proposal .btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
 #insert-proposal .btn-data--submit:disabled {background-color:#aaa;}
 #insert-proposal .group {overflow:hidden;}
 #insert-proposal .group > * {width:calc(50% - 10px);}
 #insert-proposal .group > *:nth-of-type(odd) {float:left;}
 #insert-proposal .group > *:nth-of-type(even) {float:right;}
 #insert-proposal .group > *:nth-of-type(n+3) {margin-top:10px;}
+
+#insert-proposal .check-area {position: relative; display:flex; justify-content:space-between;}
+#insert-proposal .btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
+
 @media screen and (max-width: 960px) {
   #insert-proposal .group > * {width:calc(100px); float:none;}
 }

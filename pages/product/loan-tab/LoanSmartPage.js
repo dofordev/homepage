@@ -1,4 +1,5 @@
 import React from "react";
+import BtnAppDown from "../../../components/BtnAppDown";
 import styles from "/styles/product/FinnqLoan.module.scss";
 
 const LoanComparePage = () => {
@@ -18,12 +19,7 @@ const LoanComparePage = () => {
           </li>
         </ul>
         <div className="btn-wrap app-down">
-          <a href="#none" className="btn btn-google">
-            <span>Google Play</span>
-          </a>
-          <a href="#none" className="btn btn-apple">
-            <span>App Store</span>
-          </a>
+          <BtnAppDown></BtnAppDown>
         </div>
       </div>
 

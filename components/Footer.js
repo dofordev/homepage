@@ -69,43 +69,27 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href="https://pop.finnq.com/finnq_home/files/finnq2017.pdf"
-                target="_blank"
-                title="새창 열기"
-              >
+              <a href="/files/finnq2017.pdf" target="_blank" title="새창 열기">
                 재무제표공고(2017)
               </a>
             </li>
             <li>
-              <a
-                href="https://pop.finnq.com/finnq_home/files/finnq2018.pdf"
-                target="_blank"
-                title="새창 열기"
-              >
+              <a href="/files/finnq2018.pdf" target="_blank" title="새창 열기">
                 재무제표공고(2018)
               </a>
             </li>
             <li>
-              <a
-                href="https://pop.finnq.com/finnq_home/files/finnq2019.pdf"
-                target="_blank"
-                title="새창 열기"
-              >
+              <a href="/files/finnq2019.pdf" target="_blank" title="새창 열기">
                 재무제표공고(2019)
               </a>
             </li>
             <li>
-              <a
-                href="https://pop.finnq.com/finnq_home/files/finnq2020.pdf"
-                target="_blank"
-                title="새창 열기"
-              >
+              <a href="/files/finnq2020.pdf" target="_blank" title="새창 열기">
                 재무제표공고(2020)
               </a>
             </li>
             <li>
-              <a href="/policy/announce.html" className="btn-layer">
+              <a href="/details/announce/announcement">
                 선불충전금 운용공시(2021.1Q)
               </a>
             </li>

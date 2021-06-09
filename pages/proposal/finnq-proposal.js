@@ -54,10 +54,9 @@ export default function FinnqInsurance() {
     }
   };
 
+  const layerGuideOpen = () => setShowGuideModal(true);
   const layerGuideClose = () => setShowGuideModal(false);
-  const layerSuccessClose = () => {
-    setSuccessShowModal(false);
-  };
+  const layerSuccessClose = () => setSuccessShowModal(false);
 
   const LayerGuidePop = styled.div`
     position: fixed;
@@ -184,88 +183,90 @@ export default function FinnqInsurance() {
               <section className="desc-wrap" id={styles["insert-proposal"]}>
                 <div className="item-desc">
                   <form onSubmit={handleSubmit(onSubmit)}>
-                    <div>
-                      <label htmlFor="companyName">회사명/담당부서명</label>
-                      <input
-                        type="text"
-                        id="companyName"
-                        {...register("companyName", {
-                          required: "회사명/담당자명을 입력해주세요",
-                        })}
-                        className={styles["input-txt"]}
-                        placeholder="(예) 핀크/신규사업팀"
-                      ></input>
-                      {errors.companyName && (
-                        <p className={styles["error-message"]}>
-                          {errors.companyName.message}
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <label htmlFor="name">성명</label>
-                      <input
-                        type="text"
-                        id="name"
-                        {...register("name", {
-                          required: "성명을 입력해주세요",
-                        })}
-                        className={styles["input-txt"]}
-                        placeholder="김핀크"
-                      ></input>
-                      {errors.name && (
-                        <p className={styles["error-message"]}>
-                          {errors.name.message}
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <label htmlFor="phoneNumber">전화번호</label>
-                      <input
-                        type="tel"
-                        id="phoneNumber"
-                        {...register("phoneNumber", {
-                          required: true,
-                          maxLength: 13,
-                          // pattern: /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/,
-                        })}
-                        maxLength="13"
-                        className={styles["input-txt"]}
-                        placeholder="010-1234-5678"
-                      ></input>
-                      {errors.phoneNumber &&
-                        errors.phoneNumber.type === "required" && (
+                    <article className={styles.group}>
+                      <div>
+                        <label htmlFor="companyName">회사명/담당부서명</label>
+                        <input
+                          type="text"
+                          id="companyName"
+                          {...register("companyName", {
+                            required: "회사명/담당자명을 입력해주세요",
+                          })}
+                          className={styles["input-txt"]}
+                          placeholder="(예) 핀크/신규사업팀"
+                        ></input>
+                        {errors.companyName && (
                           <p className={styles["error-message"]}>
-                            전화번호을 입력해주세요
+                            {errors.companyName.message}
                           </p>
                         )}
-                    </div>
-                    <div>
-                      <label htmlFor="emailAddress">이메일</label>
-                      <input
-                        type="text"
-                        id="emailAddress"
-                        {...register("emailAddress", {
-                          required: true,
-                          pattern:
-                            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-                        })}
-                        className={styles["input-txt"]}
-                        placeholder="info@finnq.com"
-                      ></input>
-                      {errors.emailAddress &&
-                        errors.emailAddress.type === "required" && (
+                      </div>
+                      <div>
+                        <label htmlFor="name">성명</label>
+                        <input
+                          type="text"
+                          id="name"
+                          {...register("name", {
+                            required: "성명을 입력해주세요",
+                          })}
+                          className={styles["input-txt"]}
+                          placeholder="김핀크"
+                        ></input>
+                        {errors.name && (
                           <p className={styles["error-message"]}>
-                            이메일을 입력해주세요
+                            {errors.name.message}
                           </p>
                         )}
-                      {errors.emailAddress &&
-                        errors.emailAddress.type === "pattern" && (
-                          <p className={styles["error-message"]}>
-                            올바른 이메일을 입력해주세요
-                          </p>
-                        )}
-                    </div>
-                    <div>
+                      </div>
+                      <div>
+                        <label htmlFor="phoneNumber">전화번호</label>
+                        <input
+                          type="tel"
+                          id="phoneNumber"
+                          {...register("phoneNumber", {
+                            required: true,
+                            maxLength: 13,
+                            // pattern: /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/,
+                          })}
+                          maxLength="13"
+                          className={styles["input-txt"]}
+                          placeholder="010-1234-5678"
+                        ></input>
+                        {errors.phoneNumber &&
+                          errors.phoneNumber.type === "required" && (
+                            <p className={styles["error-message"]}>
+                              전화번호을 입력해주세요
+                            </p>
+                          )}
+                      </div>
+                      <div>
+                        <label htmlFor="emailAddress">이메일</label>
+                        <input
+                          type="text"
+                          id="emailAddress"
+                          {...register("emailAddress", {
+                            required: true,
+                            pattern:
+                              /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                          })}
+                          className={styles["input-txt"]}
+                          placeholder="info@finnq.com"
+                        ></input>
+                        {errors.emailAddress &&
+                          errors.emailAddress.type === "required" && (
+                            <p className={styles["error-message"]}>
+                              이메일을 입력해주세요
+                            </p>
+                          )}
+                        {errors.emailAddress &&
+                          errors.emailAddress.type === "pattern" && (
+                            <p className={styles["error-message"]}>
+                              올바른 이메일을 입력해주세요
+                            </p>
+                          )}
+                      </div>
+                    </article>
+                    <article>
                       <label htmlFor="contents">문의사항</label>
                       <textarea
                         cols="30"
@@ -281,8 +282,8 @@ export default function FinnqInsurance() {
                           {errors.contents.message}
                         </p>
                       )}
-                    </div>
-                    <div>
+                    </article>
+                    <article className={styles["check-area"]}>
                       <label
                         htmlFor="agreementYn"
                         className={styles["checkbox--wrap"]}
@@ -295,7 +296,15 @@ export default function FinnqInsurance() {
                           onClick={handleCheckbox}
                         ></input>
                         개인정보 보호 정책에 동의합니다.
+                        <button
+                          type="button"
+                          onClick={layerGuideOpen}
+                          className={styles["btn-layer--open"]}
+                        >
+                          자세히 보기
+                        </button>
                       </label>
+
                       <button
                         type="submit"
                         className={styles["btn-data--submit"]}
@@ -304,7 +313,7 @@ export default function FinnqInsurance() {
                       >
                         문의하기
                       </button>
-                    </div>
+                    </article>
                   </form>
                 </div>
               </section>

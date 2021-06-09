@@ -17,7 +17,7 @@
 * CSS Default
 ****************************/
 *, *:before, *:after {-webkit-box-sizing: border-box; box-sizing: border-box;}
-button, a {cursor: pointer;}
+button, a {cursor: pointer; color:inherit;}
 html, body {height: 100%; min-height: 100%; font-family: "SpoqaL", "AppleSDGothicNeo-Medium", "Dotum", "Dotumche", "돋움", "돋움체", "Arial", sans-serif; font-size: 100%; line-height: 1.4; text-decoration: none; color: #222; vertical-align: middle; -webkit-font-smoothing: antialiased; background: #fff;}
 body {-webkit-text-size-adjust: none; letter-spacing: -0.05em;}
 /*뷰표트 변환시 폰트크기 자동확대 방지*/

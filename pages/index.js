@@ -162,14 +162,16 @@ export default function Home() {
             </p>
             <div className={`${styles["main-btn--wrap"]} app-down`}>
               <a
-                href="#none"
+                href="https://play.google.com/store/apps/details?id=com.finnq.f1&referrer=singular_click_id%3D085994d9-bd91-4212-83ec-bfb0460d4f52"
                 className={`${styles["main-btn"]} ${styles["btn-google"]}`}
+                target="_blank"
               >
                 <span>Google Play</span>
               </a>
               <a
-                href="#none"
+                href="https://finnq.sng.link/Alxrp/hlst?_dl=finnq%3A%2F%2F&_fallback_+redirect=https%3A%2F%2Fapps.apple.com%2Fkr%2Fapp%2Fapple-store%2Fid1260871482"
                 className={`${styles["main-btn"]} ${styles["btn-apple"]}`}
+                target="_blank"
               >
                 <span>App Store</span>
               </a>

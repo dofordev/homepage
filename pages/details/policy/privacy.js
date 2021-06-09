@@ -15,7 +15,7 @@ import PrivacyPage12 from "/pages/details/policy/load-privacy/PrivacyPage12";
 import PrivacyPage13 from "/pages/details/policy/load-privacy/PrivacyPage13";
 import styles from "/styles/policy/FinnqPolicy.module.scss";
 
-export default function FinnqInsurance() {
+export default function Privacy() {
   const content = {
     0: <PrivacyPage1 />,
     1: <PrivacyPage2 />,

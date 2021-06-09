@@ -4,7 +4,7 @@ const RewordPage12 = () => {
   return (
     <article>
       <h5 className="pt-5">개인정보 처리방침 개정 비교표</h5>
-      <div className="tabel-col mt-10">
+      <div className="table-col mt-10">
         <p className="pt-5">제1조 개인정보 처리목적</p>
         <table className="mt-5">
           <caption></caption>
@@ -33,7 +33,7 @@ const RewordPage12 = () => {
         </table>
       </div>
 
-      <div className="tabel-col mt-10">
+      <div className="table-col mt-10">
         <p className="pt-5">제2조 처리하는 개인정보 항목</p>
         <table className="mt-5">
           <caption></caption>
@@ -81,7 +81,7 @@ const RewordPage12 = () => {
         </table>
       </div>
 
-      <div className="tabel-col mt-10">
+      <div className="table-col mt-10">
         <p className="pt-5">제4조 개인정보의 제3자 제공</p>
         <table className="mt-5">
           <caption></caption>
@@ -502,7 +502,7 @@ const RewordPage12 = () => {
         <li>
           <span>②</span> 회사는 다음과 같이 개인정보를 제3자에게 제공하고
           있습니다.
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table>
               <caption></caption>
               <colgroup>
@@ -518,7 +518,7 @@ const RewordPage12 = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td rowspan="5">주식회사 하나은행</td>
+                  <td rowSpan="5">주식회사 하나은행</td>
                   <td>출금이체 동의 및 입출금이체 서비스 이용</td>
                   <td>성명, 생년월일, 금융기관명, 계좌번호</td>
                   <td>
@@ -536,7 +536,7 @@ const RewordPage12 = () => {
                 <tr>
                   <td>비대면 계좌개설</td>
                   <td>성명, 연계정보(CI), 통신사, 휴대전화 번호, 생년월일</td>
-                  <td rowspan="3">
+                  <td rowSpan="3">
                     회원 탈퇴 시까지(관련 법령에 따라 보존할 필요가 있는
                     경우에는 해당 보존기간)
                   </td>
@@ -577,7 +577,7 @@ const RewordPage12 = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td rowspan="3">세틀뱅크 주식회사</td>
+                  <td rowSpan="3">세틀뱅크 주식회사</td>
                   <td>출금이체 동의 및 입출금이체 서비스 이용</td>
                   <td>성명, 휴대전화 번호, 생년월일, 금융기관명, 계좌번호</td>
                   <td>
@@ -605,13 +605,13 @@ const RewordPage12 = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td rowspan="4">하나카드 주식회사</td>
+                  <td rowSpan="4">하나카드 주식회사</td>
                   <td>하나멤버스 회원가입</td>
                   <td>
                     성명, 연계정보(CI), 통신사, 휴대전화 번호, 생년월일,
                     내외국인 여부
                   </td>
-                  <td rowspan="4">
+                  <td rowSpan="4">
                     회원 탈퇴 시까지(관련 법령에 따라 보존할 필요가 있는
                     경우에는 해당 보존기간)
                   </td>
@@ -629,7 +629,7 @@ const RewordPage12 = () => {
                   <td>연계정보(CI), 카드번호, 카드ID, 거래 후 잔액</td>
                 </tr>
                 <tr>
-                  <td rowspan="3">에스케이 텔레콤 주식회사</td>
+                  <td rowSpan="3">에스케이 텔레콤 주식회사</td>
                   <td>통신요금 자동이체</td>
                   <td>
                     성명, 생년월일, 핀크 가상계좌번호, 휴대전화 번호,
@@ -747,7 +747,7 @@ const RewordPage12 = () => {
           <span>③</span> 회사는 다음과 같이 개인정보 제3자 제공(에스케이 텔레콤
           주식회사/DGB대구은행/KDB산업은행/오픈뱅킹공동업무 참여
           금융회사→주식회사 핀크)을 통해 개인정보를 처리하고 있습니다.
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table>
               <caption></caption>
               <colgroup>
@@ -763,7 +763,7 @@ const RewordPage12 = () => {
               </thead>
               <tbody>
                 <tr>
-                  <td rowspan="5">에스케이텔레콤주식회사</td>
+                  <td rowSpan="5">에스케이텔레콤주식회사</td>
                   <td>
                     SK텔레콤 고객의 &lt;T High5 적금(DGB)&gt;, &lt;KDB x T
                     high5적금&gt; 가입 시, 정보입력 간소화 및 우대금리와
@@ -837,7 +837,7 @@ const RewordPage12 = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td rowspan="2">DGB대구은행</td>
+                  <td rowSpan="2">DGB대구은행</td>
                   <td>
                     은행고객의 &lt;T high5 적금(DGB)&gt;가입 시, 정보입력 간소화
                     및 우대금리와 제휴혜택 제공대상 확인
@@ -908,7 +908,7 @@ const RewordPage12 = () => {
         <li>
           <span>①</span> 회사는 원활한 개인정보 업무처리를 위하여 다음과 같이
           개인정보 처리업무를 위탁하고 있습니다.
-          <div className="tabel-col mt-10">
+          <div className="table-col mt-10">
             <table>
               <caption></caption>
               <colgroup>
