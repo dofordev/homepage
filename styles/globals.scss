@@ -37,11 +37,14 @@ button::-moz-focus-inner {padding: 0px;}
 strong {font-family: 'SpoqaB';}
 button, a {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.18);}
 a, a:hover, a:focus, a:active, a:visited, a:link {font-family: inherit; text-decoration: none; word-break: break-all; white-space: normal;}
+textarea {resize:none;}
 
 /****************************************************
 * 공통 요소 정의 
 *****************************************************/
+br.web {display:block;}
 br.mobile {display:none;}
+
 .txt-purple {color:#731aed !important;}
 .txt-black {color:#222 !important;}
 .txt-orange {color:#f07400 !important;}
@@ -51,6 +54,7 @@ br.mobile {display:none;}
 .bold {font-family: 'SpoqaB' !important;}
 
 @media screen and (max-width: 960px) {
+  br.web {display:none;}
   br.mobile {display:block;}
 }
 
@@ -69,20 +73,35 @@ br.mobile {display:none;}
 .main-swiper .swiper-button-prev {background-image:url(/images/main/ico_arrow_left.png);}
 .main-swiper .swiper-button-next {background-image:url(/images/main/ico_arrow_right.png);}
 .main-swiper .swiper-pagination {bottom: 266px; left: calc(50% - 38px); font-size: 0; width: auto;}
-.main-swiper .swiper-pagination-bullet {display: inline-block; width: 10px; height: 10px; border-radius: 5px; background-color: #c8c8c8; text-indent: -9999px; cursor: pointer; opacity:1; margin:0 !important;}
-.main-swiper .swiper-pagination-bullet + .swiper-pagination-bullet {margin-left:10px !important;}
-.main-swiper .swiper-pagination-bullet-active {width: 24px; background-color: #222;}
-.main-swiper .swiper-slide-active .txt-animate1,
-.main-swiper .swiper-slide-active .txt-animate2,
-.main-swiper .swiper-slide-active .txt-animate3 {opacity:0;}
-.main-swiper .swiper-slide-active .txt-animate1 {animation: fadeInRight .8s forwards; -webkit-animation: fadeInRight .8s forwards;}
-.main-swiper .swiper-slide-active .txt-animate2 {animation: fadeInRight .8s forwards; -webkit-animation: fadeInRight .8s forwards; -webkit-animation-delay:.3s; animation-delay:.3s;}
-.main-swiper .swiper-slide-active .txt-animate3 {animation: fadeInRight .9s forwards; -webkit-animation: fadeInRight .9s forwards; -webkit-animation-delay:.5s; animation-delay: .5s;}
+
+
 @media screen and (max-width: 960px) {
   .main-swiper .swiper-button-prev,
   .main-swiper .swiper-button-next {display:none;}
   .main-swiper .swiper-pagination {bottom: 70px; left: calc(50% - 36px);}
 }
+
+// 마이데이터 제휴
+.proposal-swiper .swiper-pagination {bottom: 60px; left: 510px; width: auto;}
+
+/****************************************************
+* 스와이퍼 사용되는 페이지 
+  - 메인, 카드, 마이데이터 제휴
+  - 카드는 별도의 클래스로 분기 작업 필요.
+* 공통(메인, 마이데이터) 스와이퍼 CSS 정리
+  - 페이징 및 텍스트 Animation 시차 효과
+*****************************************************/
+.swiper-slide-active .txt-animate1,
+.swiper-slide-active .txt-animate2,
+.swiper-slide-active .txt-animate3 {opacity:0;}
+.swiper-slide-active .txt-animate1 {animation: fadeInRight .8s forwards; -webkit-animation: fadeInRight .8s forwards;}
+.swiper-slide-active .txt-animate2 {animation: fadeInRight .8s forwards; -webkit-animation: fadeInRight .8s forwards; -webkit-animation-delay:.3s; animation-delay:.3s;}
+.swiper-slide-active .txt-animate3 {animation: fadeInRight .9s forwards; -webkit-animation: fadeInRight .9s forwards; -webkit-animation-delay:.5s; animation-delay: .5s;}
+
+.swiper-pagination-bullet {display: inline-block; width: 10px; height: 10px; border-radius: 5px; background-color: #c8c8c8; text-indent: -9999px; cursor: pointer; opacity:1; margin:0 !important;}
+.swiper-pagination-bullet + .swiper-pagination-bullet {margin-left:10px !important;}
+.swiper-pagination-bullet-active {width: 24px; background-color: #222;}
+
 /****************************************************
 * 페이지 전환 효과
 *****************************************************/

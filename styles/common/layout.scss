@@ -155,8 +155,11 @@ html.preventScroll body {overflow-y: hidden;}
 .key-visual .inner {height: 400px; padding: 170px 0; background: url(/images/common/sub_visual_common.jpg) no-repeat 50% 50%; background-size: cover; text-align: center;}
 // 상품 key visual
 .key-visual.product .inner {background-image:url(/images/common/sub_visual_market.jpg);}
+// 마이데이터 제휴
+.key-visual.proposal .inner {padding:150px 0; background-image:url(/images/proposal/img_top_visua.jpg);}
 .key-visual .title {opacity:0; margin-bottom:10px; font-size:32px; color:#fff; letter-spacing: -2px; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards;}
-.key-visual .desc {opacity:0; margin: 0 0 60px 0; font-size: 18px; color: rgba(255, 255, 255, 0.8); font-family:'SpoqaR';letter-spacing:0; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards; -webkit-animation-delay:1s; animation-delay: 1s;}
+.key-visual .desc {opacity:0; margin-bottom:60px; font-size: 18px; color: rgba(255, 255, 255, 0.8); font-family:'SpoqaR';letter-spacing:0; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards; -webkit-animation-delay:1s; animation-delay: 1s;}
+.key-visual.proposal .desc {font-family:"SpoqaL"; margin-bottom:35px;}
 
 @media screen and (max-width: 960px) {
   .container .contents {padding: 55px 20px 35px;}

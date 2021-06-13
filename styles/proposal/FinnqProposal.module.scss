@@ -1,35 +1,98 @@
+@charset "UTF-8";
+
 /********************************
 * 업무 제휴 
 *********************************/
-.btn-proposal {border:1px solid black; padding:8px 16px; border-radius:4px;;}
+.bold {font-family:"SpoqaB";}
+#proposal-contents {padding:0;}
+#proposal-body {margin-top:0;}
+#proposal-contents .title {font-size:48px; line-height:62px; font-family:"SpoqaB"; word-break:keep-all;}
 
+
+.swiper-wrap {background-color:#f5f6fa; padding-top:10px;}
+
+#swiper-content {padding: 100px 0;}
 .swiper-proposal--custom {}
-.swiper-proposal--custom .swiper-cont {background-color:blue;}
+.swiper-proposal--custom .txt-area {position:absolute; left:505px;}
+.swiper-proposal--custom .txt-area .desc {display:inline-block; position: relative; margin-bottom:20px; font-size:24px; color:#731aed; font-family:"SpoqaR";}
+.swiper-proposal--custom .txt-area .desc:after {display:block; position:absolute; width: calc(100% + 10px); bottom: -2px; left:0; height:16px; opacity: 0.15; background-color: #731aed; content:"";}
+.swiper-proposal--custom .txt-area .text {font-size:48px; line-height:62px; letter-spacing:-2px;}
+.swiper-proposal--custom .swiper-cont {position: relative; max-width: 1280px; margin: 0 auto; padding: 0 40px;}
+.swiper-proposal--custom .swiper-img {width:200px; margin-left:205px;}
+.swiper-proposal--custom .swiper-img img {width:100%; height:auto;}
 
+.btn-proposal--wrap {text-align:center; opacity:0; animation: fadeIn 1.5s forwards; -webkit-animation: fadeIn 1.5s forwards; -webkit-animation-delay:2s; animation-delay: 2s;}
+.btn-proposal--wrap .btn-proposal {display:inline-block; padding: 16px 24px; border-radius:4px; font-size:16px; font-family:"SpoqaB"; border: solid 1px rgba(255, 255, 255, 0.4); background-color: rgba(255, 255, 255, 0.1); color:#fff;}
 
-.checkbox--wrap {position: relative;}
-.checkbox--wrap .custom-checkbox {display:inline-block; position: relative;  vertical-align:text-bottom; width:25px; height:25px; background-color:#eee;}
-.checkbox--wrap input[type=checkbox] {display: inline-block; width: 25px; height: 25px; vertical-align: middle;	 box-shadow: none; -webkit-appearance: none; line-height: 13px; border: none; background-color: transparent; margin-right:5px; background-color:#eee;}
-.checkbox--wrap input[type=checkbox]:checked {background-color:red;}
+#proposal-desc {}
+#proposal-desc .sub-title {font-size:24px; font-family:"SpoqaB"; margin-bottom:24px; color:#222;}
+#proposal-desc .box-cont .text:before {display:inline-block; width:78px; height:78px; margin-right:24px; content:""; background-repeat:no-repeat; background-position:50% 50%; background-size:cover;}
+.split-desc {margin-top:40px; display:flex; justify-content:space-between;}
+.split-desc .box-cont {width:calc(50% - 12px); padding:50px 0; border-radius:8px; background-color:#f5f6fa;}
+.split-desc .box-cont .text {display: flex; justify-content: center; align-items: center; font-size:24px; color:#222; font-family:"SpoqaR";}
+.split-desc .box-cont:first-of-type .text:before {background-image: url(/images/proposal/ico_info_01.png)}
+.split-desc .box-cont:last-of-type .text:before {background-image: url(/images/proposal/ico_info_02.png)}
+#proposal-desc article + article {margin-top:80px;}
+
+.product-list {display:flex; justify-content:space-between; margin:40px 0;}
+.product-list > li {position: relative; width:calc( (100% - 48px ) / 3);}
+.product-list .product-text {position:absolute; top:40px; left:24px; font-size:32px; line-height: 42px; color: #fff;}
+.product-list .product-text mark {letter-spacing:0;}
+.product-list .product-text p {font-family:"SpoqaB";}
+.product-list .add-text {word-break: keep-all; font-size:24px; line-height:32px; margin-top:16px; font-family:"SpoqaR";}
+
+@media screen and (max-width: 1080px) {
+  .product-list .product-text {font-size:28px;}
+  .product-list .add-text br {display:none;}
+}
 
 #insert-proposal {}
-#insert-proposal label {display:block; text-align:left;}
+#insert-proposal .title {margin-bottom:40px;}
+#insert-proposal .item {position:relative; padding-bottom:32px;}
+#insert-proposal label {display:block; text-align:left; font-size:16px; font-family:"SpoqaB"; margin-bottom:8px;}
 #insert-proposal form {width:100%;}
 #insert-proposal .input-txt,
-#insert-proposal textarea {box-sizing:border-box; width:100%;}
-#insert-proposal .input-txt {background-color:#fff; border-radius:4px;   padding:8px 10px; outline: none;}
-#insert-proposal textarea {display: block; padding: 8px 10px; font-size: 16px; color: #000; line-height: 21px; overflow-x: hidden; overflow-y: auto;}
-#insert-proposal .error-message {color:red;}
+#insert-proposal textarea {box-sizing:border-box; width:100%; border:1px solid 
+  #e0e0e0; border-radius:4px; padding:14px 16px; outline: none; font-size:16px;}
+#insert-proposal .input-txt::placeholder,
+#insert-proposal textarea::placeholder {color: #c8c8c8;}
+#insert-proposal .input-txt:focus,
+#insert-proposal textarea:focus {border-color:#731aed;}
+
+#insert-proposal .input-txt {background-color:#fff;    padding:8px 10px; }
+#insert-proposal textarea {display: block; height:220px; font-size: 16px; color: #000; line-height: 21px; overflow-x: hidden; overflow-y: auto; outline:none;}
+#insert-proposal .error-message {color:#f74b20;}
 #insert-proposal .btn-data--submit:disabled {background-color:#aaa;}
 #insert-proposal .group {overflow:hidden;}
-#insert-proposal .group > * {width:calc(50% - 10px);}
+#insert-proposal .group > * {width:calc(50% - 40px);}
 #insert-proposal .group > *:nth-of-type(odd) {float:left;}
 #insert-proposal .group > *:nth-of-type(even) {float:right;}
 #insert-proposal .group > *:nth-of-type(n+3) {margin-top:10px;}
 
 #insert-proposal .check-area {position: relative; display:flex; justify-content:space-between;}
+#insert-proposal .checkbox--wrap input[type=checkbox] {display: inline-block; width: 25px; height: 25px; vertical-align: middle;	 box-shadow: none; -webkit-appearance: none; line-height: 13px; border: none; background-color: transparent; margin-right:5px; background-color:#eee;}
+#insert-proposal .checkbox--wrap input[type=checkbox]:checked {background-color:red;}
 #insert-proposal .btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
 
 @media screen and (max-width: 960px) {
   #insert-proposal .group > * {width:calc(100px); float:none;}
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
