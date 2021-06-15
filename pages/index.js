@@ -10,6 +10,80 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
+// 레이어 모달
+const MainLayerPop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 5;
+`;
+const LayerContent = styled.div`
+  position: relative;
+  top: 120px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 10px;
+  height: 589px;
+  border: 1px solid #222;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  @media screen and (max-width: 575px) {
+    width: 88.89%;
+    height: auto;
+  }
+`;
+const LayerImg = styled.div`
+  padding: 0 40px;
+  height: 524px;
+  img {
+    height: 100%;
+  }
+  @media screen and (max-width: 575px) {
+    width: 100%;
+    height: auto;
+    padding: 0 3.145%;
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+`;
+
+const ButtonWrap = styled.div`
+  span {
+    display: inline-block;
+    position: relative;
+    font-size: 0;
+  }
+  span:first-of-type {
+    padding-right: 22px;
+    margin-right: 22px;
+  }
+  span:first-of-type:after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    content: "";
+    width: 1px;
+    height: 10px;
+    background: #c8c8c8;
+  }
+  button {
+    font-size: 16px;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 575px) {
+    padding-bottom: 7.5%;
+  }
+`;
+
 const registerObserver = (ref, setVisible) => {
   const observer = new IntersectionObserver((enteries, options) => {
     enteries.forEach((entry) => {
@@ -24,6 +98,7 @@ const registerObserver = (ref, setVisible) => {
   observer.observe(ref);
 };
 
+// 메인 YouTube 영상 Script
 const videoPlayerFunc = () => {
   let done = false;
   let player;
@@ -54,16 +129,6 @@ const videoPlayerFunc = () => {
   };
 };
 
-const MainLayerPop = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  z-index: 5;
-`;
-
 export default function Home() {
   const listRef = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -80,8 +145,10 @@ export default function Home() {
   importScript("https://www.youtube.com/iframe_api");
   videoPlayerFunc();
 
+  // 팝업 노출 변수
   const [showModal, setShowModal] = useState(false);
 
+  // 쿠키 생성
   function setCookieMobile(name, value, expiredays) {
     var todayDate = new Date();
     todayDate.setDate(todayDate.getDate() + expiredays);
@@ -103,55 +170,22 @@ export default function Home() {
     }
   }, []);
 
+  // 오늘 하루 팝업 보지 않기
   const headleMakeCookie = () => {
     setCookieMobile("todayCookie", "done", 1);
     setShowModal(false);
   };
+
+  // 팝업 닫기
   const headlePopupClose = () => setShowModal(false);
+
+  // 3초동안 팝업을 닫지 않으면 자동 팝업 닫힘
+  setTimeout(function () {
+    setShowModal(false);
+  }, 3000);
 
   return (
     <Layout>
-      {showModal && (
-        <MainLayerPop>
-          <div className={styles["layer-content"]}>
-            <div className={styles["layer-img"]}>
-              <img src="/images/main/img_main_popup.png" alt=""></img>
-            </div>
-            <div className="blind">
-              <h1>금융위원회 혁신금융 서비스 선정</h1>
-              <p>
-                핀크가 통신신용평가를 활용하여 대출비교서비스를 제공하는
-                혁신금융서비스 사업자로 선정되었습니다. 통신서비스 이용정보를
-                통해 더 많은 혜택을, 금융거래 정보가 없는 고객에게 차별 없는
-                금융생활을 제공하기 위한 노력의 결과입니다. 오늘의 혁신에 이어
-                내일의 혁신도 끊임없이 추구하여 어려운 금융의 벽을 허무는
-                도전하는 기업이 되겠습니다. 감사합니다.
-              </p>
-            </div>
-            <div className={styles["btn-wrap"]}>
-              <span>
-                <button
-                  type="button"
-                  className={styles["btn-today"]}
-                  onClick={headleMakeCookie}
-                >
-                  오늘 하루 열지 않기
-                </button>
-              </span>
-              <span>
-                <button
-                  type="button"
-                  className={styles["btn-close"]}
-                  onClick={headlePopupClose}
-                >
-                  닫기
-                </button>
-              </span>
-            </div>
-          </div>
-        </MainLayerPop>
-      )}
-
       <div>
         <section>
           <div className={styles["main-inner"]}>
@@ -336,6 +370,46 @@ export default function Home() {
           </Swiper>
         </section>
       </div>
+      {showModal && (
+        <MainLayerPop>
+          <LayerContent>
+            <LayerImg>
+              <img src="/images/main/img_main_popup.png" alt=""></img>
+            </LayerImg>
+            <div className="blind">
+              <h1>금융위원회 혁신금융 서비스 선정</h1>
+              <p>
+                핀크가 통신신용평가를 활용하여 대출비교서비스를 제공하는
+                혁신금융서비스 사업자로 선정되었습니다. 통신서비스 이용정보를
+                통해 더 많은 혜택을, 금융거래 정보가 없는 고객에게 차별 없는
+                금융생활을 제공하기 위한 노력의 결과입니다. 오늘의 혁신에 이어
+                내일의 혁신도 끊임없이 추구하여 어려운 금융의 벽을 허무는
+                도전하는 기업이 되겠습니다. 감사합니다.
+              </p>
+            </div>
+            <ButtonWrap>
+              <span>
+                <button
+                  type="button"
+                  className={styles["btn-today"]}
+                  onClick={headleMakeCookie}
+                >
+                  오늘 하루 열지 않기
+                </button>
+              </span>
+              <span>
+                <button
+                  type="button"
+                  className={styles["btn-close"]}
+                  onClick={headlePopupClose}
+                >
+                  닫기
+                </button>
+              </span>
+            </ButtonWrap>
+          </LayerContent>
+        </MainLayerPop>
+      )}
     </Layout>
   );
 }

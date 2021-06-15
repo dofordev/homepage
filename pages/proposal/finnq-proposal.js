@@ -82,8 +82,11 @@ const LayerSuccessPop = styled(LayerCommonWrap)`
 
 export default function FinnqInsurance() {
   const btnSubmitRef = useRef(null);
+  // 버튼 활성화 여부 판단
   const [activeBtn, setActiveBtn] = useState(false);
+  // 약관 안내 팝업 노출 팝업
   const [showGuideModal, setShowGuideModal] = useState(false);
+  // 데이터 전송 성공 팝업
   const [showSuccessModal, setSuccessShowModal] = useState(false);
 
   const {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export default function Footer() {
+  // 페밀리 사이트 메뉴
   const menuActive = () => {
     const footerMenuTag = document.querySelector(".family-list");
     let activeCheck = footerMenuTag.classList.contains("is-active");

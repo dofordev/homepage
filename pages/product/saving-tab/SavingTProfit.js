@@ -75,9 +75,7 @@ const SavingTProfit = () => {
               </dl>
             </div>
 
-            <div
-              className={`${styles["add-detail--wrap"]} ${styles["dash-info--wrap"]}`}
-            >
+            <div className={`${styles["add-detail--wrap"]}`}>
               <ul className={`list-type dash ${styles["add-detail"]}`}>
                 <li>
                   KDB산업은행 마케팅 이용 동의 및 신규 가입 시 인증한 SKT 회선
@@ -153,9 +151,7 @@ const SavingTProfit = () => {
                 <dt>무료 ATM 출금</dt>
               </dl>
             </div>
-            <div
-              className={`${styles["add-detail--wrap"]} ${styles["dash-info--wrap"]}`}
-            >
+            <div className={`${styles["add-detail--wrap"]}`}>
               <ul className={`list-type dash ${styles["add-detail"]}`}>
                 <li>무료송금 및 무료 ATM출금은 핀크에서 제공</li>
                 <li>전국 하나은행 ATM 이용 시, 수수료 무료</li>

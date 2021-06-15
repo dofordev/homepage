@@ -52,8 +52,8 @@ function FinnqmarketSaving() {
                 list={[
                   { title: "습관저금" },
                   { title: "T핀크적금" },
-                  { title: "KDB X T high5 적금" },
-                  { title: "T이득통장" },
+                  // { title: "KDB X T high5 적금" },
+                  // { title: "T이득통장" },
                 ]}
               ></Tabs>
             </article>
