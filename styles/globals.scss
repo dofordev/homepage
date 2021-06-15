@@ -53,7 +53,6 @@ input[type=search] {
 *****************************************************/
 br.web {display:block;}
 br.mobile {display:none;}
-
 @media screen and (max-width: 960px) {
   br.web {display:none;}
   br.mobile {display:block;}
@@ -69,6 +68,7 @@ br.mobile {display:none;}
 .txt-green {color:#00b389;}
 .txt-blue {color:#278df5;}
 .bold {font-family: 'SpoqaB' !important;}
+.fontL {font-family: "SpoqaL" !important;}
 
 /****************************************************
 * 정렬

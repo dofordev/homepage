@@ -6,20 +6,19 @@ import React, { useState, useEffect } from 'react';
 import Tabs from '/components/Tabs'
 import FinnqHanaCard from '/pages/product/card-tab/FinnqHanaCard'
 import TwoPlusCard from '/pages/product/card-tab/TwoPlusCard'
-import WaveCard from '/pages/product/card-tab/WaveCard'
+import WavveCard from '/pages/product/card-tab/WavveCard'
 import FinnqCheckCard from '/pages/product/card-tab/FinnqCheckCard'
 import RefreshCard from '/pages/product/card-tab/RefreshCard'
 
 const content = {
   0 : <FinnqHanaCard/>,
   1 : <TwoPlusCard/>,
-  2 : <WaveCard/>,
+  2 : <WavveCard/>,
   3 : <FinnqCheckCard/>,
   4 : <RefreshCard/>
 }
 
 function FinnqCard() {
-
   const [tabNum, setTabNum] = useState(0);
 
   useEffect(() => {
@@ -52,7 +51,7 @@ function FinnqCard() {
             </section>
 
             <section className="contents-body">
-              <article className="tab-wrap">
+              <article className="tab-wrap mb-0">
 
                 <Tabs clickEvent={setTabNum} activeTab={tabNum} list={[
                   {title:'핀크카드'}

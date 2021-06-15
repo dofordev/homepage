@@ -4,8 +4,9 @@
 * 카드 탭
 *********************************/
 
+
 .container .visual{
-  height: 463px;
+  height: auto;
 
 }
 .container .guide-title{
@@ -32,7 +33,7 @@
 
 .txt-desc{
   font-size: 20px;
-  line-height: 30px;
+  line-height: 24px;
   letter-spacing: -1px;
   color: #666;
   font-family: 'SpoqaR';
@@ -117,10 +118,7 @@
   color: #0254fa;
 }
 
-.finnq-card-wrap .visual{
-  background: url(/images/product/card/finnq-card/bg_market_card.png) no-repeat right 95px bottom 48px;
-  background-size: 400px 370px;
-}
+
 
 
 .two-plus-card-wrap .visual{
@@ -130,7 +128,7 @@
 
 
 
-.two-plus-card-wrap .guide-desc, .wave-card-wrap .guide-desc{
+.two-plus-card-wrap .guide-desc, .wavve-card-wrap .guide-desc{
   display:inline-block;
   margin-right: 80px;
 }
@@ -173,57 +171,105 @@
   word-break: keep-all;
 }
 
-
-/********************************
-* 카드 탭 : 웨이브 카드
-*********************************/
-.wave-card-wrap .visual{
-  background: url(/images/product/card/wave-card/img_wavve_visual1.png) no-repeat right 140px bottom 48px;
-  background-size: 400px 370px;
-  height: 100%;
-}
-.wave-card-wrap .background-wrap{
+.background-wrap{
   background:#f8f8f8;
 }
-.wave-card-wrap .visual2{
-  background: url(/images/product/card/wave-card/img_wavve_visual2.png) no-repeat right 140px bottom 48px;
-  background-size: 450px 500px;
-  background-position: top right;
+.desc-wrap{
+  padding: 0;
+  overflow: hidden;
+
 }
-.wave-card-wrap .visual3{
-  height:400px;
-  background: url(/images/product/card/wave-card/img_wavve_visual3.png) no-repeat right 140px bottom 48px;
-  background-size: 450px 240px;
-  background-position: center right;
+.list-expend{
+  border-bottom: 1px solid #eee;
 }
-.wave-card-wrap .info-wrap .txt{
+.list-expend > li {
+  font-size: 16px;
+  line-height: 20px;
+  color: #666;
+  font-family: "SpoqaR";
+}
+.list-expend > li * {
+  font-family: "SpoqaR";
+}
+.list-expend .subject {
+  border-top: 1px solid #eee;
+}
+.list-expend .subject.on {
+  border-bottom: 1px solid #eee;
+}
+.list-expend > li .subject a {
+  display: block;
+  position: relative;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 30px 40px;
+  color: #222;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.list-expend>li .subject a i {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  margin-top: -15px;
+  display: inline-block;
+  background: url(/images/product/card/btn_toggle_arrow.png) no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  background-position: 0 0;
+}
+.list-expend > li .subject.on a i {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+.list-expend .detail-set{
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+
+}
+
+.info-wrap .txt{
   color: #222;
   font-size: 20px;
   margin-bottom: 24px;
   font-family: 'SpoqaR';
 }
 
-.wave-card-wrap .info-wrap .card--info__guide dt{
+.card--info__guide dt{
   margin-top: 24px;
 }
 
-.wave-card-wrap .info-wrap .card--info__guide dt{
+.card--info__guide dt{
   font-family: "SpoqaR";
   color: #222;
 }
-.wave-card-wrap .info-wrap .card--info__guide dd{
+.card--info__guide dd{
   margin-top: 8px;
   font-family: "SpoqaL";
   color: #666;
 }
 
-.wave-card-wrap .info-wrap .card--info__guide .dash-type{
-  margin-top: 8px;
+.card--info__guide .dash-type{
+  margin-top: 16px;
   margin-left: 0;
   position: relative;
   padding-left: 10px;
 }
-.wave-card-wrap .info-wrap .card--info__guide .dash-type:before {
+.card--info__guide .star-type:before {
+  content: "*";
+  vertical-align: text-top;
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+.card--info__guide .star-type{
+  position: relative;
+  padding-left: 10px;
+}
+.card--info__guide .dash-type:before {
   top: -1px;
   content: "-";
   vertical-align: text-top;
@@ -231,7 +277,7 @@
   left: 0;
 }
 
-.wave-card-wrap .info-wrap .card--info__guide .info-type{
+.card--info__guide .info-type{
   margin-top: 16px;
   font-size: 16px;
   line-height: 20px;
@@ -241,12 +287,236 @@
   position: relative;
   padding-left: 20px;
 }
-.wave-card-wrap .info-wrap .card--info__guide .info-type:before{
+.card--info__guide .info-type:before{
   content: "※";
   vertical-align: text-top;
   position: absolute;
   top: 0px;
   left: 0;
+}
+
+.tbl-type1{
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #c8c8c8;
+}
+.tbl-type1 thead th {
+  background: #f8f8f8;
+  font-weight: normal;
+  border-bottom: 1px solid #c8c8c8;
+  text-align: center;
+  padding: 14px 5px 11px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222;
+}
+.tbl-type1 td {
+  padding: 14px 5px 11px;
+  color: #666;
+  text-align: center;
+  letter-spacing: -1px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  line-height: 18px;
+}
+.sub-text {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+.cont-wrap{
+  position: relative;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.cont-wrap .bul-text {
+  padding: 48px 40px;
+}
+.cont-wrap .bul-text .info-type {
+  font-family: "spoqaB";
+  color: #666;
+  position: relative;
+  padding-left: 20px;
+  margin-top: 16px;
+}
+.cont-wrap .bul-text .info-type:before {
+  content: "※";
+  vertical-align: text-top;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.cont-wrap .bul-text .sub {
+  font-weight: normal;
+  margin-top: 24px;
+  font-family: "spoqaR";
+}
+.hide{
+  display:none;
+}
+@media screen and (max-width: 960px) {
+  .mobile-text-center{
+    text-align: center;
+  }
+  .mobile-show{
+    display:block;
+  }
+  .mobile-hide{
+    display:none;
+  }
+}
+.cont-wrap .bul-text .product-num {
+  margin-top: 40px;
+  color: #666;
+}
+
+/********************************
+* 카드 탭 : 핀크카드
+*********************************/
+.finnq-card-wrap .visual{
+  background: url(/images/product/card/finnq-card/bg_market_card.png) no-repeat right 95px bottom 48px;
+  background-size: 400px 370px;
+}
+.finnq-card-wrap .swiper-container{
+  display:none;
+}
+@media screen and (max-width: 960px) {
+  .finnq-card-wrap .visual{
+    height: auto;
+    background-position: right 20px top 64px;
+    background-size: 300px 278px;
+    padding-bottom: 40px;
+  }
+  .finnq-card-wrap .guide-title{
+    padding-top: 201px;
+    width: auto;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .finnq-card-wrap .guide-desc{
+    margin-right: 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .finnq-card-wrap .desc-info{
+    display:none;
+  }
+
+  .finnq-card-wrap .visual-title{
+    margin-top: 0;
+    text-align: center;
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .finnq-card-wrap .txt-desc{
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 0;
+    padding-top: 15px;
+  }
+  .finnq-card-wrap .visual2 .img1-wrap, .finnq-card-wrap .visual2 .img3-wrap{
+    margin : 0 auto;
+    width: 308px;
+    height: auto;
+  }
+  .finnq-card-wrap .visual2 .img2-wrap{
+    position: static;
+    margin: 40px auto;
+    width: 33px;
+    height: 33px;
+  }
+  .finnq-card-wrap .img4-wrap{
+    margin : 0 auto;
+    padding-top: 30px;
+    width: 308px;
+    height: auto;
+  }
+  .finnq-card-wrap .cont-wrap{
+    text-align: left;
+    display: block;
+    margin: 36px 20px 58px;
+    max-width: 437px;
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 0;
+    color: #999;
+  }
+  .finnq-card-wrap .deli-wrap{
+    margin-top: 30px;
+    padding-left: 20px;
+  }
+  .finnq-card-wrap .deli-txt{
+    text-indent: -14px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .finnq-card-wrap .visual2 .auto-charge-info-wrap{
+    margin-top: 38px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .finnq-card-wrap .visual2 .auto-charge-info{
+    margin-top: 36px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .finnq-card-wrap .swiper-container {
+    position:relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top:20px;
+    display: block;
+  }
+  .finnq-card-wrap .swiper-slide{
+    width: 50%;
+    margin-left: 2px;
+    text-align: center;
+  }
+  .finnq-card-wrap .swiper-slide .item{
+    position: relative;
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .finnq-card-wrap .swiper-container img{
+    width: 100%;
+    height: auto;
+  }
+  .finnq-card-wrap .swiper-container .stit{
+    margin-top: 15px;
+    display: inline-block;
+    padding: 0 10px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    background: #e0e0e0;
+    color: #666;
+    border-radius: 15px;
+    font-weight: bold;
+  }
+}
+/********************************
+* 카드 탭 : 웨이브 카드
+*********************************/
+.wavve-card-wrap .visual{
+  background: url(/images/product/card/wavve-card/img_wavve_visual1.png) no-repeat right 140px bottom 48px;
+  background-size: 400px 370px;
+  height: 100%;
+}
+
+.wavve-card-wrap .visual2{
+  background: url(/images/product/card/wavve-card/img_wavve_visual2.png) no-repeat right 140px bottom 48px;
+  background-size: 450px 500px;
+  background-position: top right;
+}
+.wavve-card-wrap .visual3{
+  height:400px;
+  background: url(/images/product/card/wavve-card/img_wavve_visual3.png) no-repeat right 140px bottom 48px;
+  background-size: 450px 240px;
+  background-position: center right;
 }
 
 /********************************
@@ -259,3 +529,340 @@
   background-size: 400px 370px;
   padding: 80px 40px 189px;
 }
+
+.finnq-check-card-wrap .visual2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.finnq-check-card-wrap .visual2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.finnq-check-card-wrap .visual2 .visual-title{
+  position: relative;
+  margin-top: 0;
+  width: 290px;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  color: #222;
+  font-family: 'SpoqaR';
+}
+.finnq-check-card-wrap .visual2 h5:after{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: -174px;
+  margin-top: -87px;
+  width: 174px;
+  height: 174px;
+  content: "";
+  background: url(/images/product/card/finnq-check-card/img_finnq_check2-1.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+.finnq-check-card-wrap .visual2 h6:after{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: -174px;
+  margin-top: -87px;
+  width: 174px;
+  height: 174px;
+  content: "";
+  background: url(/images/product/card/finnq-check-card/img_finnq_check2-2.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.finnq-check-card-wrap .visual2 .list-item li{
+  position: relative;
+  padding-left: 26px;
+  font-family: "spoqaR";
+  font-size: 20px;
+  line-height: 28px;
+  color: #666;
+  text-align: left;
+}
+.finnq-check-card-wrap .visual2 .list-item li:before{
+  display: block;
+  content: "-";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.finnq-check-card-wrap .visual2 .right-content{
+  position:relative;
+  left:-160px;
+}
+
+.finnq-check-card-wrap .visual3{
+  background: url(/images/product/card/finnq-check-card/img_finnq_check3.png) no-repeat right 50px top 50%;
+  padding: 170px 40px;
+  background-size: 400px 256px;
+}
+.finnq-check-card-wrap .visual4{
+  padding: 183px 40px;
+  background: url(/images/product/card/finnq-check-card/img_finnq_check4.png) no-repeat right 50px top 50%;
+  background-size: 400px 336px;
+}
+
+@media screen and (max-width: 960px) {
+  .finnq-check-card-wrap .visual1{
+    padding: 40px 20px 239px;
+    background-position: right 20px bottom 20px;
+    background-size: 319px auto;
+  }
+  .finnq-check-card-wrap .visual1 .txt-desc{
+    font-size: 14px;
+  }
+
+  .finnq-check-card-wrap .visual2{
+    display: block;
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .finnq-check-card-wrap .visual2 .cont1{
+    float: none;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .finnq-check-card-wrap .visual2 .cont1 .visual-title{
+    display: inline-block;
+    font-size: 20px;
+    line-height: 26px;
+    width: 100%;
+    padding-right: 90px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .finnq-check-card-wrap .visual2 .cont1 .visual-title:after{
+    right: 0px;
+    margin-top: 0px;
+    width: 87px;
+    height: 87px;
+    top: -4px;
+  }
+  .finnq-check-card-wrap .visual2 .cont1 .list-item, .finnq-check-card-wrap .visual2 .cont2 .list-item{
+
+    margin-top: 20px;
+    padding-left: 0;
+  }
+  .finnq-check-card-wrap .visual2 .cont1 .list-item li, .finnq-check-card-wrap .visual2 .cont2 .list-item li{
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .finnq-check-card-wrap .visual2 .cont2{
+    float: none;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 0 16px;
+    box-sizing: border-box;
+    left: 0;
+    margin-top: 48px;
+  }
+  .finnq-check-card-wrap .visual2 .cont2 .visual-title{
+    display: inline-block;
+    font-size: 20px;
+    line-height: 26px;
+    width: 100%;
+    padding-right: 90px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .finnq-check-card-wrap .visual2 .cont2 .visual-title:after{
+    right: 0px;
+    margin-top: 0px;
+    width: 87px;
+    height: 87px;
+    top: -4px;
+  }
+
+  .finnq-check-card-wrap .visual3 {
+    padding: 20px 0 237px;
+    margin-bottom: 30px;
+    background-position: bottom;
+    background-size: 308px auto;
+
+  }
+  .finnq-check-card-wrap .visual3 h6, .finnq-check-card-wrap .visual4 h6{
+    font-size: 26px;
+    line-height: 31px;
+    margin-bottom: 0px;
+  }
+
+  .finnq-check-card-wrap .visual4 {
+    padding: 20px 0 297px;
+    margin-bottom: 0;
+    background-position: bottom 30px right 50%;
+    background-size: 308px auto;
+
+  }
+  .finnq-check-card-wrap .info-wrap{
+    padding-bottom: 30px;
+  }
+  .finnq-check-card-wrap .info-wrap li{
+    font-size: 14px;
+  }
+}
+/********************************
+* 카드 탭 : 새로고침 카드
+*********************************/
+.refresh-card-wrap .visual{
+  background: url(/images/product/card/refresh-card/img_refreshcard_01.png) no-repeat right 0px top 0px;
+  background-size: 600px 467px;
+}
+
+.refresh-card-wrap .visual2{
+  background: url(/images/product/card/refresh-card/img_refreshcard_02.png) no-repeat right 0px top 0px;
+  background-size: 600px 510px;
+  height:510px;
+}
+
+.refresh-card-wrap .visual3{
+  background: url(/images/product/card/refresh-card/img_refreshcard_03.png) no-repeat right 0px top 0px;
+  background-size: 600px 383px;
+  height:383px;
+}
+.refresh-card-wrap .visual4{
+  background: url(/images/product/card/refresh-card/img_refreshcard_04.png) no-repeat right 0px top 0px;
+  background-size: 600px 440px;
+  height:440px;
+}
+
+.refresh-card-wrap .guide-title{
+  padding-top: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  .refresh-card-wrap .visual {
+    background-size: 400px auto;
+    background-position: top 160px right -63px;
+    padding: 34px 20px 80px;
+  }
+  .refresh-card-wrap .visual2, .refresh-card-wrap .visual3, .refresh-card-wrap .visual4 {
+    background-size: 100% auto;
+    background-position: bottom;
+    padding: 34px 20px 80px;
+    height:auto;
+  }
+  .refresh-card-wrap .visual2 .sub-text3{
+    margin-bottom: 80%;
+  }
+  .refresh-card-wrap .visual2 .sub-text1{
+    font-size: 16px;
+  }
+  .refresh-card-wrap .visual2 .sub-text2{
+    margin-top:0;
+    font-size: 16px;
+  }
+  .refresh-card-wrap .visual2 .sub-text3{
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .refresh-card-wrap .visual3 .sub-text3{
+    margin-bottom: 55%;
+  }
+  .refresh-card-wrap .visual4 .sub-text3{
+    margin-bottom: 60%;
+  }
+  .refresh-card-wrap .visual3 .visual-title, .refresh-card-wrap .visual4 .visual-title{
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .refresh-card-wrap .visual3 .sub-text3, .refresh-card-wrap .visual4 .sub-text3{
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .list-expend > li .subject a{
+    padding: 20px 24px 17px;
+    font-size: 18px;
+  }
+  .refresh-card-wrap .guide-title {
+    margin-top: 230px;
+    padding-top: 0;
+    border-bottom: none;
+    width: auto;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .refresh-card-wrap .txt-desc {
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 20px;
+  }
+  .refresh-card-wrap .guide-desc {
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    float: left;
+    margin-right: 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'SpoqaR';
+  }
+  .detail-set .con{
+    padding: 13px 24px 50px;
+  }
+  .refresh-card-wrap .visual-title{
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .cont-wrap .bul-text {
+    padding: 20px 24px;
+  }
+  .cont-wrap .bul-text li{
+    font-size: 14px;
+  }
+}
+
+.refresh-card-wrap .sub-text0{
+  font-size: 16px;
+  color: #222;
+}
+
+
+.refresh-card-wrap .sub-text1{
+  font-family: "spoqaB";
+  font-size: 20px;
+  color: #999;
+}
+
+.refresh-card-wrap .sub-text2{
+  font-family: "spoqaL";
+  margin-top: 8px;
+  font-size: 20px;
+  color: #999;
+}
+.refresh-card-wrap .sub-text3{
+  color: #999;
+  padding-top: 24px;
+
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -1px;
+  font-family: 'SpoqaR';
+}
+.refresh-card-wrap .sub-text4{
+  font-size: 16px;
+  color: #c8c8c8;
+}
+
+.refresh-card-wrap strong{
+  display: block;
+  font-size: 16px;
+  font-family: "spoqaB";
+  color: #222;
+}
+
+

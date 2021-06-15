@@ -1,16 +1,14 @@
 import styles from "/styles/product/FinnqCard.module.scss";
-import Image from "next/image";
 import React from "react";
 
 
-export default function WaveCard(){
+export default function WavveCard(){
     return (
-        <article className={`${styles["wave-card-wrap"]} contents-details`}>
+        <article className={`${styles["wavve-card-wrap"]} contents-details`}>
             <section className={`${styles["visual"]} contents-visual`}>
                 <h4 className="visual-title">
                     웨이브 구독만 하면
-                    <br />누구나 파도치는
-                    <br />혜택!
+                    <br />누구나 파도치는 혜택!
                 </h4>
                 <dl className={`pt-17`}>
                     <dt className={styles["guide-title"]}>연회비</dt>
@@ -52,10 +50,7 @@ export default function WaveCard(){
                     <div className={`${styles["card--info__guide"]}`}>
                         <p className={`${styles["txt"]}`}>wavve 카드 5만원 캐시백 이벤트 상세</p>
                         <div className={`${styles["card__guide"]}`}>
-                            <dl>
-                                <dt>기간</dt>
-                                <dd>2021.1.15 ~ 2.28</dd>
-                            </dl>
+
                             <dl>
                                 <dt>이벤트 내용</dt>
                                 <dd>핀크앱 이벤트 페이지에서 응모 후, wavve카드로 3.15일까지 5만원 이상 이용 시 결제 계좌로 5만원 캐시백</dd>
@@ -100,7 +95,7 @@ export default function WaveCard(){
                         </div>
                         <div className="">
                             <ul className="">
-                                <li className={`${styles["info-type"]} bold`}>카드별 상세혜택 및 이용조건은 카드 발급 신청 시 상품설명서 및 상품 약관을 반드시 확인하시기 바랍니다</li>
+                                <li className={`${styles["info-type"]} bold`}>카드별 상세혜택 및 이용조건은 카드 발급 신청 시 상품설명서 및 상품 약관을 반드시 확인하시기 바랍니다.</li>
                                 <li className={`${styles["info-type"]} bold`}>신용카드 남용은 가계경제에 위협이 됩니다.</li>
                                 <li className={`${styles["info-type"]} bold`}>여신금융상품 이용 시 귀하의 신용등급이 하락할 수 있습니다.</li>
                                 <li className={`${styles["info-type"]} bold`}>연체이자율(약정이율 + 최대 3%)은 회원별·이용상품별로 차등 적용되며, 법정 최고금리(24%)를
