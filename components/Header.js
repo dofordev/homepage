@@ -79,7 +79,7 @@ export default function Header() {
 
   return (
     <header
-      className="header"
+      className="header fixed"
       onMouseEnter={eventIn}
       onMouseLeave={eventLeave}
       onFocus={eventIn}
@@ -105,15 +105,18 @@ export default function Header() {
               <a
                 href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
                 target="_blank"
+                className="new"
               >
-                대출금리비교<i className="new"></i>
+                대출금리비교
               </a>
             </li>
             <li>
               <Link href="/product/finnq-insurance">보험 맞춤 추천</Link>
             </li>
             <li>
-              <Link href="/proposal/finnq-proposal">마이데이터 제휴</Link>
+              <Link href="/proposal/finnq-proposal">
+                <a className="new">마이데이터 제휴</a>
+              </Link>
             </li>
             <li className="cerfi">
               <Link href="/details/cert/finnq-cert">공인인증센터</Link>
@@ -149,15 +152,18 @@ export default function Header() {
                     <a
                       href="https://loan.finnq.com/intro/finnq?pcn=WEB_Bridge"
                       target="_blank"
+                      className="new"
                     >
-                      대출금리비교<i className="new"></i>
+                      대출금리비교
                     </a>
                   </li>
                   <li>
                     <Link href="/product/finnq-insurance">보험 맞춤 추천</Link>
                   </li>
                   <li>
-                    <Link href="/proposal/finnq-proposal">마이데이터 제휴</Link>
+                    <Link href="/proposal/finnq-proposal">
+                      <a className="new">마이데이터 제휴</a>
+                    </Link>
                   </li>
                 </ul>
               </li>

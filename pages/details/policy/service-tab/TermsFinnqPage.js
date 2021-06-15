@@ -669,7 +669,7 @@ const TermsFinnqPage = () => {
         </ol>
 
         <p className="sub-text">제16조의 2 착오송금에 관한 사항</p>
-        <ol class="depth01">
+        <ol className="depth01">
           <li>
             <span>①</span> 이용자가 착오로 수취금융회사, 수취계좌번호 등을 잘못
             기재하거나 입력하여 수취인에게 선불전자지급수단 등의 자금이
@@ -704,7 +704,7 @@ const TermsFinnqPage = () => {
             신청한 내역이 다음 각 호에 해당하는 경우 관련 법령에 따라
             예금보험공사의 지원 절차가 중단될 수 있습니다.
           </li>
-          <ul class="depth02">
+          <ul className="depth02">
             <li>1. 이용자가 거짓이나 부정한 방법으로 반환지원을 신청한 경우</li>
             <li>2. 착오송금이 아님이 객관적인 자료로 확인되는 경우</li>
             <li>

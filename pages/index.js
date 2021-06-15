@@ -233,7 +233,10 @@ export default function Home() {
           </article>
         </section>
 
-        <section className={styles["swiper-wrap"]}>
+        <section
+          className={styles["swiper-wrap"]}
+          style={{ overflow: "hidden" }}
+        >
           <Swiper
             className={`main-swiper width-fix ${styles["swiper-main--custom"]}`}
             // onSlideChange={() => console.log("slide change")}

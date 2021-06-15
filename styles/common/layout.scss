@@ -15,12 +15,12 @@ html.preventScroll body {overflow-y: hidden;}
 ****************************************************/
 .header {@include position($p:fixed, $t:0, $l:0); width: 100%; height: 100px; z-index: 10;}
 .header .header-logo {float: left; width: 80px; height: 24px;}
-.header .header-logo a {display:inline-block; width:100%; height:100%; margin: 38px 0 0 0; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 100% auto; text-indent: -999em;}
+.header .header-logo a {display:inline-block; width:100%; height:100%; margin:34px 0 0 0; background: url(/images/common/finnq_logo_white.png) no-repeat 0 0; background-size: 100% auto; text-indent: -999em;}
 .header .nav {float: right; margin: 38px 0 0 0; font-size: 16px;}
-.header .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new.png) no-repeat 0 0; background-size: 100% auto;}
+.header .nav .new:after {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; content:""; background-image: url(/images/common/img_new.png); background-repeat: no-repeat; background-position:0 0; background-size: 100% auto;}
 .header .nav .nav-list li {float: left;}
-.header .nav .nav-list li a {position: relative; display: block; padding: 0 15px; font-family: 'SpoqaB'; font-size: 18px; line-height: 18px; color: #fff;}
-.header .nav .nav-list li a:after {display: inline-block; @include position($t: 1px, $r: 0); width: 1px; height: 15px; background: rgba(255, 255, 255,0.3); content: '';}
+.header .nav .nav-list li a {position: relative; display: block; padding: 0 13px; font-family: 'SpoqaB'; font-size: 18px; line-height: 18px; color: #fff;}
+.header .nav .nav-list li a:before {display: inline-block; @include position($t: 1px, $r: 0); width: 1px; height: 15px; background: rgba(255, 255, 255,0.3); content: '';}
 .header .nav .nav-list .cerfi > a {padding-right: 26px; background: url(/images/common/ico_cerfi.png) no-repeat 100% 50%; background-size: 16px auto; font-family: 'SpoqaR'; font-size: 16px; line-height: 17px;}
 .m-gnb,
 .m-gnb-deem,
@@ -32,9 +32,9 @@ html.preventScroll body {overflow-y: hidden;}
 .header.fixed .nav .nav-list li a {color:#222}
 .header.fixed .nav .nav-list li a:hover,
 .header.fixed .nav .nav-list li a:focus {color:#5008b2;}
-.header.fixed .nav .nav-list li a:after{background:rgba(0, 0, 0,0.3);}
+.header.fixed .nav .nav-list li a:before{background:rgba(0, 0, 0,0.3);}
 .header.fixed .nav .nav-list .cerfi > a {color:#222; background-image: url(/images/common/ico_cerfi_fixed.png);}
-.header.fixed .nav .new {display: inline-block; position: relative; top: 1px; width: 34px; height: 15px; margin-left: 6px; background-image: url(/images/common/img_new_m.png);}
+.header.fixed .nav .new:after {background-image: url(/images/common/img_new_m.png);}
 
 @media screen and (max-width: 960px) {
   .header {position: absolute;}
@@ -57,7 +57,6 @@ html.preventScroll body {overflow-y: hidden;}
     }
   }
 
-
   .m-nav {display: block; margin: 8px 0 0 -8px;}
   .m-nav .btn-nav {position: relative; outline: none; width: 34px; height: 34px; text-indent:-999em;}
   .m-nav .btn-nav:after {@include common__after($t:50%, $l:50%); width:20px; height:15px; margin-top:-7.5px; margin-left:-10px; background: url(/images/common/btn_m_nav.png) no-repeat 0 0; background-size:cover;}
@@ -66,14 +65,14 @@ html.preventScroll body {overflow-y: hidden;}
   .m-gnb .m-gnb-inner {margin: 60px 20px 0;}
   .m-gnb-inner .menu-title {display: block; padding-bottom: 18px; border-bottom: 1px solid #222; font-size: 22px; line-height: 24px; font-family: 'SpoqaB'; color: #222;}
   .m-gnb .m-gnb-inner .m-sub-menu {margin-top: 4px;}
-  @for $i from 1 through 5 {
+  @for $i from 1 through 6 {
     .m-gnb .m-gnb-inner .m-sub-menu li:nth-child(#{$i}) {
       opacity:0;
       animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards;
       -webkit-animation-delay:$i * 0.3s; animation-delay: $i * 0.3s;
     }
   }
-  .m-gnb .m-gnb-inner .m-sub-menu li .new {display: inline-block; position: relative; top: 2px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new_m.png) no-repeat 0 0; background-size: 100% auto;}
+  .m-gnb .m-gnb-inner .m-sub-menu .new:after {display: inline-block; position: relative; top: 2px; width: 34px; height: 15px; margin-left: 6px; background: url(/images/common/img_new_m.png) no-repeat 0 0; background-size: 100% auto;}
   .m-gnb .m-gnb-inner .m-sub-menu li a {display: block; position: relative; padding-top: 13px; padding-bottom: 13px; font-size: 16px; font-family: 'SpoqaR'; color: #666;}
   .m-gnb .m-gnb-inner .m-sub-menu li a:after {position: absolute; bottom: 0; left: 0; display: inline-block; width: 10px; height: 1px; background: #e0e0e0; content: '';}
   .m-gnb .m-gnb-inner .m-sub-menu li.is-active a {font-family: 'SpoqaB';}  
@@ -92,8 +91,7 @@ html.preventScroll body {overflow-y: hidden;}
   .m-gnb .m-sns .btn-sns.Instagram {background-image:url(/images/common/btn_gnb_insta.png);}
   .m-gnb .m-sns .btn-sns.blog {background-image:url(/images/common/btn_gnb_blog.png);}
   .m-gnb-deem {display: none; top: 0; bottom: 0; left: 0; right: 0; position: fixed; background: rgba(0, 0, 0, 0.3); z-index: 99;}
-  .m-gnb-deem.is-active {display:block;}
-  
+  .m-gnb-deem.is-active {display:block;} 
 }
 
 /***************************************************
@@ -156,7 +154,7 @@ html.preventScroll body {overflow-y: hidden;}
 // 상품 key visual
 .key-visual.product .inner {background-image:url(/images/common/sub_visual_market.jpg);}
 // 마이데이터 제휴
-.key-visual.proposal .inner {padding:150px 0; background-image:url(/images/proposal/img_top_visua.jpg);}
+.key-visual.proposal .inner {background-image:url(/images/proposal/img_top_visual.jpg);}
 .key-visual .title {opacity:0; margin-bottom:10px; font-size:32px; color:#fff; letter-spacing: -2px; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards;}
 .key-visual .desc {opacity:0; margin-bottom:60px; font-size: 18px; color: rgba(255, 255, 255, 0.8); font-family:'SpoqaR';letter-spacing:0; animation: fadeInUp 1.5s forwards; -webkit-animation: fadeInUp 1.5s forwards; -webkit-animation-delay:1s; animation-delay: 1s;}
 .key-visual.proposal .desc {font-family:"SpoqaL"; margin-bottom:35px;}
@@ -166,6 +164,7 @@ html.preventScroll body {overflow-y: hidden;}
   .key-visual .desc {display: none;}
   .key-visual .title {font-size:36px;}
   .key-visual .inner {height: 250px; padding:80px 0 50px; background-position:70% 50%;background-size: cover;}
+  .key-visual.proposal .inner {background-image:url(/images/proposal/img_top_visual_m.png);}
 }
 
 /**************************************************
@@ -182,33 +181,34 @@ html.preventScroll body {overflow-y: hidden;}
 .contents-details mark {letter-spacing: 0; color: inherit; background: transparent;}
 .contents-details .contents-visual {position: relative; max-width: 1280px; margin: 0 auto; padding: 80px 40px; -webkit-transition: all 0.3s ease-in; -o-transition: all 0.3s ease-in; transition: all 0.3s ease-in; height:auto;}
 .contents-details .visual-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
-.contents-details .desc-wrap {padding:80px 0; overflow: hidden;}
-.contents-details .desc-wrap .sub-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
-.contents-details .desc-wrap .sub-desc {margin-top:30px; font-size: 20px; line-height: 30px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR';}
-.contents-details .desc-wrap .sub-desc + .img-wrap {margin-top:35px;}
-.contents-details .desc-wrap .sub-desc + .sub-desc {margin-top:15px;}
-.contents-details .desc-wrap .item-desc {display:flex; align-items:center; justify-content: space-between; position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding:0 40px;}
-.contents-details .desc-wrap .item-desc.top {align-items: flex-start;}
+.desc-wrap {padding:80px 0; overflow: hidden;}
+.desc-wrap .sub-title {font-size: 36px; line-height: 46px; letter-spacing: -1px; color: #222; font-family: 'SpoqaR';}
+.desc-wrap .sub-desc {margin-top:30px; font-size: 20px; line-height: 30px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR';}
+.desc-wrap .sub-desc + .img-wrap {margin-top:35px;}
+.desc-wrap .sub-desc + .sub-desc {margin-top:15px;}
+.desc-wrap .item-desc {display:flex; align-items:center; justify-content: space-between; position:relative; overflow: hidden; max-width: 1280px; margin: 0 auto; padding:0 40px;}
+.desc-wrap .item-desc.top {align-items: flex-start;}
 
-.contents-details .desc-wrap .img-wrap {width: 400px;}
-.contents-details .desc-wrap .img-wrap img {width:100%; height:auto;}
-.contents-details .desc-wrap:nth-of-type(odd) {background: #f8f8f8;}
+.desc-wrap .img-wrap {width: 400px;}
+.desc-wrap .item-desc > *:last-of-type {margin-right:40px;}
+.desc-wrap .img-wrap img {width:100%; height:auto;}
+.desc-wrap:nth-of-type(odd) {background: #f8f8f8;}
 
 @media screen and (max-width: 960px) {
   .contents-head {padding:0 20px;}
-  .container .contents {padding: 60px 0px 15px;}
+  .container .contents {padding: 60px 0px 15px;}  
   .contents-head .title {font-size: 20px;}
   .contents-head .title:after {margin-top:15px;}  
   .btn-wrap.app-down,
   .contents-head .desc {display:none;}
   .contents-details .contents-visual {padding: 40px 20px 160px;}
-  .contents-details .desc-wrap {padding: 40px 0;}
+  .desc-wrap {padding: 40px 0;}
   .contents-details .visual-title {font-size:34px; line-height:40px;}
-  .contents-details .desc-wrap .item-desc {display:block; text-align:center; padding:0px;}
-  .contents-details .desc-wrap .sub-title {font-size: 26px; line-height: 30px; text-align: center;}
-  .contents-details .desc-wrap .sub-desc {margin-top:15px; text-align: center;
+  .desc-wrap .item-desc {display:block; text-align:center; padding:0px;}
+  .desc-wrap .sub-title {font-size: 26px; line-height: 30px; text-align: center;}
+  .desc-wrap .sub-desc {margin-top:15px; text-align: center;
     font-size: 16px; line-height:20px;}
-  .contents-details .desc-wrap .img-wrap {margin:40px auto 0; width: 308px;}
-  .contents-details .desc-wrap .sub-desc + .img-wrap {margin-top:15px;}
-  .contents-details .desc-wrap .desc-info + .desc-info.img-content {margin-top:30px}
+  .desc-wrap .img-wrap {margin:40px auto 0; width: 308px;}
+  .desc-wrap .sub-desc + .img-wrap {margin-top:15px;}
+  .desc-wrap .desc-info + .desc-info.img-content {margin-top:30px}
 }

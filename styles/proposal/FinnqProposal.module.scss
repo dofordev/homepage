@@ -3,20 +3,22 @@
 /********************************
 * 업무 제휴 
 *********************************/
-.bold {font-family:"SpoqaB";}
+.bold,
+.proposal-title {font-family:"SpoqaB";}
+.desc-wrap {padding:80px 0;}
+
 #proposal-contents {padding:0;}
 #proposal-body {margin-top:0;}
 #proposal-contents .title {font-size:48px; line-height:62px; font-family:"SpoqaB"; word-break:keep-all;}
 
-
-.swiper-wrap {background-color:#f5f6fa; padding-top:10px;}
-
-#swiper-content {padding: 100px 0;}
+#swiper-content {padding: 100px 0; background-color: #f5f6fa;}
 .swiper-proposal--custom {}
 .swiper-proposal--custom .txt-area {position:absolute; left:505px;}
+.swiper-proposal--custom .txt-web {display:block;}
+.swiper-proposal--custom .txt-mobile {display:none;}
 .swiper-proposal--custom .txt-area .desc {display:inline-block; position: relative; margin-bottom:20px; font-size:24px; color:#731aed; font-family:"SpoqaR";}
 .swiper-proposal--custom .txt-area .desc:after {display:block; position:absolute; width: calc(100% + 10px); bottom: -2px; left:0; height:16px; opacity: 0.15; background-color: #731aed; content:"";}
-.swiper-proposal--custom .txt-area .text {font-size:48px; line-height:62px; letter-spacing:-2px;}
+.swiper-proposal--custom .txt-area .text {font-size:48px; line-height:62px; letter-spacing:-2px; word-break: keep-all;}
 .swiper-proposal--custom .swiper-cont {position: relative; max-width: 1280px; margin: 0 auto; padding: 0 40px;}
 .swiper-proposal--custom .swiper-img {width:200px; margin-left:205px;}
 .swiper-proposal--custom .swiper-img img {width:100%; height:auto;}
@@ -46,7 +48,7 @@
   .product-list .add-text br {display:none;}
 }
 
-#insert-proposal {}
+#insert-proposal {background-color:#f5f6fa;}
 #insert-proposal .title {margin-bottom:40px;}
 #insert-proposal .item {position:relative; padding-bottom:32px;}
 #insert-proposal label {display:block; text-align:left; font-size:16px; font-family:"SpoqaB"; margin-bottom:8px;}
@@ -61,38 +63,88 @@
 
 #insert-proposal .input-txt {background-color:#fff;    padding:8px 10px; }
 #insert-proposal textarea {display: block; height:220px; font-size: 16px; color: #000; line-height: 21px; overflow-x: hidden; overflow-y: auto; outline:none;}
-#insert-proposal .error-message {color:#f74b20;}
-#insert-proposal .btn-data--submit:disabled {background-color:#aaa;}
+#insert-proposal .error-message {position:absolute; bottom:11px; right:0; text-align:right; font-size:11px; color:#f74b20;}
 #insert-proposal .group {overflow:hidden;}
 #insert-proposal .group > * {width:calc(50% - 40px);}
 #insert-proposal .group > *:nth-of-type(odd) {float:left;}
 #insert-proposal .group > *:nth-of-type(even) {float:right;}
 #insert-proposal .group > *:nth-of-type(n+3) {margin-top:10px;}
 
+/***************************
+* 커스텀  체크박스 
+* - 현재는 마이테이터 제휴에서만 사용. 
+* - 추후 다른곳에서 체크박스가 사용되면 Element Css로 옮겨서 글로벌로 사용.
+***************************/
 #insert-proposal .check-area {position: relative; display:flex; justify-content:space-between;}
-#insert-proposal .checkbox--wrap input[type=checkbox] {display: inline-block; width: 25px; height: 25px; vertical-align: middle;	 box-shadow: none; -webkit-appearance: none; line-height: 13px; border: none; background-color: transparent; margin-right:5px; background-color:#eee;}
-#insert-proposal .checkbox--wrap input[type=checkbox]:checked {background-color:red;}
-#insert-proposal .btn-data--submit {display:inline-block; border:1px solid #aaa; padding:8px 15px; text-align: center;}
+#insert-proposal .check-area label {font-family: "SpoqaL";}
+#insert-proposal .check-area label strong {font-family: "SpoqaB";}
+#insert-proposal .checkbox--wrap input[type=checkbox] {display: inline-block; width: 26px; height:26px; vertical-align: text-top; box-shadow: none; -webkit-appearance: none; line-height: 13px; margin-right:8px; border: none; background-color: transparent; background-repeat:no-repeat; background-position: 0 0; background-image: url(/images/common/sp_ico_checkbox.png); background-size:100% auto;}
+#insert-proposal .checkbox--wrap input[type=checkbox]:checked {background-position: 0 100%;}
+#insert-proposal .btn-layer--open {position: relative; margin:12px 0 0 34px; color:#278df5; font-size:14px; padding-right:16px; font-family:"spoqaR";}
+#insert-proposal .btn-layer--open:after {display:inline-block; position:absolute; right:0; top:3px; width:16px; height:16px; background: url(/images/common/ico_arrow_blue.png) no-repeat 0 0; background-size:cover; content:"";}
+
+#insert-proposal .btn-data--submit {display:inline-block; text-align: center; font-family:"spoqaB"; font-size:18px; background-color:#731aed; width:312px; height:60px; line-height:60px; border-radius:4px; color:#fff;}
+#insert-proposal .btn-data--submit:disabled {background-color:#e0e0e0; color:#f8f8f8;}
 
 @media screen and (max-width: 960px) {
-  #insert-proposal .group > * {width:calc(100px); float:none;}
+  .txt-hide {display:none;}
+  .desc-wrap {padding:48px 0;}
+  .proposal-title {font-family:"SpoqaL";}  
+  .btn-proposal--wrap {padding-top:22px;}
+  .btn-proposal--wrap .btn-proposal {padding:10px 48px;}
+  #insert-proposal .group > * {width:100%; float:none;}
+  #proposal-contents .title {font-size:24px; line-height:30px;}
+
+  // Swiper
+  #swiper-content {padding:48px 0 0 0px;}
+  .swiper-wrap {padding:0;}
+  .swiper-proposal--custom {overflow: hidden; padding-bottom:86px;}
+  .swiper-proposal--custom .swiper-cont {text-align:center; width:100%; max-width: 100%;}
+  .swiper-proposal--custom .txt-web {display:none;}
+  .swiper-proposal--custom .txt-mobile {display:block;}
+  .swiper-proposal--custom .txt-area {position: relative; left:0;}
+  .swiper-proposal--custom .txt-area .desc {font-size:18px;}
+  .swiper-proposal--custom .txt-area .desc:after {height:10px; left: -4px; bottom: 2px;}
+  .swiper-proposal--custom .txt-area .text {font-size:24px; line-height:30px; letter-spacing:-1px;}
+  .swiper-proposal--custom .swiper-img {margin:32px auto 0;}  
+
+  .split-desc {margin-top:24px; display: block; justify-content: normal;}
+  .split-desc .box-cont {width:100%; padding:28px 0; border-radius:0;}
+  .split-desc .box-cont + .box-cont {margin-top:8px;}
+  .split-desc .box-cont .text {font-size:14px; line-height:18px;}  
+  #proposal-desc .box-cont .text:before {width:40px; height:40px; margin-right:16px;}  
+  #proposal-desc article + article {margin-top:48px;}
+  #proposal-desc .sub-title {font-size:14px; margin-bottom:8px;}
+
+  .product-list {display:block; justify-content:normal; margin:24px 0 0;}
+  .product-list > li {width:100%; height:300px; background-position:50% 50%; background-size: cover;
+    background-repeat: no-repeat;}
+  .product-list > li + li {margin-top:8px;}
+  .product-list > li:nth-of-type(1) {background-image:url(/images/proposal/img_info_service_m_01.jpg);}
+  .product-list > li:nth-of-type(2) {background-image:url(/images/proposal/img_info_service_m_02.jpg);}
+  .product-list > li:nth-of-type(3) {background-image:url(/images/proposal/img_info_service_m_03.jpg);}
+  .product-list .add-text,
+  .product-list .product-img {display:none;}
+  .product-list .product-text {top:16px; left:16px; font-size:20px; line-height:26px;}
+  .product-list .product-text mark {letter-spacing:0;}
+  .product-list .product-text p {font-family:"SpoqaB";}
+  .product-list .add-text {word-break: keep-all; font-size:24px; line-height:32px; margin-top:16px; font-family:"SpoqaR";}
+  
+  #insert-proposal .title {margin-bottom:24px;}
+  #insert-proposal .check-area {display:block; justify-content:normal;}
+  #insert-proposal .btn-data--submit {width:100%; margin-top:32px;}
+}
+
+@media screen and (max-width: 640px) {
+  .product-list > li {height:200px;}
 }
 
 @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from {opacity: 0; }
+  to {opacity: 1; }
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
 
-  to {
-    opacity: 1;
-  }
+@keyframes fadeIn {
+  from {opacity: 0; }
+  to {opacity: 1; }
 }

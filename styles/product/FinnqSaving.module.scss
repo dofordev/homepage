@@ -1,225 +1,127 @@
 @charset "UTF-8";
 
 /********************************
-* 예적금 탭: 공통
+* 공통 적용 요소 
 *********************************/
-br.notMobile {
-  display:block;
-}
+.saving-split--desc .desc {overflow:hidden;}
+.saving-split--desc .desc li {float: left; margin-right: 4.5%; font-size: 20px; line-height: 24px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR'; word-break: keep-all;}
+.saving-split--desc .desc li strong {font-family: 'SpoqaR';}
+.saving-split--desc .desc li .detail {margin-top:5px; letter-spacing: -1px; color: #666; font-family: 'SpoqaR'; word-break: keep-all;}
+
+.thumb-txt {margin-top: 12px; font-size: 16px; line-height: 20px; letter-spacing: -1px; color: #999; font-family: 'SpoqaL';}
+.saving-common--desc {margin-top:80px;}
 
 @media screen and (max-width: 960px) {
-  br.notMobile {
-    display:none;
-    line-height: 18px;
-  }
+  .saving-common--desc {position: relative; top:125px;}
+  .saving-split--desc .desc {display:flex; justify-content:space-between;}
+  .saving-split--desc .desc li {font-size:14px; margin:0 !important;}
+  .saving-split--desc .desc li .detail {margin-top:0px;}
+  .thumb-txt {margin-top:8px; font-size:14px; line-height:18px;} 
 }
-
-
-
-
 
 /********************************
 * 예적금 탭: 습관저금
 *********************************/
-.saving-habit .visual{
-  background: url(/images/product/saving/saving-habitsaving/img_habit_saving1.png) no-repeat right 110px bottom 48px;
-  background-size: 400px 370px;
-}
+.saving-habit .visual{ background: url(/images/product/saving/saving-habit/img_habit_saving1.png) no-repeat right 80px bottom 55px; background-size: 400px 370px;}
 
-.step-list-guide {
-  position: relative;
-  margin-left: 5px;
-}
+.saving-habit--desc {margin-top:112px;}
 
-.step-list-guide.unordered-list:before {
-  position: absolute;
-  height: calc(100% - 47px);
-  content: "";
-  border-left: 1px dashed #8848ff;
-  top: 9px;
-  left: 0px;
-  bottom: 38px;
-}
-
-.step-list-guide li {
-  position: relative;
-  margin-top: 40px;
-  padding-left: 20px;
-  font-size: 20px;
-  word-break: keep-all;
-}
-
-.step-list-guide.list-item:before {
-  z-index: 5;
-  top: 7px;
-  background: #8848ff;
-  width: 12px;
-  height: 12px;
-  left: -11px;
-  display: inline-block;
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-}
-
-.step-list-guide.list-item:after {
-  z-index: 10;
-  top: 10px;
-  background: #fff;
-  width: 6px;
-  height: 6px;
-  left: -8px;
-  display: inline-block;
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-}
-
-.step-list-guide li:after {
-  z-index: 10;
-  top: 10px;
-  background: #fff;
-  width: 6px;
-  height: 6px;
-  left: -4px;
-}
+.step-list--guide {margin-left:10px;}
+.step-list {position:relative; margin-top:60px;}
+.step-list:before {position: absolute; height: calc(100% - 47px); content: ""; border-left: 1px dashed #8848ff; top: 9px; left:-1px; bottom: 38px;}
+.step-list li {position: relative; margin-top: 40px; padding-left: 20px; font-size: 20px; word-break: keep-all;}
+.step-list li:first-of-type {margin-top: 0;}
+.step-list li:before,
+.step-list li:after {display: inline-block; content: ""; position: absolute; border-radius: 50%;}
+.step-list li:before {z-index: 5; top: 7px; background: #8848ff; width: 12px; height: 12px; left: -7px;}
+.step-list li:after {z-index: 10; top: 10px; background: #fff; width: 6px; height: 6px; left: -4px;}
+.step-list .img-info {margin-top:20px;}
+.step-list .img-info img {width:400px; height:auto;}
 
 @media screen and (max-width: 960px) {
   .saving-habit .visual {
-    background: url(/images/product/saving/saving-habitsaving/img_habit_saving1.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
-
-  .step-list-guide {
-    position: relative;
-    margin-left: 16px;
-  }
-
-  .step-list-guide li {
-    font-size: 16px;
-    text-align: left;
-    padding-left: 5px;
-  }
-
-  .step-list-guide.list-item:before {
-    z-index: 5;
-    top: 7px;
-    background: #8848ff;
-    width: 12px;
-    height: 12px;
-    left: -22px;
-    display: inline-block;
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  .step-list-guide.list-item:after {
-    z-index: 10;
-    top: 10px;
-    background: #fff;
-    width: 6px;
-    height: 6px;
-    left: -19px;
-    display: inline-block;
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-  }
-
-  .img-info {
-    float: none;
-    margin: 20px 0 0 0;
-    text-align: center;
-    padding: 0 6px;
-  }
-
+    background-position:center top 64px; background-size: 300px auto;}  
+  .step-list:before {height: calc(100% - 75px);}
+  .step-list {margin:40px auto 0; width:308px; text-align:left;}
+  .step-list .img-info img {width:100%; height:auto;}
 }
-
-
-
-
 
 /********************************
 * 예적금 탭: T핀크적금
 *********************************/
-.saving-tfinnq .visual{
-  background: url(/images/product/saving/saving-tfinnqinstallmentsavings/bg_finnq_savings.png) no-repeat right 110px bottom 48px;
-  background-size: 400px 370px;
-}
+.saving-tfinnq .visual {
+  background: url(/images/product/saving/saving-tfinnq/bg_finnq_savings.png) no-repeat right 110px bottom 48px; background-size: 400px auto;}
 
 @media screen and (max-width: 960px) {
   .saving-tfinnq .visual {
-    background: url(/images/product/saving/saving-tfinnqinstallmentsavings/bg_finnq_savings.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
+    background-position: right 20px top 65px; background-size: 300px auto;}      
 }
-
-
-
 
 /********************************
 * 예적금 탭: KDB X T high5 적금
 *********************************/
-.saving-kdb .visual{
-  background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5kdbsavings.png) no-repeat right 110px bottom 48px;
-  background-size: 400px 370px;
-}
+.saving-high5 .saving-split--desc {margin-top:112px;}
+.saving-high5 .visual {background:url(/images/product/saving/saving-high5/bg_finnq_high5.png) no-repeat right 125px bottom 135px; background-size: 400px auto;}
+.saving-high5 .saving-split--desc .desc li {margin-right: 14.033%;}
 
-.bgImageT{
-  display: table-cell;
-  padding-left: 169px;
-  height: 150px;
-  vertical-align: middle;
-  background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_01.png) no-repeat 0 0;
-  background-size: 150px 150px;
-}
+.high5-product--detail {display:block !important;}
+.high5-product--detail article + article {margin-top:50px;}
+.high5-product--detail .sub-add--text {margin-top: 18px; font-size: 16px; line-height: 24px; color: #999; font-family: 'SpoqaL';}
 
-.bgImageV{
-  display: table-cell;
-  padding-left: 169px;
-  height: 150px;
-  vertical-align: middle;
-  background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_04.png) no-repeat 0 0;
-  background-size: 150px 150px;
-}
+.high5-product--detail .sub-detail--title {font-size: 30px; font-family: 'SpoqaR';}
+.high5-product--detail .detail-info--list {overflow: hidden;}
+.high5-product--detail .detail-info--list li {display:flex; align-items:center; position: relative; float: left; width: 50%; margin-top: 38px;}
+.high5-product--detail .detail-info--list li:before {display:inline-block; width:150px; height:150px; margin-right:20px; content:""; background-position:50% 50%; background-repeat:no-repeat; background-size:cover;}
+.high5-product--detail .detail-info--list dt,
+.high5-product--detail .detail-info--list dd {font-family: 'SpoqaR'; text-align: left;}
+.high5-product--detail .detail-info--list dt {font-size: 24px; line-height: 30px;}
+.high5-product--detail .detail-info--list dt .txt {position: relative; top: -2px; margin-left: 2px; padding: 0; font-family: 'SpoqaL'; font-size: 16px; line-height: 24px; letter-spacing: 0; color: #999;}
+.high5-product--detail .detail-info--list dd {font-family: 'SpoqaR'; margin-top: 9px; font-size: 20px; line-height: 27px; color: #666; text-align: left;}
+
+.high5-product--detail .detail-info--list li:nth-of-type(1):before {background-image:url(/images/product/saving/saving-high5/ico_high5_01.png) ;}
+.high5-product--detail .detail-info--list li:nth-of-type(2):before,
+.high5-product--detail .detail-info--list li:nth-of-type(3):before {background-image:url(/images/product/saving/saving-high5/ico_high5_02.png);}
 
 @media screen and (max-width: 960px) {
-  .saving-kdb .visual {
-    background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5kdbsavings.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
-
-  .bgImageT{
-    display: table-cell;
-    padding-left: 169px;
-    height: 150px;
-    vertical-align: middle;
-    background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_01.png) no-repeat 0 0;
-    background-size: auto 90px;
-  }
-
-  .bgImageV{
-    display: table-cell;
-    padding-left: 169px;
-    height: 150px;
-    vertical-align: middle;
-    background: url(/images/product/saving/saving-kdbxthigh5installmentsavning/bg_finnq_t5ico_04.png) no-repeat 0 0;
-    background-size: auto 90px;
-  }
-
+  .saving-high5 .visual {
+    background-position: right 20px top 100px; background-size: 300px auto;}  
+  .high5-product--detail .sub-add--text {margin-top:15px; font-size: 14px; line-height: 18px;}
+  .high5-product--detail .detail-info--list li {float: none; margin: 20px auto 0; max-width: 320px; width: 100%; padding:0 13px;}
+  .high5-product--detail .detail-info--list li:before {width:90px; height:90px;}
+  .high5-product--detail .detail-info--list dt {font-size:17px;}
+  .high5-product--detail .detail-info--list dd {font-size:15px; word-break: keep-all;     line-height: 20px; margin-top: 0;}
+  .high5-product--detail .detail-info--list dt .txt {font-size:12px;}
 }
-
-
-
-
 
 /********************************
 * 예적금 탭: T이득통장
 *********************************/
 .saving-tprofit .visual{
-  background: url(/images/product/saving/saving-tprofitpassbook/img_finnq_pla1.png) no-repeat right 110px bottom 48px;
-  background-size: 400px 370px;
+  background: url(/images/product/saving/saving-tprofit/img_finnq_pla1.png) no-repeat right 100px bottom 130px; background-size: 400px auto;
 }
+.saving-tprofit .saving-split--desc .desc li:first-of-type {margin-right: 8%;}
+.saving-tprofit .kdb-product {align-items:flex-start !important;}
+.saving-tprofit .benefit-detail--wrap {margin-top:40px;}
+.saving-tprofit .benefit-detail dt {font-family: "spoqaB"; color: #222; font-size: 24px;}
+.saving-tprofit .benefit-detail dd {font-size: 20px; color: #666; margin-top: 14px;}
+.saving-tprofit .benefit-detail .add-txt {color:#999; font-family: "spoqaL";}
+.saving-tprofit .benefit-detail + .benefit-detail {margin-top: 34px;}
+.saving-tprofit .skt-info--wrap,
+.saving-tprofit .finnq-info--wrap {margin-top:40px;}
+.saving-tprofit .add-detail--wrap .add-detail li {margin-top:16px; font-family: "spoqaL"; color: #999; font-size: 16px; line-height: 22px;}
+.saving-tprofit .add-detail--wrap .add-detail li:first-of-type {margin-top:0;}
+
 
 @media screen and (max-width: 960px) {
-  .saving-tprofit .visual {
-    background: url(/images/product/saving/saving-tprofitpassbook/img_finnq_pla1.png) no-repeat right 20px top 95px; background-size: 300px 278px;}
-
+  .saving-tprofit .visual {background-position: right 20px top 95px; background-size: 300px auto;}
+  .saving-tprofit .kdb-sub--title {text-align:left;}
+  .saving-tprofit .kdb-product {position:relative; text-align:left; padding:0 32px 90px;}
+  .saving-tprofit .benefit-detail dt {font-size: 16px;}
+  .saving-tprofit .benefit-detail dd {font-size: 14px; margin-top:8px;}
+  .saving-tprofit .add-detail--wrap {position:absolute; left:32px; bottom:0;}
+  .saving-tprofit .add-detail--wrap .add-detail li {font-size:14px;}    
+  .saving-tprofit .mobile-reverse--wrap {padding: 250px 0 0 0; position: relative;}
+  .saving-tprofit .product-text {position: absolute; top: 0; left: 32px;}
 }
 
 

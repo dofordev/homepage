@@ -39,30 +39,53 @@ button, a {-webkit-tap-highlight-color: rgba(0, 0, 0, 0.18);}
 a, a:hover, a:focus, a:active, a:visited, a:link {font-family: inherit; text-decoration: none; word-break: break-all; white-space: normal;}
 textarea {resize:none;}
 
+textarea,
+input[type=text], 
+input[type=password],
+input[type=tel], 
+input[type=email], 
+input[type=search] { 
+	-webkit-border-radius:0; 
+	-webkit-appearance:none; 
+}
 /****************************************************
 * 공통 요소 정의 
 *****************************************************/
 br.web {display:block;}
 br.mobile {display:none;}
 
-.txt-purple {color:#731aed !important;}
-.txt-black {color:#222 !important;}
-.txt-orange {color:#f07400 !important;}
-.fl {float:left;}
-.fr {float:right;}
-.clearfix:after {display:block; content:""; clear:both;}
-.bold {font-family: 'SpoqaB' !important;}
-
 @media screen and (max-width: 960px) {
   br.web {display:none;}
   br.mobile {display:block;}
 }
 
+/****************************************************
+* 컬러 / Weight
+*****************************************************/
+.txt-purple {color:#731aed !important;}
+.txt-black {color:#222 !important;}
+.txt-orange {color:#f07400 !important;}
+.txt-red {color:#ec1840;}
+.txt-green {color:#00b389;}
+.txt-blue {color:#278df5;}
+.bold {font-family: 'SpoqaB' !important;}
+
+/****************************************************
+* 정렬
+*****************************************************/
+.fl {float:left;}
+.fr {float:right;}
+.clearfix:after {display:block; content:""; clear:both;}
+
+.txt-left {text-align: left !important;}
+.txt-center {text-align: center !important;}
+.txt-right {text-align: right !important;}
 
 /****************************************************
 * Swiper 커스텀 
 * Swiper에 클래스로 자식요소 CSS 랜더링 
 *****************************************************/
+
 // Main 
 .main-swiper {}
 .main-swiper .swiper-button-prev, 
@@ -83,6 +106,12 @@ br.mobile {display:none;}
 
 // 마이데이터 제휴
 .proposal-swiper .swiper-pagination {bottom: 60px; left: 510px; width: auto;}
+@media screen and (max-width: 960px) {
+  .proposal-swiper .swiper-pagination {display: flex; width: 100%; box-sizing: border-box; left: 0; justify-content: center; bottom:48px; height: 10px;}
+  .proposal-swiper .swiper-pagination .swiper-pagination-bullet {height:6px; width:6px;}
+  .proposal-swiper .swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet {margin-left:6px !important;}
+  .proposal-swiper .swiper-pagination .swiper-pagination-bullet-active {width:14px;}
+}
 
 /****************************************************
 * 스와이퍼 사용되는 페이지 

@@ -10,6 +10,76 @@ import axios from "axios";
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
+const LayerCommonWrap = styled.div`
+  position: fixed;
+  left: 50%;
+  margin-left: -252px;
+  width: 504px;
+  padding: 40px 24px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  z-index: 5;
+  @media screen and (max-width: 960px) {
+    left: 24px;
+    right: 24px;
+    margin-left: 0;
+    width: auto;
+    box-sizing: border-box;
+    padding: 40px 16px 24px;
+  }
+`;
+
+const LayerTitle = styled.h1`
+  font-size: 16px;
+  text-align: center;
+  font-family: "SpoqaB";
+  line-height: 20px;
+`;
+
+const LayerSubText = styled.p`
+  font-size: 14px;
+  color: #000;
+  margin-top: 8px;
+  text-align: center;
+  font-family: "SpoqaR";
+`;
+
+const LayerDescText = styled.p`
+  font-size: 14px;
+  line-height: 20px;
+  color: #999;
+  & + & {
+    margin-top: 8px;
+  }
+`;
+
+const LayerButton = styled.button`
+  width: 100%;
+  margin-top: 40px;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff;
+  height: 46px;
+  font-size: 16px;
+  background-color: #731aed;
+  font-family: "SpoqaB";
+`;
+
+const LayerGuidePop = styled(LayerCommonWrap)`
+  top: 50%;
+  margin-top: -158px;
+  @media screen and (max-width: 960px) {
+    margin-top: 0;
+    top: 100px;
+  }
+`;
+
+const LayerSuccessPop = styled(LayerCommonWrap)`
+  top: 50%;
+  margin-top: -95px;
+`;
+
 export default function FinnqInsurance() {
   const btnSubmitRef = useRef(null);
   const [activeBtn, setActiveBtn] = useState(false);
@@ -64,33 +134,13 @@ export default function FinnqInsurance() {
     scrollTo({ top: location, behavior: "smooth" });
   };
 
-  const LayerGuidePop = styled.div`
-    position: fixed;
-    top: 300px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    z-index: 5;
-  `;
-
-  const LayerSuccessPop = styled.div`
-    position: fixed;
-    top: 300px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    z-index: 5;
-  `;
-
   return (
     <Layout>
       <section className="container">
         <article className="key-visual proposal">
           <div className="inner">
-            <p className="title">
-              <span className={styles.bold}>마이데이터 ADD-ON</span>
+            <p className={`title ${styles["proposal-title"]}`}>
+              마이데이터 ADD-ON
             </p>
             <div className="desc">
               고객사의 성공적인 마이데이터 비즈니스를 위해 핀크가 최적의
@@ -102,7 +152,10 @@ export default function FinnqInsurance() {
                 className={styles["btn-proposal"]}
                 onClick={menuMoveScroll}
               >
-                마이데이터 &amp; 핀크리얼리 제휴 문의
+                <span className={styles["txt-hide"]}>
+                  마이데이터 &amp; 핀크리얼리{" "}
+                </span>
+                제휴 문의
               </button>
             </div>
           </div>
@@ -110,9 +163,15 @@ export default function FinnqInsurance() {
 
         <div className="contents" id={styles["proposal-contents"]}>
           <section className="contents-body" id={styles["proposal-body"]}>
-            <article className={`${styles["proposal"]} contents-details`}>
-              <section className="desc-wrap" id={styles["swiper-content"]}>
-                <article className={styles["swiper-wrap"]}>
+            <article className="contents-details">
+              <section
+                className={styles["desc-wrap"]}
+                id={styles["swiper-content"]}
+              >
+                <article
+                  className={styles["swiper-wrap"]}
+                  style={{ overflow: "hidden" }}
+                >
                   <Swiper
                     className={`proposal-swiper width-fix ${styles["swiper-proposal--custom"]}`}
                     pagination={{ clickable: true }}
@@ -124,7 +183,9 @@ export default function FinnqInsurance() {
                   >
                     <SwiperSlide>
                       <div className={styles["swiper-cont"]}>
-                        <div className={styles["txt-area"]}>
+                        <div
+                          className={`${styles["txt-area"]} ${styles["txt-web"]}`}
+                        >
                           <p className={`txt-animate1 ${styles.desc}`}>
                             통합 자산 관리 서비스
                           </p>
@@ -137,6 +198,19 @@ export default function FinnqInsurance() {
                             </span>
                           </p>
                         </div>
+                        <div
+                          className={`${styles["txt-area"]} ${styles["txt-mobile"]}`}
+                        >
+                          <p className={`txt-animate1 ${styles.desc}`}>
+                            통합 자산 관리 서비스
+                          </p>
+                          <p className={`txt-animate2 ${styles.text}`}>
+                            한 눈에 모아보는
+                          </p>
+                          <p className={`txt-animate3 ${styles.text}`}>
+                            <span className={styles.bold}>내 돈 관리</span>
+                          </p>
+                        </div>
                         <div className={styles["swiper-img"]}>
                           <img
                             src="/images/proposal/img_keyscreen_01.png"
@@ -147,13 +221,30 @@ export default function FinnqInsurance() {
                     </SwiperSlide>
                     <SwiperSlide>
                       <div className={styles["swiper-cont"]}>
-                        <div className={styles["txt-area"]}>
+                        <div
+                          className={`${styles["txt-area"]} ${styles["txt-web"]}`}
+                        >
                           <p className={`txt-animate1 ${styles.desc}`}>
                             핀크 리얼리 Real:Re
                           </p>
                           <p className={`txt-animate2 ${styles.text}`}>
                             금융 고수들의<br></br>
                             REAL한 금융생활을 엿보는
+                          </p>
+                          <p className={`txt-animate3 ${styles.text}`}>
+                            <span className={styles.bold}>
+                              게임형 금융 SNS 서비스
+                            </span>
+                          </p>
+                        </div>
+                        <div
+                          className={`${styles["txt-area"]} ${styles["txt-mobile"]}`}
+                        >
+                          <p className={`txt-animate1 ${styles.desc}`}>
+                            핀크 리얼리 Real:Re
+                          </p>
+                          <p className={`txt-animate2 ${styles.text}`}>
+                            고수들의 금융생활
                           </p>
                           <p className={`txt-animate3 ${styles.text}`}>
                             <span className={styles.bold}>
@@ -173,10 +264,14 @@ export default function FinnqInsurance() {
                 </article>
               </section>
 
-              <section className="desc-wrap">
+              <section className={styles["desc-wrap"]}>
                 <div className="width-fix" id={styles["proposal-desc"]}>
                   <p className={styles.title}>
-                    금융 기술력과 경험을 갖춘 핀크의 전문 IT인력으로 최고 수준의
+                    금융 기술력과{" "}
+                    <span className={styles["txt-hide"]}>
+                      경험을 갖춘 핀크의{" "}
+                    </span>
+                    전문 IT인력으로<br className="mobile"></br> 최고 수준의
                     솔루션을 제공합니다.
                   </p>
                   <article className={styles["split-desc"]}>
@@ -206,7 +301,8 @@ export default function FinnqInsurance() {
                             <mark>01</mark>
                             <p>
                               마이데이터 자산관리<br></br>&amp; <br></br>
-                              핀크리얼리 Real:Re 통합 서비스
+                              핀크리얼리 Real:Re<br></br>
+                              통합 서비스
                             </p>
                           </div>
                           <div className={styles["product-img"]}>
@@ -274,13 +370,14 @@ export default function FinnqInsurance() {
               </section>
 
               <section
-                className="desc-wrap"
+                className={styles["desc-wrap"]}
                 id={styles["insert-proposal"]}
                 ref={insetFormRef}
               >
                 <div className="width-fix">
                   <p className={styles.title}>
-                    문의사항을 남겨주시면 빠른 시일 내 연락드리겠습니다.
+                    문의사항을 남겨주시면<br className="mobile"></br> 빠른 시일
+                    내 연락드리겠습니다.
                   </p>
                   <form onSubmit={handleSubmit(onSubmit)}>
                     <article className={styles.group}>
@@ -397,7 +494,8 @@ export default function FinnqInsurance() {
                           id="agreementYn"
                           onClick={handleCheckbox}
                         ></input>
-                        개인정보 보호 정책에 동의합니다.
+                        <strong>개인정보 보호 정책</strong>에 동의합니다.
+                        <br></br>
                         <button
                           type="button"
                           onClick={layerGuideOpen}
@@ -425,39 +523,36 @@ export default function FinnqInsurance() {
       </section>
       {showGuideModal && (
         <LayerGuidePop>
-          <div className={styles["layer-guide--content"]}>
-            <h1>개인정보 수집 및 이용에 관한 동의</h1>
-            <p>※아래 주의사항을 확인해 주시기 바랍니다.</p>
-            <ul>
-              <li>
-                1. 수집하는 개인정보 항목 : 회사/부서명, 성명, 전화번호, 이메일
-              </li>
-              <li>2. 수집 및 이용 목적 : 문의 내용 확인, 접수 및 답변 회신</li>
-              <li>
-                3. 보유 및 이용 기간 : 문의에 대한 서비스 목적 달성 후 즉시 폐기
-              </li>
-            </ul>
-            <button
-              type="button"
-              className={styles["btn-layer"]}
-              onClick={layerGuideClose}
-            >
-              확인
-            </button>
+          <LayerTitle>개인정보 수집 및 이용에 관한 동의</LayerTitle>
+          <LayerSubText>※아래 주의사항을 확인해 주시기 바랍니다.</LayerSubText>
+          <div style={{ marginTop: "24px" }}>
+            <LayerDescText>
+              1. 수집하는 개인정보 항목 : 회사/부서명, 성명, 전화번호, 이메일
+            </LayerDescText>
+            <LayerDescText>
+              2. 수집 및 이용 목적 : 문의 내용 확인, 접수 및 답변 회신
+            </LayerDescText>
+            <LayerDescText>
+              3. 보유 및 이용 기간 : 문의에 대한 답변 및 요청사항의 처리 또는
+              업무 제휴 등 목적 달성 후 즉시 폐기(관련 법령에 따라 보존할 필요가
+              있는 경우에는 해당 보존기간)
+            </LayerDescText>
           </div>
+          <LayerButton onClick={layerGuideClose} type="button">
+            확인
+          </LayerButton>
         </LayerGuidePop>
       )}
       {showSuccessModal && (
         <LayerSuccessPop>
           <div className={styles["layer-success--content"]}>
-            <p>성공적으로 완료했습니다.</p>
-            <button
-              type="button"
-              className={styles["btn-layer"]}
-              onClick={layerSuccessClose}
-            >
+            <LayerTitle>
+              문의가 정상적으로 접수되었습니다.<br></br> 빠른 시일 내
+              연락드리겠습니다.
+            </LayerTitle>
+            <LayerButton onClick={layerSuccessClose} type="button">
               확인
-            </button>
+            </LayerButton>
           </div>
         </LayerSuccessPop>
       )}
