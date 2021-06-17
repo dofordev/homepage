@@ -119,7 +119,6 @@ export default function FinnqInsurance() {
 
   const handleCheckbox = (e) => {
     const checkValue = e.target.checked;
-    console.log(checkValue);
     if (checkValue === true) {
       setActiveBtn(true);
     } else {

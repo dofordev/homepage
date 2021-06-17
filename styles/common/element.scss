@@ -24,6 +24,9 @@
   .tab-wrap li.is-active > * {height: 46px; border: 2px solid #731aed; font-family: 'SpoqaB';}
   .tab-wrap li.is-active:after {@include common__after; width:100%; height:100%; @include position($t:0, $l:0); box-sizing: border-box; border: 2px solid #731aed; z-index: 2;}
   .tab-wrap li:last-of-type > * {border-right:0;}
+  .tab-wrap li:nth-of-type(3), 
+  .tab-wrap li:nth-of-type(5), 
+  .tab-wrap li:nth-of-type(7) {border-right: 1px solid #c8c8c8;}
   
   // 하나 비전 탭
   .tab-wrap.table-type li {display: table-cell; float: none; vertical-align: middle;}
