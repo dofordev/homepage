@@ -8,20 +8,20 @@ export default function WavveCard(){
             <section className={`${styles["visual"]} contents-visual`}>
                 <h4 className="visual-title">
                     웨이브 구독만 하면
-                    <br />누구나 파도치는 혜택!
+                    <br />누구나 파도치는<br className={`mobile`}/> 혜택!
                 </h4>
                 <dl className={`pt-17`}>
                     <dt className={styles["guide-title"]}>연회비</dt>
-                    <dd className={`${styles["guide-desc"]} pt-17`}>국내전용<div className={`${styles["price"]} mt-6`}>18,000원</div></dd>
-                    <dd className={`${styles["guide-desc"]} pt-5`}>국내외겸용(Master Card)<div className={`${styles["price"]} ${styles["master-card"]} mt-6`}>20,000원</div></dd>
+                    <dd className={`${styles["guide-desc"]} pt-17`}>국내전용<div className={`${styles["price"]} mt-6`}>25,000원</div></dd>
+                    <dd className={`${styles["guide-desc"]} pt-5`}>국내외겸용(Master Card)<div className={`${styles["price"]} ${styles["master-card"]} mt-6`}>25,000원</div></dd>
 
                 </dl>
             </section>
             <div className={`${styles["background-wrap"]}`}>
                 <section className={`${styles["visual2"]} contents-visual`}>
-                    <h5 className="visual-title">
+                    <h5 className={`${styles["visual-title"]} visual-title`}>
                         매월 최대
-                        <br /><mark>13,900</mark>원 핀크머니 적립
+                        <br className={`${styles["mobile-hide"]}`}/><mark>13,900</mark>원<br className={`mobile`}/> 핀크머니 적립
                     </h5>
                     <p className={`${styles["txt-desc"]} pt-29`}>Wavve 카드로 wavv 직접 결제 하거나<br/>SKT 부가 서비스로 무료 이용 중인 모든 고객</p>
 
@@ -37,7 +37,7 @@ export default function WavveCard(){
             </div>
 
             <section className={`${styles["visual3"]} contents-visual`}>
-                <h6 className="visual-title">
+                <h6 className={`${styles["visual-title"]} visual-title`}>
                     커피 브랜드 <mark>5%</mark> 청구할인
                 </h6>
                 <dl className={`${styles["benefit-info"]} mt-40`}>
@@ -50,7 +50,11 @@ export default function WavveCard(){
                     <div className={`${styles["card--info__guide"]}`}>
                         <p className={`${styles["txt"]}`}>wavve 카드 5만원 캐시백 이벤트 상세</p>
                         <div className={`${styles["card__guide"]}`}>
+                            <dl>
+                                <dt>기간</dt>
+                                <dd>2021.1.15 ~ 2.28</dd>
 
+                            </dl>
                             <dl>
                                 <dt>이벤트 내용</dt>
                                 <dd>핀크앱 이벤트 페이지에서 응모 후, wavve카드로 3.15일까지 5만원 이상 이용 시 결제 계좌로 5만원 캐시백</dd>
@@ -112,7 +116,7 @@ export default function WavveCard(){
 
                         <div className="">
                             <ul className="mt-40">
-                                <li className={`${styles["info-type"]}`}>여신금융협회 심의필 제
+                                <li className={`${styles["info-type"]} fontR`}>여신금융협회 심의필 제
                                     <mark>2020-C1a-04784</mark>
                                     호<br className="mobile"/>
                                         <mark className="">(2020.06.05)</mark></li>

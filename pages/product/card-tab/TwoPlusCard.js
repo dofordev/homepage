@@ -19,45 +19,52 @@ export default function TwoPlusCard(){
                 </dl>
             </section>
             <div className="desc-wrap">
-                <div className="item-desc">
+                <div className={`${styles["visual2"]} item-desc`}>
                     <section className={"desc-info"}>
-                        <h4 className="visual-title">
+                        <h4 className={`${styles["visual-title"]} visual-title`}>
                             기본 <span className={`txt-orange`}>1%</span> 적립
                         </h4>
                         <p className={`${styles["txt-desc"]} mt-29 mb-33`}>이용실적, 이용 횟수, 한도 제한 없이 제공</p>
-                        <Image
-                            src="/images/product/card/two-plus-card/img_twoplus_card01.png"
-                            alt="기본 1% 적립"
-                            width={400}
-                            height={205}/>
+                        <div className={`${styles["img1-wrap"]}`}>
+                            <Image
+                                src="/images/product/card/two-plus-card/img_twoplus_card01.png"
+                                alt="기본 1% 적립"
+                                width={400}
+                                height={205}/>
+                        </div>
                     </section>
-                    <Image
-                        src="/images/product/card/finnq-card/ico_plus.png"
-                        alt="더하기"
-                        width={50}
-                        height={50}/>
-                    <section className={"desc-info"}>
-                        <h4 className="visual-title">
+                    <div className={`${styles["img2-wrap"]}`}>
+                        <Image
+                            src="/images/product/card/finnq-card/ico_plus.png"
+                            alt="더하기"
+                            width={50}
+                            height={50}/>
+                    </div>
+                    <section className={`${styles["desc-info"]} desc-info`}>
+                        <h4 className={`${styles["visual-title"]} visual-title`}>
                             추가 매월 최대 <span className={`txt-orange`}>15,000</span> 적립
                         </h4>
                         <p className={`${styles["txt-desc"]} mt-29 mb-38`}>이용 실적에 따라 불어나는 캐시백</p>
-                        <Image
-                            src="/images/product/card/two-plus-card/img_twoplus_card02.png"
-                            alt="추가 적립"
-                            width={400}
-                            height={270}/>
+                        <div className={`${styles["img3-wrap"]}`}>
+                            <Image
+                                src="/images/product/card/two-plus-card/img_twoplus_card02.png"
+                                alt="추가 적립"
+                                width={400}
+                                height={270}/>
+                        </div>
                     </section>
 
                 </div>
             </div>
             <div className="desc-wrap">
-                <div className="item-desc">
-                    <h4 className="visual-title">
+                <div className={`item-desc`}>
+                    <h4 className={`${styles["visual-title"]} visual-title`}>
                         청구할인 혜택
                     </h4>
                 </div>
-                <div className={`mt-36 mb-79`}>
-                    <div className={`item-desc`}>
+                <div className={`${styles["center-wrap"]} mt-36 mb-79`}>
+                    <div className={`${styles["visual3"]} item-desc`}>
+
                         <section className={"desc-info"}>
                             <div className={`${styles["benefit-wrap"]} ${styles["benefit-movie"]}`}>
                                 <dl>
@@ -87,7 +94,7 @@ export default function TwoPlusCard(){
                     </div>
                     <dl className={`${styles["deli-wrap"]}`}>
                         <dd className={`${styles["deli-txt"]}`}>※ 준법심의 19-0397 (2019.03.21 ~ 2020.03.20)</dd>
-                        <dd className={`${styles["deli-txt"]} mt-6`}>※ 여신금융협회 심의필 제 2019-C1h-02558호(2019.03.28)</dd>
+                        <dd className={`${styles["deli-txt"]} mt-6`}>※ 여신금융협회 심의필 제 2019-C1h-02558호<br className={`mobile`}/>(2019.03.28)</dd>
                     </dl>
                 </div>
             </div>

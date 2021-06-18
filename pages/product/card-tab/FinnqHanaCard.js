@@ -16,13 +16,10 @@ export default function FinnqHanaCard(){
             slidesPerView: 'auto', // 한 슬라이드에 보여줄 갯수
             direction: 'horizontal',
             loop: true,
-            /*
             autoplay : {
                 delay : 2000,
                 disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
             },
-
-             */
             speed : 600,
             coverflowEffect: { // 커버플로우 설정
                 rotate: 0, // 슬라이더 회전 각 : 클수록 슬라이딩시 회전이 커짐
